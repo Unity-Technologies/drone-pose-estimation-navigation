@@ -1,2 +1,18 @@
+# Logs #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+
+# Python  #
+###########
 __pycache__/
-datasets/
+
+# Runs
+runs/
+*.egg-info/
+.coverage
+*.tar.gz
+env/
