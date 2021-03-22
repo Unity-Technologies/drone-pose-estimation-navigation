@@ -1,0 +1,32 @@
+estimator: UR3_single_cube_model
+train:
+  dataset_zip_file_name_training: drone_multi_objects_training
+  batch_training_size: 10
+  accumulation_steps: 1
+  epochs: 2
+  beta_loss: 1
+  sample_size_train: 0
+val:
+  dataset_zip_file_name_validation: drone_multi_objects_validation
+  batch_validation_size: 30
+  eval_freq: 4
+  sample_size_val: 0
+test:
+  dataset_zip_file_name_test: drone_multi_objects_validation
+  batch_test_size: 30
+  sample_size_test: 0
+dataset:
+  image_scale: 224
+  download_data_gcp: False
+  gcs_bucket: None
+  pose_estimation_gcs_path: None
+adam_optimizer:
+  lr: 0.0001
+  beta_1: 0.9
+  beta_2: 0.999
+checkpoint:
+  load_dir_checkpoint: None
+  save_frequency: 1
+system:
+  log_dir_system: /Users/jonathan.leban/Documents/models
+  data_root: /Users/jonathan.leban/Documents/data
