@@ -1,0 +1,1 @@
+# unity project settings
