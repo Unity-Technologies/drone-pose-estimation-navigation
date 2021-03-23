@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-hw21-drone-pose-estimation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drone-pose-estimation
+  template:
+    metadata:
+      labels:
+        app: drone-pose-estimation
+    spec:
+      containers:
+      - command:
+        - python
+        - -m
+        - pose_estimation.cli
+        - train
+        image: gcr.io/unity-ai-hackweek-test/ai-hw21-drone-pose-estimation:latest
+        imagePullPolicy: Always
+        name: drone-pose-estimation
