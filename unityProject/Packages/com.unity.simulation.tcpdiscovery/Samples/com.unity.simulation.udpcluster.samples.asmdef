@@ -1,0 +1,15 @@
+{
+    "name": "com.unity.simulation.udpcluster.samples",
+    "references": [
+        "com.unity.simulation.udpcluster"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
