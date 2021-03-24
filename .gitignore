@@ -4,15 +4,13 @@ datasets/
 .DS_Store
 .vsconfig
 
-trainSceneProject/Library
-trainSceneProject/Temp
-trainSceneProject/obj
+**/Library
+**/Temp
+**/obj
 
-trainSceneProject/.idea
-trainSceneProject/.vs
-trainSceneProject/.vscode
+**/.idea
+**/.vs
+**/.vscode
 
-trainSceneProject/*.csproj
-trainSceneProject/*.sln
-
-
+**/*.csproj
+**/*.sln
