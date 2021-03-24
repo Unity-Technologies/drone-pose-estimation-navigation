@@ -20,6 +20,10 @@ public class TestProtobuf : MonoBehaviour
     private void Update()
     {
         GetRandomColor();
+        //Get Data from model
+        //Update the navmesh plane
+        // Apply the quaternion to the drone
+        //SetDestination (navmesh)
     }
 
     public void GetRandomColor()

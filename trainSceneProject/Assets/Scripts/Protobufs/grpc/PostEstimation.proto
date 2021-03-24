@@ -6,6 +6,7 @@ service Position {
     rpc GetDroneTransformPosition (DronePosition) returns (DronePosition) {}
     rpc GetTargetTransformPosition (CurrentPostion) returns (TargetPosition) {}
     rpc GetDroneQuaternion (Quaternion) returns (Quaternion) {}
+    rpc GetTargetQuaternion (Quaternion) returns (Quaternion) {}
 }
 
 
