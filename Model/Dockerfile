@@ -47,4 +47,4 @@ RUN python -c 'import pose_estimation.model as model; model.preload()'
 # Use -g to ensure all child process received SIGKILL
 ENTRYPOINT ["tini", "-g", "--"]
 
-CMD sh -c "jupyter notebook --notebook-dir=/ --ip=0.0.0.0 --no-browser --allow-root --port=8888 --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' --NotebookApp.base_url=${NB_PREFIX}"
+CMD sh -c "python -m pose_estimation.cli train"
