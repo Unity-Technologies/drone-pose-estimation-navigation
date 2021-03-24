@@ -28,5 +28,5 @@ checkpoint:
   load_dir_checkpoint: None
   save_frequency: 1
 system:
-  log_dir_system: gs://ai-hw21-drone-pose-estimation/models
+  log_dir_system: /Users/jonathan.leban/Documents/hackaton/models
   data_root: /Users/jonathan.leban/Documents/hackaton/data

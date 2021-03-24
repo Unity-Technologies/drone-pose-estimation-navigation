@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637521444210000000
+      ticks: 637522044910000000
     m_Hash: 4007186375
   m_LockFileStatus:
     m_FilePath: /Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637521446250000000
+      ticks: 637522045100000000
     m_Hash: 38571225
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
