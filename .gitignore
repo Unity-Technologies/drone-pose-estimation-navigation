@@ -4,6 +4,9 @@ datasets/
 .DS_Store
 .vsconfig
 
+trainSceneProject/.DS_Store
+trainSceneProject/.vsconfig
+
 trainSceneProject/Library
 trainSceneProject/Temp
 trainSceneProject/obj
