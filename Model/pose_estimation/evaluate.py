@@ -58,9 +58,6 @@ def evaluate_one_epoch(*, estimator, config, data_loader, epoch, test):
     estimator.model.eval()
     estimator.logger.info(f" evaluation started")
 
-    metric_translation = 0.0
-    metric_orientation = 0.0
-
     if test:
         batch_size = config.test.batch_test_size
     elif test == False:
@@ -184,7 +181,6 @@ def evaluation_over_batch(
                 loss_translation_drone + loss_orientation_drone + loss_translation_cube + loss_orientation_cube
             )
 
-        if is_training:
             train_loss.backward()
 
             if (index + 1) % config.train.accumulation_steps == 0:
