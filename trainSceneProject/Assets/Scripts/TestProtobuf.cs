@@ -8,6 +8,7 @@ using Protocolor;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Perception.Randomization.Scenarios;
+using Quaternion = UnityEngine.Quaternion;
 
 public class TestProtobuf : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class TestProtobuf : MonoBehaviour
     private int _seq = 0;
     public RenderTexture renderTexture;
     public PoseEstimationScenario scenario;
+
+    public GameObject drone;
+    public GameObject target;
     void Start()
     {
         _channel = new Channel(_server, ChannelCredentials.Insecure);
@@ -70,6 +74,12 @@ public class TestProtobuf : MonoBehaviour
                   poseEstimation.DroneQuaternion.X + ", " + poseEstimation.DroneQuaternion.Y + ", " +
                   poseEstimation.DroneQuaternion.Z +
                   ", " + poseEstimation.DroneQuaternion.W);
+        var droneEstimatedPose = poseEstimation.DroneQuaternion;
+        var targetEstimatedPose = poseEstimation.TargetQuaternion;
+        var targetEstimatedPosition = poseEstimation.TargetTransformPosition;
+        drone.transform.rotation = new Quaternion(droneEstimatedPose.X, droneEstimatedPose.Y, droneEstimatedPose.Z, droneEstimatedPose.W);
+        target.transform.rotation = new Quaternion(targetEstimatedPose.X, targetEstimatedPose.Y, targetEstimatedPose.Z, targetEstimatedPose.W);
+        target.transform.position = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
         
         // Do next steps here..
         // Apply the data
