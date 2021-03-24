@@ -2,14 +2,20 @@ syntax = "proto3";
 
 package protocolor;
 
-service Position {
-    rpc GetDroneTransformPosition (DronePosition) returns (DronePosition) {}
-    rpc GetTargetTransformPosition (CurrentPostion) returns (TargetPosition) {}
-    rpc GetDroneQuaternion (Quaternion) returns (Quaternion) {}
-    rpc GetTargetQuaternion (Quaternion) returns (Quaternion) {}
+service PostEstimationService {
+    rpc GetPoseEstimation (ImageInfo) returns (PoseEstimationResponse);
 }
 
+message ImageInfo {
+    bytes image = 1;
+}
 
+message PoseEstimationResponse {
+    Quaternion droneQuaternion = 1;
+    Quaternion targetQuaternion = 2;
+    TransformPosition droneTransformPosition = 3;
+    TransformPosition targetTransformPosition = 4;
+}
 message Quaternion {
     float x = 1;
     float y = 2;
@@ -17,26 +23,8 @@ message Quaternion {
     float w = 4;
 }
 
-message TargetPosition {
+message TransformPosition {
     float x = 1;
     float y = 2;
     float z = 3;
-}
-
-message DronePosition {
-    float x = 1;
-    float y = 2;
-    float z = 3;
-}
-
-// Messages define the data format
-message CurrentColor {
-    string color = 1;
-}
-
-message NewColor {
-    string color = 1;
-}
-
-message CurrentPostion {
 }

@@ -4,10 +4,9 @@ import grpc
 import PostEstimation_pb2 as PostEstimation__pb2
 
 
-class ColorGeneratorStub(object):
-  """Services define the different communication scenarios available
-  A simple service for generating color
-  """
+class PostEstimationServiceStub(object):
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -15,34 +14,33 @@ class ColorGeneratorStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.GetRandomColor = channel.unary_unary(
-        '/protocolor.ColorGenerator/GetRandomColor',
-        request_serializer=PostEstimation__pb2.CurrentColor.SerializeToString,
-        response_deserializer=PostEstimation__pb2.NewColor.FromString,
+    self.GetPoseEstimation = channel.unary_unary(
+        '/protocolor.PostEstimationService/GetPoseEstimation',
+        request_serializer=PostEstimation__pb2.ImageInfo.SerializeToString,
+        response_deserializer=PostEstimation__pb2.PoseEstimationResponse.FromString,
         )
 
 
-class ColorGeneratorServicer(object):
-  """Services define the different communication scenarios available
-  A simple service for generating color
-  """
+class PostEstimationServiceServicer(object):
+  # missing associated documentation comment in .proto file
+  pass
 
-  def GetRandomColor(self, request, context):
-    """Generates a random color on each request
-    """
+  def GetPoseEstimation(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
 
-def add_ColorGeneratorServicer_to_server(servicer, server):
+def add_PostEstimationServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'GetRandomColor': grpc.unary_unary_rpc_method_handler(
-          servicer.GetRandomColor,
-          request_deserializer=PostEstimation__pb2.CurrentColor.FromString,
-          response_serializer=PostEstimation__pb2.NewColor.SerializeToString,
+      'GetPoseEstimation': grpc.unary_unary_rpc_method_handler(
+          servicer.GetPoseEstimation,
+          request_deserializer=PostEstimation__pb2.ImageInfo.FromString,
+          response_serializer=PostEstimation__pb2.PoseEstimationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'protocolor.ColorGenerator', rpc_method_handlers)
+      'protocolor.PostEstimationService', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

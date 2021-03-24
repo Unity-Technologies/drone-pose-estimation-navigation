@@ -8,16 +8,17 @@ import PostEstimation_pb2_grpc
 from concurrent import futures
 
 
-class Greeter(PostEstimation_pb2_grpc.ColorGeneratorServicer):
+class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
-    def GetRandomColor(
-            self, request: PostEstimation_pb2.CurrentColor,context) -> PostEstimation_pb2.NewColor:
-        return PostEstimation_pb2.NewColor(color='Hello, %s!' % request.color)
+    def GetPoseEstimation(
+            self, request: PostEstimation_pb2.ImageInfo,context) -> PostEstimation_pb2.PoseEstimationResponse:
+        return PostEstimation_pb2.PoseEstimationResponse(droneQuaternion=PostEstimation_pb2.Quaternion(x=1,y=2,z=3,w=4), targetQuaternion= PostEstimation_pb2.Quaternion(x=1,y=2,z=3,w=4), droneTransformPosition=PostEstimation_pb2.TransformPosition(x=0,y=0,z=0), targetTransformPosition=PostEstimation_pb2.TransformPosition(x=0,y=0,z=0))
+    
 
 
 def serve() -> None:
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    PostEstimation_pb2_grpc.add_ColorGeneratorServicer_to_server(Greeter(), server)
+    PostEstimation_pb2_grpc.add_PostEstimationServiceServicer_to_server(PoseEstimation(), server)
     listen_addr = '[::]:50051'
     server.add_insecure_port(listen_addr)
     logging.info("Starting server on %s", listen_addr)

@@ -18,23 +18,23 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='protocolor',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x14PostEstimation.proto\x12\nprotocolor\"\x1d\n\x0c\x43urrentColor\x12\r\n\x05\x63olor\x18\x01 \x01(\t\"\x19\n\x08NewColor\x12\r\n\x05\x63olor\x18\x01 \x01(\t2T\n\x0e\x43olorGenerator\x12\x42\n\x0eGetRandomColor\x12\x18.protocolor.CurrentColor\x1a\x14.protocolor.NewColor\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x14PostEstimation.proto\x12\nprotocolor\"\x1a\n\tImageInfo\x12\r\n\05image\x18\x01 \x01(\x0c\"\xfa\x01\n\x16PoseEstimationResponse\x12/\n\x0f\x64roneQuaternion\x18\x01 \x01(\x0b\x32\x16.protocolor.Quaternion\x12\x30\n\x10targetQuaternion\x18\x02 \x01(\x0b\x32\x16.protocolor.Quaternion\x12=\n\x16\x64roneTransformPosition\x18\x03 \x01(\x0b\x32\x1d.protocolor.TransformPosition\x12>\n\x17targetTransformPosition\x18\x04 \x01(\x0b\x32\x1d.protocolor.TransformPosition\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"4\n\x11TransformPosition\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x32g\n\x15PostEstimationService\x12N\n\x11GetPoseEstimation\x12\x15.protocolor.ImageInfo\x1a\".protocolor.PoseEstimationResponseb\x06proto3'
 )
 
 
 
 
-_CURRENTCOLOR = _descriptor.Descriptor(
-  name='CurrentColor',
-  full_name='protocolor.CurrentColor',
+_IMAGEINFO = _descriptor.Descriptor(
+  name='ImageInfo',
+  full_name='protocolor.ImageInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='color', full_name='protocolor.CurrentColor.color', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='image', full_name='protocolor.ImageInfo.image', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -51,21 +51,42 @@ _CURRENTCOLOR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=36,
-  serialized_end=65,
+  serialized_end=62,
 )
 
 
-_NEWCOLOR = _descriptor.Descriptor(
-  name='NewColor',
-  full_name='protocolor.NewColor',
+_POSEESTIMATIONRESPONSE = _descriptor.Descriptor(
+  name='PoseEstimationResponse',
+  full_name='protocolor.PoseEstimationResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='color', full_name='protocolor.NewColor.color', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='droneQuaternion', full_name='protocolor.PoseEstimationResponse.droneQuaternion', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='targetQuaternion', full_name='protocolor.PoseEstimationResponse.targetQuaternion', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='droneTransformPosition', full_name='protocolor.PoseEstimationResponse.droneTransformPosition', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='targetTransformPosition', full_name='protocolor.PoseEstimationResponse.targetTransformPosition', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -81,51 +102,168 @@ _NEWCOLOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=67,
-  serialized_end=92,
+  serialized_start=65,
+  serialized_end=315,
 )
 
-DESCRIPTOR.message_types_by_name['CurrentColor'] = _CURRENTCOLOR
-DESCRIPTOR.message_types_by_name['NewColor'] = _NEWCOLOR
+
+_QUATERNION = _descriptor.Descriptor(
+  name='Quaternion',
+  full_name='protocolor.Quaternion',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='protocolor.Quaternion.x', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='protocolor.Quaternion.y', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='z', full_name='protocolor.Quaternion.z', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='w', full_name='protocolor.Quaternion.w', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=317,
+  serialized_end=373,
+)
+
+
+_TRANSFORMPOSITION = _descriptor.Descriptor(
+  name='TransformPosition',
+  full_name='protocolor.TransformPosition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='protocolor.TransformPosition.x', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='protocolor.TransformPosition.y', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='z', full_name='protocolor.TransformPosition.z', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=375,
+  serialized_end=427,
+)
+
+_POSEESTIMATIONRESPONSE.fields_by_name['droneQuaternion'].message_type = _QUATERNION
+_POSEESTIMATIONRESPONSE.fields_by_name['targetQuaternion'].message_type = _QUATERNION
+_POSEESTIMATIONRESPONSE.fields_by_name['droneTransformPosition'].message_type = _TRANSFORMPOSITION
+_POSEESTIMATIONRESPONSE.fields_by_name['targetTransformPosition'].message_type = _TRANSFORMPOSITION
+DESCRIPTOR.message_types_by_name['ImageInfo'] = _IMAGEINFO
+DESCRIPTOR.message_types_by_name['PoseEstimationResponse'] = _POSEESTIMATIONRESPONSE
+DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
+DESCRIPTOR.message_types_by_name['TransformPosition'] = _TRANSFORMPOSITION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-CurrentColor = _reflection.GeneratedProtocolMessageType('CurrentColor', (_message.Message,), {
-  'DESCRIPTOR' : _CURRENTCOLOR,
+ImageInfo = _reflection.GeneratedProtocolMessageType('ImageInfo', (_message.Message,), {
+  'DESCRIPTOR' : _IMAGEINFO,
   '__module__' : 'PostEstimation_pb2'
-  # @@protoc_insertion_point(class_scope:protocolor.CurrentColor)
+  # @@protoc_insertion_point(class_scope:protocolor.ImageInfo)
   })
-_sym_db.RegisterMessage(CurrentColor)
+_sym_db.RegisterMessage(ImageInfo)
 
-NewColor = _reflection.GeneratedProtocolMessageType('NewColor', (_message.Message,), {
-  'DESCRIPTOR' : _NEWCOLOR,
+PoseEstimationResponse = _reflection.GeneratedProtocolMessageType('PoseEstimationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _POSEESTIMATIONRESPONSE,
   '__module__' : 'PostEstimation_pb2'
-  # @@protoc_insertion_point(class_scope:protocolor.NewColor)
+  # @@protoc_insertion_point(class_scope:protocolor.PoseEstimationResponse)
   })
-_sym_db.RegisterMessage(NewColor)
+_sym_db.RegisterMessage(PoseEstimationResponse)
+
+Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Message,), {
+  'DESCRIPTOR' : _QUATERNION,
+  '__module__' : 'PostEstimation_pb2'
+  # @@protoc_insertion_point(class_scope:protocolor.Quaternion)
+  })
+_sym_db.RegisterMessage(Quaternion)
+
+TransformPosition = _reflection.GeneratedProtocolMessageType('TransformPosition', (_message.Message,), {
+  'DESCRIPTOR' : _TRANSFORMPOSITION,
+  '__module__' : 'PostEstimation_pb2'
+  # @@protoc_insertion_point(class_scope:protocolor.TransformPosition)
+  })
+_sym_db.RegisterMessage(TransformPosition)
 
 
 
-_COLORGENERATOR = _descriptor.ServiceDescriptor(
-  name='ColorGenerator',
-  full_name='protocolor.ColorGenerator',
+_POSTESTIMATIONSERVICE = _descriptor.ServiceDescriptor(
+  name='PostEstimationService',
+  full_name='protocolor.PostEstimationService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=94,
-  serialized_end=178,
+  serialized_start=429,
+  serialized_end=532,
   methods=[
   _descriptor.MethodDescriptor(
-    name='GetRandomColor',
-    full_name='protocolor.ColorGenerator.GetRandomColor',
+    name='GetPoseEstimation',
+    full_name='protocolor.PostEstimationService.GetPoseEstimation',
     index=0,
     containing_service=None,
-    input_type=_CURRENTCOLOR,
-    output_type=_NEWCOLOR,
+    input_type=_IMAGEINFO,
+    output_type=_POSEESTIMATIONRESPONSE,
     serialized_options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_COLORGENERATOR)
+_sym_db.RegisterServiceDescriptor(_POSTESTIMATIONSERVICE)
 
-DESCRIPTOR.services_by_name['ColorGenerator'] = _COLORGENERATOR
+DESCRIPTOR.services_by_name['PostEstimationService'] = _POSTESTIMATIONSERVICE
 
 # @@protoc_insertion_point(module_scope)

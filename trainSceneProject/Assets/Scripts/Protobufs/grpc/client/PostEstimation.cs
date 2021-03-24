@@ -24,34 +24,40 @@ namespace Protocolor {
     static PostEstimationReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRQb3N0RXN0aW1hdGlvbi5wcm90bxIKcHJvdG9jb2xvciIdCgxDdXJyZW50",
-            "Q29sb3ISDQoFY29sb3IYASABKAkiGQoITmV3Q29sb3ISDQoFY29sb3IYASAB",
-            "KAkyVAoOQ29sb3JHZW5lcmF0b3ISQgoOR2V0UmFuZG9tQ29sb3ISGC5wcm90",
-            "b2NvbG9yLkN1cnJlbnRDb2xvchoULnByb3RvY29sb3IuTmV3Q29sb3IiAGIG",
-            "cHJvdG8z"));
+            "ChRQb3N0RXN0aW1hdGlvbi5wcm90bxIKcHJvdG9jb2xvciIaCglJbWFnZUlu",
+            "Zm8SDQoFaW1hZ2UYASABKAwi+gEKFlBvc2VFc3RpbWF0aW9uUmVzcG9uc2US",
+            "LwoPZHJvbmVRdWF0ZXJuaW9uGAEgASgLMhYucHJvdG9jb2xvci5RdWF0ZXJu",
+            "aW9uEjAKEHRhcmdldFF1YXRlcm5pb24YAiABKAsyFi5wcm90b2NvbG9yLlF1",
+            "YXRlcm5pb24SPQoWZHJvbmVUcmFuc2Zvcm1Qb3NpdGlvbhgDIAEoCzIdLnBy",
+            "b3RvY29sb3IuVHJhbnNmb3JtUG9zaXRpb24SPgoXdGFyZ2V0VHJhbnNmb3Jt",
+            "UG9zaXRpb24YBCABKAsyHS5wcm90b2NvbG9yLlRyYW5zZm9ybVBvc2l0aW9u",
+            "IjgKClF1YXRlcm5pb24SCQoBeBgBIAEoAhIJCgF5GAIgASgCEgkKAXoYAyAB",
+            "KAISCQoBdxgEIAEoAiI0ChFUcmFuc2Zvcm1Qb3NpdGlvbhIJCgF4GAEgASgC",
+            "EgkKAXkYAiABKAISCQoBehgDIAEoAjJnChVQb3N0RXN0aW1hdGlvblNlcnZp",
+            "Y2USTgoRR2V0UG9zZUVzdGltYXRpb24SFS5wcm90b2NvbG9yLkltYWdlSW5m",
+            "bxoiLnByb3RvY29sb3IuUG9zZUVzdGltYXRpb25SZXNwb25zZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocolor.CurrentColor), global::Protocolor.CurrentColor.Parser, new[]{ "Color" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocolor.NewColor), global::Protocolor.NewColor.Parser, new[]{ "Color" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocolor.ImageInfo), global::Protocolor.ImageInfo.Parser, new[]{ "Image" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocolor.PoseEstimationResponse), global::Protocolor.PoseEstimationResponse.Parser, new[]{ "DroneQuaternion", "TargetQuaternion", "DroneTransformPosition", "TargetTransformPosition" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocolor.Quaternion), global::Protocolor.Quaternion.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocolor.TransformPosition), global::Protocolor.TransformPosition.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  /// <summary>
-  /// Messages define the data format
-  /// </summary>
-  public sealed partial class CurrentColor : pb::IMessage<CurrentColor>
+  public sealed partial class ImageInfo : pb::IMessage<ImageInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CurrentColor> _parser = new pb::MessageParser<CurrentColor>(() => new CurrentColor());
+    private static readonly pb::MessageParser<ImageInfo> _parser = new pb::MessageParser<ImageInfo>(() => new ImageInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CurrentColor> Parser { get { return _parser; } }
+    public static pb::MessageParser<ImageInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -64,55 +70,55 @@ namespace Protocolor {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CurrentColor() {
+    public ImageInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CurrentColor(CurrentColor other) : this() {
-      color_ = other.color_;
+    public ImageInfo(ImageInfo other) : this() {
+      image_ = other.image_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CurrentColor Clone() {
-      return new CurrentColor(this);
+    public ImageInfo Clone() {
+      return new ImageInfo(this);
     }
 
-    /// <summary>Field number for the "color" field.</summary>
-    public const int ColorFieldNumber = 1;
-    private string color_ = "";
+    /// <summary>Field number for the "image" field.</summary>
+    public const int ImageFieldNumber = 1;
+    private pb::ByteString image_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Color {
-      get { return color_; }
+    public pb::ByteString Image {
+      get { return image_; }
       set {
-        color_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        image_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CurrentColor);
+      return Equals(other as ImageInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CurrentColor other) {
+    public bool Equals(ImageInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Color != other.Color) return false;
+      if (Image != other.Image) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Color.Length != 0) hash ^= Color.GetHashCode();
+      if (Image.Length != 0) hash ^= Image.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -129,9 +135,9 @@ namespace Protocolor {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Color.Length != 0) {
+      if (Image.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Color);
+        output.WriteBytes(Image);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -142,9 +148,9 @@ namespace Protocolor {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Color.Length != 0) {
+      if (Image.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Color);
+        output.WriteBytes(Image);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -155,8 +161,8 @@ namespace Protocolor {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Color.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Color);
+      if (Image.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Image);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -165,12 +171,12 @@ namespace Protocolor {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CurrentColor other) {
+    public void MergeFrom(ImageInfo other) {
       if (other == null) {
         return;
       }
-      if (other.Color.Length != 0) {
-        Color = other.Color;
+      if (other.Image.Length != 0) {
+        Image = other.Image;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -187,7 +193,7 @@ namespace Protocolor {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Color = input.ReadString();
+            Image = input.ReadBytes();
             break;
           }
         }
@@ -205,7 +211,7 @@ namespace Protocolor {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Color = input.ReadString();
+            Image = input.ReadBytes();
             break;
           }
         }
@@ -215,15 +221,15 @@ namespace Protocolor {
 
   }
 
-  public sealed partial class NewColor : pb::IMessage<NewColor>
+  public sealed partial class PoseEstimationResponse : pb::IMessage<PoseEstimationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<NewColor> _parser = new pb::MessageParser<NewColor>(() => new NewColor());
+    private static readonly pb::MessageParser<PoseEstimationResponse> _parser = new pb::MessageParser<PoseEstimationResponse>(() => new PoseEstimationResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<NewColor> Parser { get { return _parser; } }
+    public static pb::MessageParser<PoseEstimationResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -236,55 +242,97 @@ namespace Protocolor {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NewColor() {
+    public PoseEstimationResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NewColor(NewColor other) : this() {
-      color_ = other.color_;
+    public PoseEstimationResponse(PoseEstimationResponse other) : this() {
+      droneQuaternion_ = other.droneQuaternion_ != null ? other.droneQuaternion_.Clone() : null;
+      targetQuaternion_ = other.targetQuaternion_ != null ? other.targetQuaternion_.Clone() : null;
+      droneTransformPosition_ = other.droneTransformPosition_ != null ? other.droneTransformPosition_.Clone() : null;
+      targetTransformPosition_ = other.targetTransformPosition_ != null ? other.targetTransformPosition_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public NewColor Clone() {
-      return new NewColor(this);
+    public PoseEstimationResponse Clone() {
+      return new PoseEstimationResponse(this);
     }
 
-    /// <summary>Field number for the "color" field.</summary>
-    public const int ColorFieldNumber = 1;
-    private string color_ = "";
+    /// <summary>Field number for the "droneQuaternion" field.</summary>
+    public const int DroneQuaternionFieldNumber = 1;
+    private global::Protocolor.Quaternion droneQuaternion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Color {
-      get { return color_; }
+    public global::Protocolor.Quaternion DroneQuaternion {
+      get { return droneQuaternion_; }
       set {
-        color_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        droneQuaternion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "targetQuaternion" field.</summary>
+    public const int TargetQuaternionFieldNumber = 2;
+    private global::Protocolor.Quaternion targetQuaternion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocolor.Quaternion TargetQuaternion {
+      get { return targetQuaternion_; }
+      set {
+        targetQuaternion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "droneTransformPosition" field.</summary>
+    public const int DroneTransformPositionFieldNumber = 3;
+    private global::Protocolor.TransformPosition droneTransformPosition_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocolor.TransformPosition DroneTransformPosition {
+      get { return droneTransformPosition_; }
+      set {
+        droneTransformPosition_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "targetTransformPosition" field.</summary>
+    public const int TargetTransformPositionFieldNumber = 4;
+    private global::Protocolor.TransformPosition targetTransformPosition_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocolor.TransformPosition TargetTransformPosition {
+      get { return targetTransformPosition_; }
+      set {
+        targetTransformPosition_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as NewColor);
+      return Equals(other as PoseEstimationResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(NewColor other) {
+    public bool Equals(PoseEstimationResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Color != other.Color) return false;
+      if (!object.Equals(DroneQuaternion, other.DroneQuaternion)) return false;
+      if (!object.Equals(TargetQuaternion, other.TargetQuaternion)) return false;
+      if (!object.Equals(DroneTransformPosition, other.DroneTransformPosition)) return false;
+      if (!object.Equals(TargetTransformPosition, other.TargetTransformPosition)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Color.Length != 0) hash ^= Color.GetHashCode();
+      if (droneQuaternion_ != null) hash ^= DroneQuaternion.GetHashCode();
+      if (targetQuaternion_ != null) hash ^= TargetQuaternion.GetHashCode();
+      if (droneTransformPosition_ != null) hash ^= DroneTransformPosition.GetHashCode();
+      if (targetTransformPosition_ != null) hash ^= TargetTransformPosition.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -301,9 +349,21 @@ namespace Protocolor {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Color.Length != 0) {
+      if (droneQuaternion_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Color);
+        output.WriteMessage(DroneQuaternion);
+      }
+      if (targetQuaternion_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(TargetQuaternion);
+      }
+      if (droneTransformPosition_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(DroneTransformPosition);
+      }
+      if (targetTransformPosition_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(TargetTransformPosition);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -314,9 +374,21 @@ namespace Protocolor {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Color.Length != 0) {
+      if (droneQuaternion_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Color);
+        output.WriteMessage(DroneQuaternion);
+      }
+      if (targetQuaternion_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(TargetQuaternion);
+      }
+      if (droneTransformPosition_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(DroneTransformPosition);
+      }
+      if (targetTransformPosition_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(TargetTransformPosition);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -327,8 +399,17 @@ namespace Protocolor {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Color.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Color);
+      if (droneQuaternion_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DroneQuaternion);
+      }
+      if (targetQuaternion_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetQuaternion);
+      }
+      if (droneTransformPosition_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DroneTransformPosition);
+      }
+      if (targetTransformPosition_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetTransformPosition);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -337,12 +418,33 @@ namespace Protocolor {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(NewColor other) {
+    public void MergeFrom(PoseEstimationResponse other) {
       if (other == null) {
         return;
       }
-      if (other.Color.Length != 0) {
-        Color = other.Color;
+      if (other.droneQuaternion_ != null) {
+        if (droneQuaternion_ == null) {
+          DroneQuaternion = new global::Protocolor.Quaternion();
+        }
+        DroneQuaternion.MergeFrom(other.DroneQuaternion);
+      }
+      if (other.targetQuaternion_ != null) {
+        if (targetQuaternion_ == null) {
+          TargetQuaternion = new global::Protocolor.Quaternion();
+        }
+        TargetQuaternion.MergeFrom(other.TargetQuaternion);
+      }
+      if (other.droneTransformPosition_ != null) {
+        if (droneTransformPosition_ == null) {
+          DroneTransformPosition = new global::Protocolor.TransformPosition();
+        }
+        DroneTransformPosition.MergeFrom(other.DroneTransformPosition);
+      }
+      if (other.targetTransformPosition_ != null) {
+        if (targetTransformPosition_ == null) {
+          TargetTransformPosition = new global::Protocolor.TransformPosition();
+        }
+        TargetTransformPosition.MergeFrom(other.TargetTransformPosition);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -359,7 +461,31 @@ namespace Protocolor {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Color = input.ReadString();
+            if (droneQuaternion_ == null) {
+              DroneQuaternion = new global::Protocolor.Quaternion();
+            }
+            input.ReadMessage(DroneQuaternion);
+            break;
+          }
+          case 18: {
+            if (targetQuaternion_ == null) {
+              TargetQuaternion = new global::Protocolor.Quaternion();
+            }
+            input.ReadMessage(TargetQuaternion);
+            break;
+          }
+          case 26: {
+            if (droneTransformPosition_ == null) {
+              DroneTransformPosition = new global::Protocolor.TransformPosition();
+            }
+            input.ReadMessage(DroneTransformPosition);
+            break;
+          }
+          case 34: {
+            if (targetTransformPosition_ == null) {
+              TargetTransformPosition = new global::Protocolor.TransformPosition();
+            }
+            input.ReadMessage(TargetTransformPosition);
             break;
           }
         }
@@ -377,7 +503,555 @@ namespace Protocolor {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Color = input.ReadString();
+            if (droneQuaternion_ == null) {
+              DroneQuaternion = new global::Protocolor.Quaternion();
+            }
+            input.ReadMessage(DroneQuaternion);
+            break;
+          }
+          case 18: {
+            if (targetQuaternion_ == null) {
+              TargetQuaternion = new global::Protocolor.Quaternion();
+            }
+            input.ReadMessage(TargetQuaternion);
+            break;
+          }
+          case 26: {
+            if (droneTransformPosition_ == null) {
+              DroneTransformPosition = new global::Protocolor.TransformPosition();
+            }
+            input.ReadMessage(DroneTransformPosition);
+            break;
+          }
+          case 34: {
+            if (targetTransformPosition_ == null) {
+              TargetTransformPosition = new global::Protocolor.TransformPosition();
+            }
+            input.ReadMessage(TargetTransformPosition);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class Quaternion : pb::IMessage<Quaternion>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Quaternion> _parser = new pb::MessageParser<Quaternion>(() => new Quaternion());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Quaternion> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocolor.PostEstimationReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Quaternion() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Quaternion(Quaternion other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      w_ = other.w_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Quaternion Clone() {
+      return new Quaternion(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "w" field.</summary>
+    public const int WFieldNumber = 4;
+    private float w_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float W {
+      get { return w_; }
+      set {
+        w_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Quaternion);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Quaternion other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(W, other.W)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (W != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(W);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (W != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(W);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (W != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(W);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (W != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Quaternion other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      if (other.W != 0F) {
+        W = other.W;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            W = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            W = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class TransformPosition : pb::IMessage<TransformPosition>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TransformPosition> _parser = new pb::MessageParser<TransformPosition>(() => new TransformPosition());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TransformPosition> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocolor.PostEstimationReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TransformPosition() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TransformPosition(TransformPosition other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TransformPosition Clone() {
+      return new TransformPosition(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TransformPosition);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TransformPosition other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TransformPosition other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
             break;
           }
         }

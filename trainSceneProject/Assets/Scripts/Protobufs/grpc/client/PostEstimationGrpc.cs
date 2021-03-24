@@ -8,13 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace Protocolor {
-  /// <summary>
-  ///Services define the different communication scenarios available
-  ///A simple service for generating color
-  /// </summary>
-  public static partial class ColorGenerator
+  public static partial class PostEstimationService
   {
-    static readonly string __ServiceName = "protocolor.ColorGenerator";
+    static readonly string __ServiceName = "protocolor.PostEstimationService";
 
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
     {
@@ -46,15 +42,15 @@ namespace Protocolor {
       return parser.ParseFrom(context.PayloadAsNewBuffer());
     }
 
-    static readonly grpc::Marshaller<global::Protocolor.CurrentColor> __Marshaller_protocolor_CurrentColor = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Protocolor.CurrentColor.Parser));
-    static readonly grpc::Marshaller<global::Protocolor.NewColor> __Marshaller_protocolor_NewColor = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Protocolor.NewColor.Parser));
+    static readonly grpc::Marshaller<global::Protocolor.ImageInfo> __Marshaller_protocolor_ImageInfo = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Protocolor.ImageInfo.Parser));
+    static readonly grpc::Marshaller<global::Protocolor.PoseEstimationResponse> __Marshaller_protocolor_PoseEstimationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Protocolor.PoseEstimationResponse.Parser));
 
-    static readonly grpc::Method<global::Protocolor.CurrentColor, global::Protocolor.NewColor> __Method_GetRandomColor = new grpc::Method<global::Protocolor.CurrentColor, global::Protocolor.NewColor>(
+    static readonly grpc::Method<global::Protocolor.ImageInfo, global::Protocolor.PoseEstimationResponse> __Method_GetPoseEstimation = new grpc::Method<global::Protocolor.ImageInfo, global::Protocolor.PoseEstimationResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetRandomColor",
-        __Marshaller_protocolor_CurrentColor,
-        __Marshaller_protocolor_NewColor);
+        "GetPoseEstimation",
+        __Marshaller_protocolor_ImageInfo,
+        __Marshaller_protocolor_PoseEstimationResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -62,112 +58,78 @@ namespace Protocolor {
       get { return global::Protocolor.PostEstimationReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of ColorGenerator</summary>
-    [grpc::BindServiceMethod(typeof(ColorGenerator), "BindService")]
-    public abstract partial class ColorGeneratorBase
+    /// <summary>Base class for server-side implementations of PostEstimationService</summary>
+    [grpc::BindServiceMethod(typeof(PostEstimationService), "BindService")]
+    public abstract partial class PostEstimationServiceBase
     {
-      /// <summary>
-      ///Generates a random color on each request
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Protocolor.NewColor> GetRandomColor(global::Protocolor.CurrentColor request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Protocolor.PoseEstimationResponse> GetPoseEstimation(global::Protocolor.ImageInfo request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
     }
 
-    /// <summary>Client for ColorGenerator</summary>
-    public partial class ColorGeneratorClient : grpc::ClientBase<ColorGeneratorClient>
+    /// <summary>Client for PostEstimationService</summary>
+    public partial class PostEstimationServiceClient : grpc::ClientBase<PostEstimationServiceClient>
     {
-      /// <summary>Creates a new client for ColorGenerator</summary>
+      /// <summary>Creates a new client for PostEstimationService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public ColorGeneratorClient(grpc::ChannelBase channel) : base(channel)
+      public PostEstimationServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for ColorGenerator that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for PostEstimationService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public ColorGeneratorClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public PostEstimationServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected ColorGeneratorClient() : base()
+      protected PostEstimationServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
-      protected ColorGeneratorClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected PostEstimationServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
-      /// <summary>
-      ///Generates a random color on each request
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
-      public virtual global::Protocolor.NewColor GetRandomColor(global::Protocolor.CurrentColor request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Protocolor.PoseEstimationResponse GetPoseEstimation(global::Protocolor.ImageInfo request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetRandomColor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPoseEstimation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///Generates a random color on each request
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
-      public virtual global::Protocolor.NewColor GetRandomColor(global::Protocolor.CurrentColor request, grpc::CallOptions options)
+      public virtual global::Protocolor.PoseEstimationResponse GetPoseEstimation(global::Protocolor.ImageInfo request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_GetRandomColor, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_GetPoseEstimation, null, options, request);
       }
-      /// <summary>
-      ///Generates a random color on each request
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Protocolor.NewColor> GetRandomColorAsync(global::Protocolor.CurrentColor request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Protocolor.PoseEstimationResponse> GetPoseEstimationAsync(global::Protocolor.ImageInfo request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetRandomColorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPoseEstimationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///Generates a random color on each request
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Protocolor.NewColor> GetRandomColorAsync(global::Protocolor.CurrentColor request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Protocolor.PoseEstimationResponse> GetPoseEstimationAsync(global::Protocolor.ImageInfo request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_GetRandomColor, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_GetPoseEstimation, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override ColorGeneratorClient NewInstance(ClientBaseConfiguration configuration)
+      protected override PostEstimationServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new ColorGeneratorClient(configuration);
+        return new PostEstimationServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(ColorGeneratorBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(PostEstimationServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetRandomColor, serviceImpl.GetRandomColor).Build();
+          .AddMethod(__Method_GetPoseEstimation, serviceImpl.GetPoseEstimation).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, ColorGeneratorBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, PostEstimationServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetRandomColor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Protocolor.CurrentColor, global::Protocolor.NewColor>(serviceImpl.GetRandomColor));
+      serviceBinder.AddMethod(__Method_GetPoseEstimation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Protocolor.ImageInfo, global::Protocolor.PoseEstimationResponse>(serviceImpl.GetPoseEstimation));
     }
 
   }
