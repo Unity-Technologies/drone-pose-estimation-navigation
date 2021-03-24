@@ -18,4 +18,17 @@ trainSceneProject/.vscode
 trainSceneProject/*.csproj
 trainSceneProject/*.sln
 
+**/.DS_Store
+**/.vsconfig
+
+**/Library
+**/Temp
+**/obj
+
+**/.idea
+**/.vs
+**/.vscode
+
+**/*.csproj
+**/*.sln
 
