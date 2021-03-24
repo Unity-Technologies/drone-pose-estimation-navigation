@@ -7,7 +7,7 @@ from .storage.checkpoint import EstimatorCheckpoint
 from pose_estimation.model import PoseEstimationNetwork
 from pose_estimation.train import train_model
 from pose_estimation.evaluate import evaluate_model
-from pose_estimation.single_cube_dataset import SingleCubeDataset
+from pose_estimation.drone_cube_dataset import DroneCubeDataset
 from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )

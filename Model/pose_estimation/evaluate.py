@@ -1,7 +1,7 @@
 import torch
 import torchvision
 
-from pose_estimation.single_cube_dataset import SingleCubeDataset
+from pose_estimation.drone_cube_dataset import DroneCubeDataset
 from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
@@ -19,7 +19,7 @@ def evaluate_model(estimator):
     """
     config = estimator.config
 
-    dataset_test = SingleCubeDataset(
+    dataset_test = DroneCubeDataset(
         config=config,
         split="test",
         zip_file_name=config.test.dataset_zip_file_name_test,

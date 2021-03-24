@@ -19,7 +19,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class SingleCubeDataset(torch.utils.data.IterableDataset):
+class DroneCubeDataset(torch.utils.data.IterableDataset):
     """
     This class is made to create a SingleCubeDataset object which is an
     object corresponding to the dataset we want to use to feed our
