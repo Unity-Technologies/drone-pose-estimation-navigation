@@ -1,4 +1,4 @@
-# AI Hackweek 2021 - Drone Pose Estimation
+# AI Hackweek 2021 - Drone Pose Estimation and Navigation
 
 The project relies on Unity version `2020.2.7f1`.
 
