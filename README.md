@@ -1,5 +1,4 @@
-# Unity Project Template for Machine Learning
-template for Unity project using machine learning
+# AI Hackweek 2021 - Drone Pose Estimation
 
 The project relies on Unity version `2020.2.7f1`.
 
