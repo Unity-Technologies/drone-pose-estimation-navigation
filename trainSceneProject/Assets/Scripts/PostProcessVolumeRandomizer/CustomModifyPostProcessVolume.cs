@@ -112,8 +112,10 @@ public class CustomModifyPostProcessVolume : MonoBehaviour
 
     }
 
-    void Update()
+    // void Update()
+    public void CustomUpdate()
     {
+        // Debug.Log("ppv");
         // Remember to enable the tick for any component you want to vary
         Volume volumeProfile = GetComponent<Volume>();
 

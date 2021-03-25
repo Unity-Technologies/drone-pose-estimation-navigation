@@ -16,8 +16,12 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
             self, request: PostEstimation_pb2.ImageInfo,context) -> PostEstimation_pb2.PoseEstimationResponse:
 
 
+        # model_choice = "models_drone_target_pose_estimation_easy_ep49.tar"
+        model_choice = "models_drone_target_pose_estimation_medium_ep33.tar"
+        # model_choice = "drone_target_pose_estimation_ep1.tar"
+
         logging.info("Inside the function...")
-        output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube = run_model_main(request.image, 1027, 592, "models_drone_target_pose_estimation_easy_ep49.tar")
+        output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube = run_model_main(request.image, 1027, 592, model_choice)
         print(output_translation_drone, output_orientation_drone,  output_translation_cube, output_orientation_cube)
 
         output_translation_drone = output_translation_drone[0]

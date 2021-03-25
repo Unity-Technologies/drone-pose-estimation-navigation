@@ -37,6 +37,9 @@ public class TestProtobuf : MonoBehaviour
     public Camera cam;
     public NavMeshAgent agent;
 
+    // post process volume
+    public CustomModifyPostProcessVolume ppv;
+
 
     void Start()
     {
@@ -126,12 +129,12 @@ public class TestProtobuf : MonoBehaviour
         // var estimatedPosition = Camera.main.transform.TransformPoint(translationObject);
         // var estimatedRotation = Camera.main.transform.rotation * rotationObject;
         
-        Debug.Log("TargetPosition : " + target.transform.position);
+        //Debug.Log("TargetPosition : " + target.transform.position);
         var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
 
         targetObject = GameObject.Find("TargetCube_modified");
         var targetPosition = Camera.main.transform.TransformPoint(pos);
-        Debug.Log("Estimated Target Position: " + targetPosition);
+        //Debug.Log("Estimated Target Position: " + targetPosition);
 
         droneObject = GameObject.Find("Drone_01 Variant_modified");
         var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, droneEstimatedPosition.Z));
@@ -152,6 +155,18 @@ public class TestProtobuf : MonoBehaviour
         float yUpperT = transform.position.y + (yCenterT + yHalfExtentsT);
         // set the y of target to the top of box collider
         targetPosition.y = yUpperT;
+
+        // compare with ground truth
+        var dronePositionGT = droneObject.transform.position;
+        dronePositionGT.y = yLower - offsetY;
+        var targetPositionGT = targetObject.transform.position;
+        targetPosition.y = yUpperT;
+        Debug.Log("Target Position : " + targetPositionGT + "  Estimated Target Position: " + targetPosition);
+        Debug.Log("Drone Position : " + dronePositionGT + "  Estimated Drone Position: " + dronePosition);
+
+        // Do navmesh calculations with ground truth drone and target positions - comment out for pose estimation demo
+        //targetPosition = targetPositionGT;
+        //dronePosition = dronePositionGT;
 
         Vector3 midPointPosition = (targetPosition - dronePosition).normalized;
 
@@ -184,6 +199,7 @@ public class TestProtobuf : MonoBehaviour
         Destroy(planeObject);
 
         scenario.Move();
+        ppv.CustomUpdate();
     }
 
     public PoseEstimationResponse GetPoseEstimation(byte[] encodedImageData)
