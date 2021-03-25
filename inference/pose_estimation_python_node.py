@@ -186,7 +186,7 @@ def run_model_main_2(image_data, image_width, image_height, model_file_name):
 
 
 count = 0
-PACKAGE_LOCATION = "/Users/priyesh/Misc/Model-Test-Image"
+PACKAGE_LOCATION = "."
 
 def _save_image(image_data):
     """  convert raw image data to a png and save it

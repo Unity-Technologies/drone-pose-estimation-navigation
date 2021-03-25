@@ -128,10 +128,10 @@ public class TestProtobuf : MonoBehaviour
         
         Debug.Log("TargetPosition : " + target.transform.position);
         var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
-        Debug.Log("Estimated Target Position: " + pos);
 
         targetObject = GameObject.Find("TargetCube_modified");
-        var targetPosition = Camera.main.transform.TransformPoint(new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z));
+        var targetPosition = Camera.main.transform.TransformPoint(pos);
+        Debug.Log("Estimated Target Position: " + targetPosition);
 
         droneObject = GameObject.Find("Drone_01 Variant_modified");
         var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, droneEstimatedPosition.Z));
