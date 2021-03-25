@@ -60,7 +60,6 @@ public class TestProtobuf : MonoBehaviour
         // Apply the quaternion to the drone
         //SetDestination (navmesh)        
     }
-
     
 
     private byte[] CaptureScreenshot()
@@ -84,6 +83,11 @@ public class TestProtobuf : MonoBehaviour
         return imageBytes;
     }
 
+
+    private Protocolor.Quaternion droneEstimatedPose;
+    private Protocolor.Quaternion targetEstimatedPose;
+    private TransformPosition targetEstimatedPosition;
+    private TransformPosition droneEstimatedPosition;
     public void StartPoseEstimation()
     {
         // cleanup agent and navmesh plane
@@ -98,17 +102,18 @@ public class TestProtobuf : MonoBehaviour
                   poseEstimation.DroneQuaternion.X + ", " + poseEstimation.DroneQuaternion.Y + ", " +
                   poseEstimation.DroneQuaternion.Z +
                   ", " + poseEstimation.DroneQuaternion.W);
-        var droneEstimatedPose = poseEstimation.DroneQuaternion;
-        var targetEstimatedPose = poseEstimation.TargetQuaternion;
-        var targetEstimatedPosition = poseEstimation.TargetTransformPosition;
-        drone.transform.rotation = new Quaternion(droneEstimatedPose.X, droneEstimatedPose.Y, droneEstimatedPose.Z, droneEstimatedPose.W);
-        target.transform.rotation = new Quaternion(targetEstimatedPose.X, targetEstimatedPose.Y, targetEstimatedPose.Z, targetEstimatedPose.W);
-        target.transform.position = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
+        droneEstimatedPose = poseEstimation.DroneQuaternion;
+        targetEstimatedPose = poseEstimation.TargetQuaternion;
+        targetEstimatedPosition = poseEstimation.TargetTransformPosition;
+        droneEstimatedPosition = poseEstimation.DroneTransformPosition;
+        // drone.transform.rotation = new Quaternion(droneEstimatedPose.X, droneEstimatedPose.Y, droneEstimatedPose.Z, droneEstimatedPose.W);
+        // target.transform.rotation = new Quaternion(targetEstimatedPose.X, targetEstimatedPose.Y, targetEstimatedPose.Z, targetEstimatedPose.W);
+        // target.transform.position = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
 
         // Do next steps here..
         // Apply the data
         // Navmesh building etc...
-       
+
     }
 
     public void StartNavigation()
@@ -117,12 +122,19 @@ public class TestProtobuf : MonoBehaviour
         agent.enabled = false;
         planeObject = GameObject.Find("Plane");
         Destroy(planeObject);
+        
+        // var estimatedPosition = Camera.main.transform.TransformPoint(translationObject);
+        // var estimatedRotation = Camera.main.transform.rotation * rotationObject;
+        
+        Debug.Log("TargetPosition : " + target.transform.position);
+        var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
+        Debug.Log("Estimated Target Position: " + pos);
 
         targetObject = GameObject.Find("TargetCube_modified");
-        var targetPosition = targetObject.transform.position;
+        var targetPosition = Camera.main.transform.TransformPoint(new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z));
 
         droneObject = GameObject.Find("Drone_01 Variant_modified");
-        var dronePosition = droneObject.transform.position;
+        var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, droneEstimatedPosition.Z));
 
         // Get the bottom of box collider y for drawing the plane correctly under the drone
         var droneCollider = droneObject.GetComponentInChildren<BoxCollider>();

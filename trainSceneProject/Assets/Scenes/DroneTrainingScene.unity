@@ -390,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -478, y: -293.6}
+  m_AnchoredPosition: {x: -358.5, y: -248.4}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53280467
@@ -767,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -478, y: -237.29999}
+  m_AnchoredPosition: {x: -358.5, y: -192.09998}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455727630
@@ -1158,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -476.2, y: -236.6}
+  m_AnchoredPosition: {x: -356.7, y: -191.39996}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750098773
@@ -2006,7 +2006,7 @@ MonoBehaviour:
     00000002:
       type: {class: CustomBackgroundOccluderScaleRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 0
         scale:
           collapsed: 0
@@ -2015,7 +2015,7 @@ MonoBehaviour:
     00000003:
       type: {class: CustomForegroundScaleRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 0
         scale:
           collapsed: 0
@@ -2050,7 +2050,7 @@ MonoBehaviour:
     00000006:
       type: {class: HueOffsetRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 1
         hueOffset:
           collapsed: 0
@@ -2059,7 +2059,7 @@ MonoBehaviour:
     00000007:
       type: {class: SunAngleRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 1
         hour:
           collapsed: 0
@@ -4088,7 +4088,7 @@ MonoBehaviour:
     00000009:
       type: {class: CustomLightRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 1
         lightIntensityParameter:
           collapsed: 0
@@ -4111,7 +4111,7 @@ MonoBehaviour:
     0000000A:
       type: {class: CustomLightPositionRotationRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 0
         useMovingLight: 1
         changeLightPosition: 0.25
@@ -4148,8 +4148,8 @@ MonoBehaviour:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 20
-          maximum: 50
+          minimum: 4
+          maximum: 10
     0000000D:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -4680,7 +4680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480, y: -178.79999}
+  m_AnchoredPosition: {x: -360.5, y: -133.59998}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784210780
