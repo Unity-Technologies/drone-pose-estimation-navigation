@@ -20,10 +20,10 @@ PoseEstimationModel:
         This file contains the cli commands which are the commands to launch the different processes (either train or evaluate).
 
 *    [config.yaml](../config.yaml):
-        This file contains the default configuration for the estimator (pose estimation model) on the single cube dataset.
+        This file contains the default configuration for the estimator (pose estimation model) on the drone cube dataset.
 
-*    [single_cube_dataset.py](../pose_estimation/single_cube_dataset.py):
-        This file contains knowledge on how the SingleCubeDataset class dataset should be loaded into memory. 
+*    [drone_cube_dataset.py](../pose_estimation/drone_cube_dataset.py):
+        This file contains knowledge on how the DroneCubeDataset class dataset should be loaded into memory. 
 
 *    [model.py](../pose_estimation/model.py):
         This file contains the neural network along with the custom linear activation function to perform 
