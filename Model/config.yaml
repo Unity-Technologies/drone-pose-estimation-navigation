@@ -1,0 +1,32 @@
+estimator: drone_target_pose_estimation
+train:
+  dataset_zip_file_name_training: drone_training_medium
+  batch_training_size: 25
+  accumulation_steps: 10
+  epochs: 60
+  beta_loss: 1
+  sample_size_train: 0
+val:
+  dataset_zip_file_name_validation: drone_validation_medium
+  batch_validation_size: 30
+  eval_freq: 4
+  sample_size_val: 0
+test:
+  dataset_zip_file_name_test: drone_validation_medium
+  batch_test_size: 30
+  sample_size_test: 0
+dataset:
+  image_scale: 224
+  download_data_gcp: False
+  gcs_bucket: ai-hw21-drone-pose-estimation
+  pose_estimation_gcs_path: data
+adam_optimizer:
+  lr: 0.0001
+  beta_1: 0.9
+  beta_2: 0.999
+checkpoint:
+  load_dir_checkpoint: None
+  save_frequency: 1
+system:
+  log_dir_system: /save/drone_multi_pose
+  data_root: /data
