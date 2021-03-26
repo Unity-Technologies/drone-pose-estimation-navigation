@@ -36,7 +36,7 @@ docker run -it -v [FULL PATH TO DATA FOLDER]:/data -v [FULL PATH TO MODEL FOLDER
 The `FULL PATH TO DATA FOLDER` is the path to the upper directory of your data. As an example, I have put my `drone_training_medium` and `drone_validation_medium` data folder into a folder called `data` that I have created in my `Documents` folder. Thus my `FULL PATH TO DATA FOLDER` will be `/Users/jonathan.leban/Documents/data`.
 
 The `FULL PATH TO MODEL FOLDER` is the directory in which your models and metrics will be saved. For me, I created a folder called `save` into my Documents. 
-The `/save/drone_multi_pose` directory is the directory inside the docker container. That is why in the [config.yaml](../config.yaml) file, under the argument `system` the argument `log_dir_system` is set to `/save/drone_multi_pose`. 
+The `/save/drone_multi_posea` directory is the directory inside the docker container. That is why in the [config.yaml](../config.yaml) file, under the argument `system` the argument `log_dir_system` is set to `/save/drone_multi_pose`. 
 
 Thus, the final command for me is: 
 ```bash
