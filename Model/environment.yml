@@ -16,7 +16,7 @@ dependencies:
     - docopt=0.6.2
     - black=19.10b
     - pyyaml=5.3.1 
-
+    
     - pip:
         - easydict==1.9
         - tensorboardX==2.1

@@ -22,12 +22,12 @@ We trained this model on sythetic data collected in Unity. To learn how to colle
 This model supports a `train` and an `evaluate` command. Both of these have many arguments, which you can examine in `cli.py`. They will default to the values in `config.yaml` for convenience, but can be overridden via the command line.
 
 The most important `train` arguments to be aware of are:
-* `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training_medium` and `drone_validation_medium`, containing the training and validation data, respectively. 
+* `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training` and `drone_validation`, containing the training and validation data, respectively. 
 * `--log-dir-system`: Path to directory where you'd like to save Tensorboard log files and model checkpoint files.
 
 The most important `evaluate` arguments to be aware of are:
 * `--load-dir-checkpoint`: Path to model to be evaluated. 
-* `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training_medium` and `drone_validation_medium`, containing the training and validation data, respectively. 
+* `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training` and `drone_validation`, containing the training and validation data, respectively. 
 
 
 ## Performance
@@ -51,4 +51,3 @@ python -m pytest tests/test_average_translation_mean_square_error.py
 ## Resources
 * [Documentation](documentation/codebase_structure.md) describing structure of the model code
 * [Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/pdf/1703.06907.pdf)
-* [Pose Estimation Tutorial](../README.md)

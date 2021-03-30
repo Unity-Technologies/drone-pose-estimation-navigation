@@ -29,12 +29,7 @@ git clone git@github.com:Unity-Technologies/ai-hw21-drone-pose-estimation-naviga
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
-We have created our own randomizers: 
-- randomization of the number of distractor objects: randomly generates objects in the scene. Objects are picked among a library. 
-- randomization of the position of objects: the available positions are within a volume and we made sure that for the drone and the landing target they always appear in the top 2/3 of the screen and in the bottom 1/3 of the screen respectively. 
-- randomization of the orientation: randomly rotates the landing target and the drone along the y-axis and randomly rotates all the distractor objects along x, y and z-axis. 
-- ...
-
+If you want more information on how the scene is set up for the data collection, go [here](Documentation/1_set_up_data_collection_scene.md)
 
 
 ---
@@ -68,3 +63,5 @@ If you want to have more information on how the model works and how to train you
 
 
 ---
+
+### <a name="link-part-5>: Part 5: closed loop control
