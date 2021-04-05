@@ -30,29 +30,39 @@ The `Main Camera` has a `Perception Camera` component that is responsible for ge
 
 We use multiple `Directional Light` Game Objects to vary the lighting of the scene. Similar to our other Game Objects they have perception randomizer tags that change the intensity, colour, on/off state, and their position and orientation in the scene.
 
-### <a name="step-2">Setting up the randomizers</a>
+#### Render resolution
 The images you generate to train your deep learning model and the images you later use for inference during the pose estimation task will need to have the same resolution. We will now set this resolution.
 
 - In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `1027` and `Height` to `592`. The gif below depicts these actions. 
 
+### <a name="step-2">Setting up the randomizers</a>
 
 #### Domain Randomization
 We will be collecting training data from a simulation, but most real perception use-cases occur in the real world. 
 To train a model to be robust enough to generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
 
-### Randomizers 
-To perform domain randomization, we use the perception package by using pre-existing randomizers and by adding our custom ones. 
-The gameobject `Simulation Scenario` possesses the script component [Pose Estimation Scenario](trainSceneProject/Assets/Scripts/PoseEstimationScenario.cs) which gathers all the following randomizers. 
+#### Randomizers 
+The [Perception package](https://github.com/Unity-Technologies/com.unity.perception) provides a set of [domain randomizers](https://github.com/Unity-Technologies/com.unity.perception/tree/master/com.unity.perception/Runtime/Randomization/Randomizers/RandomizerExamples/Randomizers). It is fairly straightforward to create your own custom randomizers by following [these instructions](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Tutorial/Phase2.md).
+To perform domain randomization in our project, we use the pre-existing Perception package randomizers as well as a few custom ones we created ourselves. 
+In our scene hierarchy, the `SimulationScenario` has a script component called [Pose Estimation Scenario](trainSceneProject/Assets/Scripts/PoseEstimationScenario.cs) where we can define the randomizers we need to use for our simulation and their properties. It is possible to mix and match these randomizers to best suit your specific application's needs. For our project we used the following randomizers, which are appropriately attached to the Game Objects where needed using Perception tags.
 
-1. `DistractorObjectRandomizer`: it randomizes the number of objects generated in the scene. Objects are picked among a library. 
-2. `DroneObjectPositionRandomizer`: it randomizes the position of the objects in the scene. The available positions are within a volume and we made sure that for the drone and the landing target they always appear in the top 2/3 of the screen and in the bottom 1/3 of the screen respectively. 
-3. `RotationRandomizer` and  `CustomRotationRandomizer`: it randomizes the rotation of the landing target and the drone along the y-axis and it randomly rotates all the distractor objects along x, y and z-axis. 
-4. `Texture Randomizer`: it randomizes the texture on the wall. There a dataset of textures for the training and one for the testing. 
-5. `Hue Offset Randomizer`: it randomizes the color of the different distractor objects. 
-6. `Light Randomizer`: it randomizes the color, intensity and direction of the light.
-7. `Custom Foreground Scale Randomizer`: it randomizes the scale of the distractor objects but also the drone and the landing target. 
-8. `Camera Randomizer`: it randomizes the camera's position
+1. `DistractorObjectRandomizer`: randomizes the number of distractor/occluder objects generated in the scene, by picking a random value between the Min and Max values the user specifies that denote the minimum and maximum number of distractor/occluder objects spawned in a simulation iteration. The objects are picked randomly from a set of prefabs the user specifies. 
+2. `DroneObjectPositionRandomizer`: randomizes the position of the foreground objects in the scene. The drone is placed inside a volume. In order to mimic a drone in the sky and the landing target on the ground, we modified this script such that the drone and the landing target are spawned in the top 2/3 and the bottom 1/3 of the screen respectively. 
+3. `Custom Foreground Scale Randomizer`: randomizes the scale of the foreground objects. 
+4. `Custom Background Scale Randomizer`: randomizes the scale of the background distractor objects.
+5. `RotationRandomizer`: randomly rotates all the distractor objects along X, Y and Z-axis. 
+6. `CustomRotationRandomizer`: randomizes the rotation of the landing target and the drone along the Y-axis.
+7. `Texture Randomizer`: randomizes the texture on the `Wall` as well as the distractor objects and the sides of the landing target. We provide separate texture datasets for training and testing which could be found in `Assets/textures`. 
+8. `Hue Offset Randomizer`: randomizes the color of the different distractor objects. 
+9. `Custom Light Randomizer`: randomizes the color and intensity of the lights between a minimum and maximum intensity value.
+10. `Custom Light Position Rotation Randomizer`: randomizes the light position and rotation in the scene.
+11. `Sun Angle Randomizer`: randomizes the light Game Object to mimic the time of the day and day of the year.
+12. `Custom Camera Randomizer`: randomizes the camera's position, rotation, Field of View, and Focal Length.
 
+Certain randomizers do not appear in the `SimulationScenario`, but are attached to their respective Game Objects:
+
+1. `Custom Light Switcher Tag`: randomly switches the light on or off based on an `Enabled Probability` value.
+2. `Custom Modify Post Process Volume`: randomly modifies the post process volume overrides: vignette, white balance, film grain, lens distortion, depth of field, and contrast and saturation in colour adjustments.
 
 ---
 ### <a name="step-3">Data Collection</a> 
