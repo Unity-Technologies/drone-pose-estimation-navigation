@@ -5,7 +5,7 @@ In this document, we will go over the steps for setting up a Unity environment a
 
 **Table of Contents**
   - [Setting up the Unity scene](#step-1)
-  - [Set up the randomizers](#step-2)
+  - [Setting up the randomizers](#step-2)
   - [Data collection](#step-3)
 
 ---
@@ -30,7 +30,7 @@ The `Main Camera` has a `Perception Camera` component that is responsible for ge
 
 We use multiple `Directional Light` Game Objects to vary the lighting of the scene. Similar to our other Game Objects they have perception randomizer tags that change the intensity, colour, on/off state, and their position and orientation in the scene.
 
-### <a name="step-2">Set up the randomizers</a>
+### <a name="step-2">Setting up the randomizers</a>
 The images you generate to train your deep learning model and the images you later use for inference during the pose estimation task will need to have the same resolution. We will now set this resolution.
 
 - In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `1027` and `Height` to `592`. The gif below depicts these actions. 
