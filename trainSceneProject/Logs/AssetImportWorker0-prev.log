@@ -12,98 +12,154 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57038
+58218
 Successfully changed project path to: /Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject
 /Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 95.76 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 96.05 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject/Assets
 GfxDevice: creating device client; threaded=0
-2021-03-30 15:25:55.668 Unity[20423:3427569] Color LCD preferred device: Intel(R) UHD Graphics 630 (low power)
-2021-03-30 15:25:55.668 Unity[20423:3427569] Metal devices available: 2
-2021-03-30 15:25:55.668 Unity[20423:3427569] 0: AMD Radeon Pro 5500M (high power)
-2021-03-30 15:25:55.668 Unity[20423:3427569] 1: Intel(R) UHD Graphics 630 (low power)
-2021-03-30 15:25:55.669 Unity[20423:3427569] Using device AMD Radeon Pro 5500M (high power)
+2021-03-30 15:34:21.682 Unity[20680:3437544] Color LCD preferred device: Intel(R) UHD Graphics 630 (low power)
+2021-03-30 15:34:21.682 Unity[20680:3437544] Metal devices available: 2
+2021-03-30 15:34:21.682 Unity[20680:3437544] 0: AMD Radeon Pro 5500M (high power)
+2021-03-30 15:34:21.682 Unity[20680:3437544] 1: Intel(R) UHD Graphics 630 (low power)
+2021-03-30 15:34:21.683 Unity[20680:3437544] Using device AMD Radeon Pro 5500M (high power)
 Initializing Metal device caps: AMD Radeon Pro 5500M
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56423
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56680
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2020.2.7f1/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.002945 seconds.
+Registered in 0.003255 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 86.38 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 77.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.527 seconds
+- Completed reload, in  1.446 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009220 seconds.
+Registered in 0.008911 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 86.72 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 84.21 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.252 seconds
+- Completed reload, in  2.127 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launching external process: /Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/Tools/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.95 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3006 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 222.5 MB.
-System memory in use after: 222.8 MB.
+System memory in use before: 222.7 MB.
+System memory in use after: 222.9 MB.
 
 Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 3425.
-Total: 2.687625 ms (FindLiveObjects: 0.309773 ms CreateObjectMapping: 0.123801 ms MarkObjects: 2.182253 ms  DeleteObjects: 0.070873 ms)
+Total: 2.663277 ms (FindLiveObjects: 0.442963 ms CreateObjectMapping: 0.157065 ms MarkObjects: 1.996335 ms  DeleteObjects: 0.066074 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/IdLabelConfig.asset
-  artifactKey: Guid(0f1f921063a9345d9a005341cb757dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IdLabelConfig.asset using Guid(0f1f921063a9345d9a005341cb757dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46265d0a2ae4f90703f6c0419a1723aa') in 0.354379 seconds
-  Import took 0.359931 seconds .
+  path: Assets/Settings/SampleSceneProfile.asset
+  artifactKey: Guid(10fc4df2da32a41aaa32d77bc913491c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/SampleSceneProfile.asset using Guid(10fc4df2da32a41aaa32d77bc913491c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cbcdc113b723b75b59ae724f04a3180') in 0.310368 seconds
+  Import took 0.316125 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/New Volume Profile.asset
-  artifactKey: Guid(1da17dfdf1c6c4a0983f84c90c556e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Volume Profile.asset using Guid(1da17dfdf1c6c4a0983f84c90c556e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5886becc5ee8826e48ceca3ddedea6eb') in 0.020299 seconds
-  Import took 0.025255 seconds .
+  Time since last request: 0.000203 seconds.
+  path: Assets/Settings/UniversalRP-LowQuality.asset
+  artifactKey: Guid(a31e9f9f9c9d4b9429ed0d1234e22103) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRP-LowQuality.asset using Guid(a31e9f9f9c9d4b9429ed0d1234e22103) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f4993eda93e6577ff6a79220a8343e0') in 0.002701 seconds
+  Import took 0.006968 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000156 seconds.
-  path: Assets/Readme.asset
-  artifactKey: Guid(83c2ed844a8c74b779a4c823d16594b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Readme.asset using Guid(83c2ed844a8c74b779a4c823d16594b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29bb0c55b42cf9bee30bd87418c39614') in 0.002083 seconds
-  Import took 0.006459 seconds .
+  Time since last request: 0.000446 seconds.
+  path: Assets/Settings/UniversalRP-MediumQuality.asset
+  artifactKey: Guid(d847b876476d3d6468f5dfcd34266f96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRP-MediumQuality.asset using Guid(d847b876476d3d6468f5dfcd34266f96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26e42684764b26a10dbdf077f60f09b4') in 0.002241 seconds
+  Import took 0.008068 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 136.047394 seconds.
-  path: Assets/Scenes/DroneTrainingScene.unity
-  artifactKey: Guid(561824e320bce4506b8bc42adb03b4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/DroneTrainingScene.unity using Guid(561824e320bce4506b8bc42adb03b4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2427ada03ae338d6760d195fa26a9a72') in 0.002207 seconds
-  Import took 0.009156 seconds .
+  Time since last request: 0.000308 seconds.
+  path: Assets/Settings/UniversalRP-HighQuality.asset
+  artifactKey: Guid(19ba41d7c0026c3459d37c2fe90c55a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/UniversalRP-HighQuality.asset using Guid(19ba41d7c0026c3459d37c2fe90c55a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '273019ca297b0091e9f691fb3b1aac8c') in 0.002615 seconds
+  Import took 0.008085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Settings/ForwardRenderer.asset
+  artifactKey: Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/ForwardRenderer.asset using Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dec83b93357108a8cb880a58efd6238') in 0.002987 seconds
+  Import took 0.007888 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Scripts/Protobufs
+  artifactKey: Guid(4ece7a4b8b4a34e029d77c3ae5609c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Protobufs using Guid(4ece7a4b8b4a34e029d77c3ae5609c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edfd7fa61f7a05b37191acf8507efb01') in 0.001134 seconds
+  Import took 0.008289 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.369784 seconds.
+  path: Assets/Scripts/Protobufs/grpc
+  artifactKey: Guid(35f46b62c38e84474bdfb6f090aa2827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Protobufs/grpc using Guid(35f46b62c38e84474bdfb6f090aa2827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0a8aa884f6b79c174769b9eba9767a4') in 0.001202 seconds
+  Import took 0.006481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.422441 seconds.
+  path: Assets/Scripts/Protobufs/grpc/client
+  artifactKey: Guid(0da67d36391ef4f46bbdf1407fdc0934) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Protobufs/grpc/client using Guid(0da67d36391ef4f46bbdf1407fdc0934) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14b4c365ae3a2c585115a6969832aa10') in 0.000982 seconds
+  Import took 0.007323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.338253 seconds.
+  path: Assets/Scripts/Protobufs/grpc/client/PostEstimation.cs
+  artifactKey: Guid(0cb0970439dab4b86a4145abeb745524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Protobufs/grpc/client/PostEstimation.cs using Guid(0cb0970439dab4b86a4145abeb745524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51d5cd94ce3839eac25b3bcbcab0c490') in 0.444079 seconds
+  Import took 0.448997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.343934 seconds.
+  path: Assets/Scripts/Protobufs/grpc/client/PostEstimationGrpc.cs
+  artifactKey: Guid(1e68f1ece399e4bab9b16903d8ca39b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Protobufs/grpc/client/PostEstimationGrpc.cs using Guid(1e68f1ece399e4bab9b16903d8ca39b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12f7f92d1e5e718a865c5899f94e305a') in 0.001733 seconds
+  Import took 0.006185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.017186 seconds.
+  path: Assets/Scripts/Protobufs/grpc/PostEstimation.proto
+  artifactKey: Guid(d8203ccca241c460ea9e8209c19ff396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Protobufs/grpc/PostEstimation.proto using Guid(d8203ccca241c460ea9e8209c19ff396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b16795ee54110d2b27b89323af256486') in 0.173995 seconds
+  Import took 0.179077 seconds .
 
