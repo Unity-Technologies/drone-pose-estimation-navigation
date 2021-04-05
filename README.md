@@ -29,7 +29,7 @@ git clone git@github.com:Unity-Technologies/ai-hw21-drone-pose-estimation-naviga
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
-If you want more information on how the scene is set up for the data collection, go [here](Documentation/1_set_up_data_collection_scene.md)
+If you want more information on how the scene is set up for the data collection, go [here](Documentation/1_set_up_scene_data_collection.md)
 
 
 ---
