@@ -35,6 +35,8 @@ The images you generate to train your deep learning model and the images you lat
 
 - In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `1027` and `Height` to `592`. The gif below depicts these actions. 
 
+---
+
 ### <a name="step-2">Setting up the randomizers</a>
 
 #### Domain Randomization
@@ -65,8 +67,11 @@ Certain randomizers do not appear in the `SimulationScenario`, but are attached 
 2. `Custom Modify Post Process Volume`: randomly modifies the post process volume overrides: vignette, white balance, film grain, lens distortion, depth of field, and contrast and saturation in colour adjustments.
 
 ---
-### <a name="step-3">Data Collection</a> 
-In the framework of the Drone pose estimation and navigation project, we collected 30K data for training and 3K data for validation. 
-For this dataset, we set to active all the randomizers. 
 
-After collecting the data, you should rename those files: `drone_training` and `drone_validation`. 
+### <a name="step-3">Data collection</a> 
+Once the Unity scene is set up and the components and randomizers are appropriately created, we can begin collecting data for training and validation of our pose estimation model. As described before, our environment can produce randomly generated RGB images as well as 3D Bounding Box labels for the drone and the target in each image.
+In the `SimulationScenario` you can specify the number of `Total Frames` generated and the `Random Seed`. Pressing ▷ (`Play`) in Unity will start generating the data, while simultaneously visualizing the frames and the annnotated 3D Bounding Box labels.
+For our model training, we collected 30K images for training and 3K images for validation using different `Random Seed` values. 
+
+After the simulation has finished running for the specified number of frames, select the `Main Camera` and click on **Show Folder** which will bring up the folder in your operating system's file explorer where the data is saved.
+You must then rename those folders `drone_training` and `drone_validation` for model training. 
