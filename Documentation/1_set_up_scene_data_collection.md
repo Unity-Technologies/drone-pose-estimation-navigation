@@ -1,17 +1,17 @@
 # Set up the scene for the data collection of the drone pose estimation and navigation project
 
-In this document, we will go over the different randomizers needed for the data collection and all the elements we need to work properly.  
+In this document, we will go over the steps for setting up a Unity environment and the different randomizers needed for the data collection.  
 
 
 **Table of Contents**
-  - [Set up the scene with importer Drone](#step-1)
+  - [Setting up the Unity scene](#step-1)
   - [Set up the randomizers](#step-2)
   - [Data collection](#step-3)
 
 ---
 
-### <a name="step-1">Set up the scene with importer Drone</a>
-In this project, we want to predict the pose of drone and a landing target in an environment composed by a wall and mulitiple distractor objects. 
+### <a name="step-1">Setting up the Unity scene</a>
+We first need to set up a Unity scene, which enables us to collect training data for training a pose estimation model that predicts the pose of a drone and a landing target. In the provided Unity project template, you should find an environment that has the necessary components already set up for you to generate data out of the box. Once import the project in Unity, navigate to the `Assets/Scenes/DroneTrainingScene.unity` and open it by double-clicking on it. You should see a scene comprised of a `Wall`, multiple `Lights`, a `Main Camera`, and a `SimulationScenario` and a `Post Process Volume` that generate random scenes with our objects of interest (the drone and the target), multiple distractor objects with random textures, random lighting, and random position and orientation for all the Game Objects in the scene. We will go over what each of the randomizers do later. You will also find some Game Object components in the scene hierarchy that are necessary for running NavMesh AI navigation for the drone, as well as gRPC communication pipeline for inference.
 
 As the drone is not by default in the Assets folder, we need to import it. The prefab is called `Drone_01 Variant_modified`. Its prefab is in `Assets/Racing Drone/prefabs/`. 
 For the target, we use a cube as the main block and we added a landing logo on it. The prefab is called `TargetCube_modified`. Its prefab is in  `Assets/Racing Drone/prefabs/`. The texture which represents the landing logo is called `Drone-landing-material` and is in `Assets/textures/`.
