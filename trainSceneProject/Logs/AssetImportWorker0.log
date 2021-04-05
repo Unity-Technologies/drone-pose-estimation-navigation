@@ -1,0 +1,301 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59119
+Successfully changed project path to: /Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject
+/Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 86.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.7f1 (c53830e277f1)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/jonathan.leban/Documents/hackaton/ai-hw21-pose-estimation-model/trainSceneProject/Assets
+GfxDevice: creating device client; threaded=0
+2021-04-05 13:02:47.976 Unity[65113:5073951] Color LCD preferred device: AMD Radeon Pro 5500M (high power)
+2021-04-05 13:02:47.976 Unity[65113:5073951] Metal devices available: 2
+2021-04-05 13:02:47.976 Unity[65113:5073951] 0: AMD Radeon Pro 5500M (high power)
+2021-04-05 13:02:47.976 Unity[65113:5073951] 1: Intel(R) UHD Graphics 630 (low power)
+2021-04-05 13:02:47.977 Unity[65113:5073951] Using device AMD Radeon Pro 5500M (high power)
+Initializing Metal device caps: AMD Radeon Pro 5500M
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56113
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2020.2.7f1/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.000784 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 60.61 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.189 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006122 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 73.14 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.845 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launching external process: /Applications/Unity/Hub/Editor/2020.2.7f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3006 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 222.7 MB.
+System memory in use after: 222.9 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 3425.
+Total: 2.899388 ms (FindLiveObjects: 0.350865 ms CreateObjectMapping: 0.174802 ms MarkObjects: 2.304879 ms  DeleteObjects: 0.067791 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Racing Drone/prefabs/Drone_01 Variant.prefab
+  artifactKey: Guid(1477a1fb14beb4169a8ef9c4f2e36176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/Drone_01 Variant.prefab using Guid(1477a1fb14beb4169a8ef9c4f2e36176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6908fa8cc2455b930ef20442617c5b75') in 1.056703 seconds
+  Import took 1.067546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Racing Drone/prefabs/TargetCube.prefab
+  artifactKey: Guid(85a631ad956cd489b8039c3de4dfd5d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/TargetCube.prefab using Guid(85a631ad956cd489b8039c3de4dfd5d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '372fdde309f84615161b8f8e1b0f6f95') in 0.335696 seconds
+  Import took 0.342354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Racing Drone/model
+  artifactKey: Guid(4d07eb782c0a64451ac169680eae1d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model using Guid(4d07eb782c0a64451ac169680eae1d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fed986eb8b3343f9a569639f765dd22') in 0.000899 seconds
+  Import took 0.005378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Racing Drone/model/Drone_ani.FBX
+  artifactKey: Guid(9ffd30472c2114e8195fc6cc7dab0ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Drone_ani.FBX using Guid(9ffd30472c2114e8195fc6cc7dab0ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06c2c0a200c0c8100710c4f5d6b662b') in 0.720568 seconds
+  Import took 0.726034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Racing Drone/prefabs/TargetCube.prefab
+  artifactKey: Guid(85a631ad956cd489b8039c3de4dfd5d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/TargetCube.prefab using Guid(85a631ad956cd489b8039c3de4dfd5d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '372fdde309f84615161b8f8e1b0f6f95') in 0.011229 seconds
+  Import took 0.016173 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Racing Drone/prefabs/Drone_03.prefab
+  artifactKey: Guid(7336d924d62e64f3f9519456b753c4d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/Drone_03.prefab using Guid(7336d924d62e64f3f9519456b753c4d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '506662e3152701dd76910742f13be383') in 0.025516 seconds
+  Import took 0.030814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Racing Drone/prefabs/Drone_01.prefab
+  artifactKey: Guid(d55ab62c726224afabc090fdad94221a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/Drone_01.prefab using Guid(d55ab62c726224afabc090fdad94221a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27da91c317476797fd06de8b77902ca5') in 0.011631 seconds
+  Import took 0.016760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Racing Drone/prefabs/Drone_01 Variant_modified.prefab
+  artifactKey: Guid(1e15f9c7a01704f579027cde2382508f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/Drone_01 Variant_modified.prefab using Guid(1e15f9c7a01704f579027cde2382508f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '552b06b7635884da3a70c3dac79892f6') in 0.017358 seconds
+  Import took 0.021712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Racing Drone/prefabs/Drone_02.prefab
+  artifactKey: Guid(fa720ae53a95a492caa9a175ce3143db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/Drone_02.prefab using Guid(fa720ae53a95a492caa9a175ce3143db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '683d0322d6ba1d08a8e647c3e583738e') in 0.013754 seconds
+  Import took 0.018482 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/Racing Drone/prefabs/Drone_04.prefab
+  artifactKey: Guid(7ee67c7e7397043c08f8561b22d2125a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/Drone_04.prefab using Guid(7ee67c7e7397043c08f8561b22d2125a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5827c74d02aa410bc5e15fe2c3360cfd') in 0.014546 seconds
+  Import took 0.019547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Racing Drone/prefabs/TargetCube_modified.prefab
+  artifactKey: Guid(4096a59dedcad4db5a1ebe4fa9e379fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/prefabs/TargetCube_modified.prefab using Guid(4096a59dedcad4db5a1ebe4fa9e379fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcef8b93c5926327c3ac1c450c97020b') in 0.011180 seconds
+  Import took 0.016185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Racing Drone/model/Drone_01.FBX
+  artifactKey: Guid(22ef457fad98243e9889f850746b5546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Drone_01.FBX using Guid(22ef457fad98243e9889f850746b5546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a9e1e41892d4b8afeb2694c3090d1ac') in 0.051095 seconds
+  Import took 0.055755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 241.268966 seconds.
+  path: Assets/Racing Drone/texture/drone_ne.psd
+  artifactKey: Guid(43fae7a0ac27b4a998eaa7ccc07cc68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/texture/drone_ne.psd using Guid(43fae7a0ac27b4a998eaa7ccc07cc68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1d11c37593a470af7a46109e4936614') in 0.401227 seconds
+  Import took 0.407710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Racing Drone/texture/drone_ne_04.psd
+  artifactKey: Guid(5cb6eef72d6564959bdf8706712d30a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/texture/drone_ne_04.psd using Guid(5cb6eef72d6564959bdf8706712d30a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cc20f75967e921e19366a976283aaca') in 0.009284 seconds
+  Import took 0.014014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Racing Drone/texture/drone_ne_02.psd
+  artifactKey: Guid(dab3496b9cc1e4f8cbd41f64a4f91d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/texture/drone_ne_02.psd using Guid(dab3496b9cc1e4f8cbd41f64a4f91d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '831378b934d4a44ce97e48b6bccc186e') in 0.007580 seconds
+  Import took 0.012216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Racing Drone/texture/drone_ne_03.psd
+  artifactKey: Guid(d385508ca5beb44e5974b73c1d9c6510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/texture/drone_ne_03.psd using Guid(d385508ca5beb44e5974b73c1d9c6510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2212f1b90e3a3fed8b824b421870734d') in 0.012749 seconds
+  Import took 0.017530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/Racing Drone/texture/drone_ne_modified.psd
+  artifactKey: Guid(92ef443e697e94704b8ba0eb32cd1363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/texture/drone_ne_modified.psd using Guid(92ef443e697e94704b8ba0eb32cd1363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c161ca4f76a56ca2463a4baae92ef5a1') in 0.010259 seconds
+  Import took 0.014728 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Racing Drone/texture/drone_ne_modified_mefrontside.psd
+  artifactKey: Guid(5450369561ab9459f934baacd1ddb22a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/texture/drone_ne_modified_mefrontside.psd using Guid(5450369561ab9459f934baacd1ddb22a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '555033d23940a9c5f74907cdf829e54a') in 0.010998 seconds
+  Import took 0.015848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.251937 seconds.
+  path: Assets/Racing Drone/model/Materials
+  artifactKey: Guid(40f555c694d1341079ecf63d46b079f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Materials using Guid(40f555c694d1341079ecf63d46b079f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dd4cb2c2711228783ac392d0e1c960d') in 0.000972 seconds
+  Import took 0.006732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.076291 seconds.
+  path: Assets/Racing Drone/model/Materials/drone_ne 1.mat
+  artifactKey: Guid(d2c5ea8c6ce494cd19d69c0dd1d739df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Materials/drone_ne 1.mat using Guid(d2c5ea8c6ce494cd19d69c0dd1d739df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3484f5227ec8f47ee3a2cb3b51afddc7') in 0.188378 seconds
+  Import took 0.194795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Racing Drone/model/Materials/drone_ne 2.mat
+  artifactKey: Guid(9f1028a4e6a46486f8a1f400bef3242a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Materials/drone_ne 2.mat using Guid(9f1028a4e6a46486f8a1f400bef3242a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6db8bc67a13a780fb1ba4e7c5273d2e') in 0.016496 seconds
+  Import took 0.022966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Racing Drone/model/Materials/drone_ne 3.mat
+  artifactKey: Guid(12f6c1a9522f6403da2c59403db3064f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Materials/drone_ne 3.mat using Guid(12f6c1a9522f6403da2c59403db3064f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c36333a8a4bac77a4547459260604fb') in 0.028098 seconds
+  Import took 0.034586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Racing Drone/model/Materials/drone_ne.mat
+  artifactKey: Guid(c597d9d36aaa3436da8c4c0b59155217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Materials/drone_ne.mat using Guid(c597d9d36aaa3436da8c4c0b59155217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a496e8156dc4757642e7040321859601') in 0.015328 seconds
+  Import took 0.021188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Racing Drone/model/Materials/drone_ne_modified.mat
+  artifactKey: Guid(b74c39718d18c4cc99e533476f6721cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Racing Drone/model/Materials/drone_ne_modified.mat using Guid(b74c39718d18c4cc99e533476f6721cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '758afe1e7b6dbad31aa70e869ebdbbb2') in 0.012553 seconds
+  Import took 0.017584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.926218 seconds.
+  path: Assets/textures/drone-landing-material.mat
+  artifactKey: Guid(ad71eebd869c543f2bc26fd73b99d714) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/textures/drone-landing-material.mat using Guid(ad71eebd869c543f2bc26fd73b99d714) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a50d5cce8d8f2cdb73a0c1bfa31e15a6') in 0.013638 seconds
+  Import took 0.019846 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/textures/drone-landing-pad-sample-013.jpg
+  artifactKey: Guid(1824a0912432345b4a9198927dc4a708) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/textures/drone-landing-pad-sample-013.jpg using Guid(1824a0912432345b4a9198927dc4a708) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '257275394c204aa29118eb1aeba3af53') in 0.406815 seconds
+  Import took 0.412729 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/textures/PlaneMaterial.mat
+  artifactKey: Guid(561f9ba5b17dc412abc1a226dc464b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/textures/PlaneMaterial.mat using Guid(561f9ba5b17dc412abc1a226dc464b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c65915863192b8b7859fe618b954738d') in 0.009091 seconds
+  Import took 0.013515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/textures/drone-landing-pad-sample-013_modified.jpg
+  artifactKey: Guid(fb1d722b9d8a443e499c6844c189a9cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/textures/drone-landing-pad-sample-013_modified.jpg using Guid(fb1d722b9d8a443e499c6844c189a9cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74e5b7674aba7640c1ddb709ca199c82') in 0.014489 seconds
+  Import took 0.019103 seconds .
+

@@ -53,7 +53,7 @@ Python stub generation for server
 This will generate `PostEstimation_pb2_grpc.py` and `PostEstimation_pb2.py`. All of our server side code is under `inference` directory. Let move these stubs generated to that directory.
 
 ### Server side setup
-Now that we have all stubs in place, we can go ahead and provide implementation for the interface method `GetPoseEstimation` Inside server.py you can see how we have provided the implementation of the RPC call. Every time the client invokes this remote procedure call, inside our implementation, we forward the data passed in by the client  to the mode, get the model prediction and pass back the response to unity.
+Now that we have all stubs in place, we can go ahead and provide implementation for the interface method `GetPoseEstimation`. Inside server.py you can see how we have provided the implementation of the RPC call. Every time the client invokes this remote procedure call, inside our implementation, we forward the data passed in by the client  to the mode, get the model prediction and pass back the response to unity.
 
 
 ### Client side setup
@@ -69,5 +69,5 @@ void Start()
 }
 ```
 
-After this, you can inoke the `GetPoseEstimation` function using `_poseEstimationClient` instance.
+After this, you can invoke the `GetPoseEstimation` function using `_poseEstimationClient` instance.
 

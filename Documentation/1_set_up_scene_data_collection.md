@@ -4,14 +4,21 @@ In this document, we will go over the different randomizers needed for the data 
 
 
 **Table of Contents**
-  - 
-  - [Set up the randomizers](#step-1)
-  - [Data collection](#step-2)
+  - [Set up the scene with importer Drone](#step-1)
+  - [Set up the randomizers](#step-2)
+  - [Data collection](#step-3)
 
 ---
 
+### <a name="step-1">Set up the scene with importer Drone</a>
+In this project, we want to predict the pose of drone and a landing target in an environment composed by a wall and mulitiple distractor objects. 
 
-### <a name="step-1">Set up the randomizers</a>
+As the drone is not by default in the Assets folder, we need to import it. The prefab is called `Drone_01 Variant_modified`. Its prefab is in `Assets/Racing Drone/prefabs/`. 
+For the target, we use a cube as the main block and we added a landing logo on it. The prefab is called `TargetCube_modified`. Its prefab is in  `Assets/Racing Drone/prefabs/`. The texture which represents the landing logo is called `Drone-landing-material` and is in `Assets/textures/`.
+For the wall, we use a cube. 
+
+
+### <a name="step-2">Set up the randomizers</a>
 The images you generate to train your deep learning model and the images you later use for inference during the pose estimation task will need to have the same resolution. We will now set this resolution.
 
 - In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `1027` and `Height` to `592`. The gif below depicts these actions. 
@@ -36,7 +43,7 @@ The gameobject `Simulation Scenario` possesses the script component [Pose Estima
 
 
 ---
-### <a name="step-2">Data Collection</a> 
+### <a name="step-3">Data Collection</a> 
 In the framework of the Drone pose estimation and navigation project, we collected 30K data for training and 3K data for validation. 
 For this dataset, we set to active all the randomizers. 
 
