@@ -1,4 +1,4 @@
-# Set up the scene for the data collection of the drone pose estimation and navigation project
+# Setting up the scene for the data collection of the drone pose estimation and navigation project
 
 In this document, we will go over the steps for setting up a Unity environment and the different randomizers needed for the data collection.  
 
