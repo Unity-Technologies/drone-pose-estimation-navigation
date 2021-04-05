@@ -30,6 +30,36 @@ The most important `evaluate` arguments to be aware of are:
 * `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training` and `drone_validation`, containing the training and validation data, respectively. 
 
 
+## Training in Google Cloud AI Platform
+
+### Docker images
+
+Specific docker images were built with configurations with different datasets based on hardless levels. This is the [config.yaml](./config.yaml) file we used to change the dataset names and parameters. These docker images were pushed to the Google Cloud Registry so that it can be used in AI Platform.
+
+### Training data
+All the training data required for training were available in GCS.
+
+### Training job
+AI Platform and the GCS buckets which has the training data should be in the same project. We then submit a training job in the following steps :
+
+<p align='center'>
+  <img src='documentation/docs/ai-plat-training-01.png' width=500/>
+</p>
+
+<p align='center' width='20px'>
+  <img src='documentation/docs/ai-plat-training-02.png' width=500/>
+</p>
+
+<p align='center'>
+  <img src='documentation/docs/ai-plat-training-03.png' width=500/>
+</p>
+
+<p align='center'>
+  <img src='documentation/docs/ai-plat-training-04.png' width=500/>
+</p>
+
+The model and checkpoint files would be saved in the bucket defined in the [config.yaml](./config.yaml) file.
+
 ## Performance
 
 ## Unit Testing

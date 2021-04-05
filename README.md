@@ -51,6 +51,9 @@ If you want to have more information on how the model works and how to train you
 ---
 ### <a name="link-part-3">Part 3: GRPC connection</a> 
 
+GRPC pipeline drives the communication between unity process and external python process that serves the trained model input/output. GRPC is a modern high performant Remote Procedure Call framework that can run in any environment. More information on the GPRC can be found [here](https://grpc.io/docs/what-is-grpc/introduction).
+
+In this project we use GRPC during inference phase to get the prediction of the pose estimation from the model. More information on how GRPC pipeline is setup for this project can be found [here](Documentation/1_set_up_grpc_pipeline.md)
 <img src="Documentation/Images/0_grpc.png" width=400/>
 
 
