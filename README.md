@@ -34,7 +34,7 @@ git clone git@github.com:Unity-Technologies/ai-hw21-drone-pose-estimation-naviga
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
-If you want more information on how the scene is set up for the data collection, go [here](Documentation/1_set_up_scene_data_collection.md)
+If you want more information on how the scene is set up for the data collection, go [here](Documentation/1_set_up_scene_data_collection.md).
 
 ---
 
@@ -50,15 +50,16 @@ To measure the success of grasping in simulation using our pre-trained model for
 |                  | Success | Failures | Percent Success |
 |:----------------:|:-------:|:--------:|:---------------:|
 
-If you want to have more information on how the model works and how to train your own, go [here](Model/README.md)
+If you want to have more information on how the model works and how to train your own, go [here](Model/README.md).
 
 ---
 ### <a name="link-part-3">Part 3: gRPC connection</a> 
 
 The gRPC pipeline drives the communication between unity process and external python process that serves the trained model input/output. gRPC is a modern high performant Remote Procedure Call framework that can run in any environment. More information on the gPRC can be found [here](https://grpc.io/docs/what-is-grpc/introduction).
 
-In this project we use gRPC during inference phase to get the prediction of the pose estimation from the model. More information on how gRPC pipeline is setup for this project can be found [here](Documentation/1_set_up_grpc_pipeline.md)
-<img src="Documentation/Images/0_grpc.png" width=400/>
+In this project we use gRPC during inference phase to get the prediction of the pose estimation from the model. More information on how gRPC pipeline is setup for this project can be found [here](Documentation/1_set_up_grpc_pipeline.md).
+
+<!-- <img src="Documentation/Images/0_grpc.png" width=400/> -->
 
 ---
 
@@ -66,7 +67,7 @@ In this project we use gRPC during inference phase to get the prediction of the 
 
 <!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
 
-We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html). More information on how we set up our NavMesh can be found [here](Documentation/1_set_up_navmesh.md)
+We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html). More information on how we set up our NavMesh can be found [here](Documentation/1_set_up_navmesh.md).
 
 ---
 
