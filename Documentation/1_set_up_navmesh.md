@@ -16,11 +16,11 @@ We begin by importing necessary NavMesh Components from [this Git repository](ht
 
 Select the `Drone_01 Variant_modified.prefab` add a `Nav Mesh Agent` component to it. We set the `Agent Type` to `Humanoid`, and increase the `Steering Speed` to 100. The rest of the properties must be set as shown in the image below:
 
-<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/NavMeshAgent.png" width="400">
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/NavMeshAgent.png" align="middle" width="400"/>
 
 In the Inspector window, create a new layer called `Player` and assign it to the `Drone_01 Variant_modified.prefab` as shown below:
 
-<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/InspectorLayer.png" width="400">
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/InspectorLayer.png" align="middle" width="400"/>
 
 Ensure that the `Box Collider` component is enabled for all the following Game Objects:
 1. `Drone_01 Variant_modified.prefab`
@@ -34,7 +34,7 @@ Ensure that the `Box Collider` component is enabled for all the following Game O
 
 We then create an Empty Game Object in the scene hierarchy and rename it to `NavMesh`. Next, we add a `NavMeshSurface` component to it and set the properties according to the image shown below:
 
-<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/NavMeshSurface.png" width="400">
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/NavMeshSurface.png" align="middle" width="400"/>
 
 ---
 
