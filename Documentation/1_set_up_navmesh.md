@@ -16,7 +16,8 @@ We begin by importing necessary NavMesh Components from [this Git repository](ht
 
 Select the `Drone_01 Variant_modified.prefab` add a `Nav Mesh Agent` component to it. We set the `Agent Type` to `Humanoid`, and increase the `Steering Speed` to 100. The rest of the properties must be set as shown in the image below:
 
-![NavMeshAgent](Documentation/images/NavMeshAgent.png)
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/NavMeshAgent.png" width="400">
+
 
 
 ---
