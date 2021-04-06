@@ -41,7 +41,7 @@ The images you generate to train your deep learning model and the images you lat
 
 #### Domain Randomization
 We will be collecting training data from a simulation, but most real perception use-cases occur in the real world. 
-To train a model to be robust enough to generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
+In order to train a robust model that can generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
 
 #### Randomizers 
 The [Perception package](https://github.com/Unity-Technologies/com.unity.perception) provides a set of [domain randomizers](https://github.com/Unity-Technologies/com.unity.perception/tree/master/com.unity.perception/Runtime/Randomization/Randomizers/RandomizerExamples/Randomizers). It is fairly straightforward to create your own custom randomizers by following [these instructions](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Tutorial/Phase2.md).
