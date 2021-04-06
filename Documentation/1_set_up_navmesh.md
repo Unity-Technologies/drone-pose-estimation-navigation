@@ -45,3 +45,6 @@ The [TestProtobuf.cs](https://github.com/Unity-Technologies/ai-hw21-drone-pose-e
 When the drone and target positions are determined by the poes estimation model, they are communicated to NavMesh with gRPC. The posisions of these objects are used to instantiate a plane at runtime that stretches from the estimated drone position to the estimated target position. In order to calculate the NavMesh correctly, we need to take into account the extents of the `Box Colliders` for our drone and target objects; to do so, we instantiate the plane exactly from the bottom of the drone's `Box Collider Y` (under the drone) to the top of the target's `Box Collider Y` (over the target).
 
 We then bake a new NavMesh based this plane and object colliders that exist in the scene, and finally move the drone to the target.
+
+For more information on baking NavMesh at runtime see [this tutorial](https://learn.unity.com/tutorial/runtime-navmesh-generation#).
+
