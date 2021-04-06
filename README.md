@@ -78,4 +78,4 @@ We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Nav
 
 ---
 
-### <a name="link-part-5">Part 5: closed loop control
+### <a name="link-part-6">Part 6: closed loop control
