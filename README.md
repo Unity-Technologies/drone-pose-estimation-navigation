@@ -25,6 +25,7 @@ git clone git@github.com:Unity-Technologies/ai-hw21-drone-pose-estimation-naviga
 - [Part 2: Data Collection and Model Training](#link-part-2)
 - [Part 3: gRPC connection](#link-part-3)
 - [Part 4: Navigation with NavMesh](#link-part-4)
+- [Part 5: Putting it all together, pose estimation and drone navigation in Unity](#link-part-5)
   
 ---
 
@@ -68,6 +69,12 @@ In this project we use gRPC during inference phase to get the prediction of the 
 <!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
 
 We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html). More information on how we set up our NavMesh can be found [here](Documentation/1_set_up_navmesh.md).
+
+---
+
+### <a name="link-part-5">Part 5: Putting it all together, pose estimation and drone navigation in Unity</a> 
+
+<!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
 
 ---
 
