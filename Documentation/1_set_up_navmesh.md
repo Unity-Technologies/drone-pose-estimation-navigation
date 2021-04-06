@@ -12,11 +12,18 @@ We extended NavMesh AI to our 3D path planning for drone navigation using a 2D s
 
 ### <a name="step-1">Setting up the NavMesh agent</a>
 
-by instantiating a plane at runtime that stretches from the estimated drone position to the estimated target position. We then bake a new navmesh based this plane and object colliders that exist in the scene. This allows us to maneuver the drone to the target while performing reasonable collision avoidance, to the extent that Navmesh allows.
+We begin by importing necessary NavMesh Components from [this Git repository](https://github.com/Unity-Technologies/NavMeshComponents/tree/master/Assets/NavMeshComponents). Place the `NavMeshComponents` folder inside the `Assets` folder. Note that this step is already done for this project. 
+
+Select the `Drone_01 Variant_modified.prefab` add a `Nav Mesh Agent` component to it. We set the `Agent Type` to `Humanoid`, and increase the `Steering Speed` to 100. The rest of the properties must be set as shown in the image below:
+
+![NavMeshAgent](Documentation/images/NavMeshAgent.png)
+
 
 ---
 
 ### <a name="step-2">Setting up the NavMesh</a>
+
+by instantiating a plane at runtime that stretches from the estimated drone position to the estimated target position. We then bake a new navmesh based this plane and object colliders that exist in the scene. This allows us to maneuver the drone to the target while performing reasonable collision avoidance, to the extent that Navmesh allows.
 
 
 ---
