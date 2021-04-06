@@ -1,4 +1,4 @@
-#  GRPC Setup
+#  gRPC Setup
 
 ## Protobuf definition
 
