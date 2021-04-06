@@ -52,19 +52,19 @@ In our scene hierarchy, the `SimulationScenario` has a script component called [
 2. `DroneObjectPositionRandomizer`: randomizes the position of the foreground objects in the scene. The drone is placed inside a volume. In order to mimic a drone in the sky and the landing target on the ground, we modified this script such that the drone and the landing target are spawned in the top 2/3 and the bottom 1/3 of the screen respectively. 
 3. `Custom Foreground Scale Randomizer`: randomizes the scale of the foreground objects. 
 4. `Custom Background Scale Randomizer`: randomizes the scale of the background distractor objects.
-5. `RotationRandomizer`: randomly rotates all the distractor objects along X, Y and Z-axis. 
+5. `RotationRandomizer`: randomly rotates all the distractor objects along X, Y, and Z-axis. 
 6. `CustomRotationRandomizer`: randomizes the rotation of the landing target and the drone along the Y-axis.
-7. `Texture Randomizer`: randomizes the texture on the `Wall` as well as the distractor objects and the sides of the landing target. We provide separate texture datasets for training and testing which could be found in `Assets/textures`. 
-8. `Hue Offset Randomizer`: randomizes the color of the different distractor objects. 
-9. `Custom Light Randomizer`: randomizes the color and intensity of the lights between a minimum and maximum intensity value.
+7. `Texture Randomizer`: randomizes the texture on the `Wall` as well as the distractor objects, and the sides of the landing target. We provide separate texture datasets for training and testing which could be found in `Assets/textures`. 
+8. `Hue Offset Randomizer`: randomizes the colour of the different distractor objects. 
+9. `Custom Light Randomizer`: randomizes the colour and intensity of the lights between a minimum and maximum intensity value.
 10. `Custom Light Position Rotation Randomizer`: randomizes the light position and rotation in the scene.
-11. `Sun Angle Randomizer`: randomizes the light Game Object to mimic the time of the day and day of the year.
+11. `Sun Angle Randomizer`: randomizes the light Game Object's intensity, elevation, and orientation to mimic the time of the day and day of the year.
 12. `Custom Camera Randomizer`: randomizes the camera's position, rotation, Field of View, and Focal Length.
 
 Certain randomizers do not appear in the `SimulationScenario`, but are attached to their respective Game Objects:
 
 1. `Custom Light Switcher Tag`: randomly switches the light on or off based on an `Enabled Probability` value.
-2. `Custom Modify Post Process Volume`: randomly modifies the post process volume overrides: vignette, white balance, film grain, lens distortion, depth of field, and contrast and saturation in colour adjustments.
+2. `Custom Modify Post Process Volume`: randomly modifies the post process volume overrides: vignette, white balance, film grain, lens distortion, depth of field, and colour adjustments such as contrast and saturation.
 
 ---
 
