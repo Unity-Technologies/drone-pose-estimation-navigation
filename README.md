@@ -1,6 +1,12 @@
 # AI Hackweek 2021 - Drone Pose Estimation and Navigation
 
-<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/project_teaser.png" width="400">
+<img src="https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/images/unity-wide.png" align="middle" width="3000"/>
+
+![ReleaseBadge](https://badge-proxy.cds.internal.unity3d.com/5ab9a162-9dd0-4ba1-ba41-cf25378a927a)
+
+<img src="https://img.shields.io/badge/unity-2020.2-green.svg?style=flat-square" alt="unity 2020.2">
+
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/project_teaser.png" align="middle" width="400"/>
 
 The project relies on Unity version `2020.2.7f1`.
 
