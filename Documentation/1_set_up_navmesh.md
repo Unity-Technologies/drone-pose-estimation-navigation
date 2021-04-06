@@ -18,6 +18,11 @@ Select the `Drone_01 Variant_modified.prefab` add a `Nav Mesh Agent` component t
 
 <img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/NavMeshAgent.png" width="400">
 
+In the Inspector window, create a new layer called `Player` and assign it to the `Drone_01 Variant_modified.prefab` as shown below:
+
+<img scr="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/InspectorLayer.png" width="400">
+
+
 
 
 ---
