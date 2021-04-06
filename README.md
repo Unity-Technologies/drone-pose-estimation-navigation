@@ -30,7 +30,7 @@ git clone git@github.com:Unity-Technologies/ai-hw21-drone-pose-estimation-naviga
 
 ### <a name="link-part-1">Part 1: Setting up Unity scene for data collection</a>
 
-<img src="Documentation/Images/0_scene.png" width=400 />
+<!-- <img src="Documentation/Images/0_scene.png" width=400 /> -->
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
@@ -40,7 +40,7 @@ If you want more information on how the scene is set up for the data collection,
 
 ### <a name="link-part-2">Part 2: Data Collection and Model Training</a> 
 
-<img src="Documentation/Images/0_data_collection_environment.png" width=400/>
+<!-- <img src="Documentation/Images/0_data_collection_environment.png" width=400/> -->
 
 
 This part includes running data collection with the Perception Package, and using that data to train a deep learning model. The training step can take some time. If you'd like, you can skip that step by using our pre-trained model.
@@ -64,7 +64,7 @@ In this project we use gRPC during inference phase to get the prediction of the 
 
 ### <a name="link-part-4">Part 4: Navigation with NavMesh</a> 
 
-<img src="Documentation/Gifs/0_demo.gif" width=400/>
+<!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
 
 We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html). More information on how we set up our NavMesh can be found [here](Documentation/1_set_up_navmesh.md)
 
