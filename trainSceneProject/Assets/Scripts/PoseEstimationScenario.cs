@@ -7,7 +7,7 @@ public class PoseEstimationScenarioConstants : ScenarioConstants
 }
 public class PoseEstimationScenario : Scenario<PoseEstimationScenarioConstants>
 {
-    public bool automaticIteration = false;
+    public bool trainingMode = false;
     private bool shouldIterate;
     public void Move()
     {
@@ -20,6 +20,6 @@ public class PoseEstimationScenario : Scenario<PoseEstimationScenarioConstants>
     }
 
     protected override bool isScenarioReadyToStart => true;
-    protected override bool isIterationComplete => automaticIteration || shouldIterate;
+    protected override bool isIterationComplete => trainingMode || shouldIterate;
     protected override bool isScenarioComplete => currentIteration >= constants.totalFrames;
 }

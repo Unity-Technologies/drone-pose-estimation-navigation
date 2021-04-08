@@ -60,7 +60,15 @@ The gRPC pipeline drives the communication between unity process and external py
 
 In this project we use gRPC during inference phase to get the prediction of the pose estimation from the model. More information on how gRPC pipeline is setup for this project can be found [here](Documentation/1_set_up_grpc_pipeline.md).
 
-<!-- <img src="Documentation/Images/0_grpc.png" width=400/> -->
+#### Switching between inference and training mode
+
+You can switch between training mode and inference mode by checking/unchecking the Training mode option in PoseEstimationScenario script component added on SimulationScenario gameobject as shown below 
+
+<!-- <img src="Documentation/Images/0_grpc.png" width=443 height=329/> -->
+
+On swithing to inference mode, you will see a canvas getting enabled that provides options to change the environment, start pose estimation and start navigation. In order to operate in inference mode, you need to have pose estimation server up and running.
+
+<!-- <img src="Documentation/Gifs/0_demo.gif" width=1016 height=489/> -->
 
 ---
 
