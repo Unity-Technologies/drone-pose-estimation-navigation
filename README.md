@@ -64,11 +64,11 @@ In this project we use gRPC during inference phase to get the prediction of the 
 
 You can switch between training mode and inference mode by checking/unchecking the Training mode option in PoseEstimationScenario script component added on SimulationScenario gameobject as shown below 
 
-<!-- <img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/0_grpc.png" width=443 height=329/> -->
+<!-- <img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/0_grpc.png" width="443" /> -->
 
 On swithing to inference mode, you will see a canvas getting enabled that provides options to change the environment, start pose estimation and start navigation. In order to operate in inference mode, you need to have pose estimation server up and running.
 
-<!-- <img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/1_grpc.png" width=1016 height=489/> -->
+<!-- <img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/1_grpc.png" width="1016" /> -->
 
 ---
 
