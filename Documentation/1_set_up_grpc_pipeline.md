@@ -57,9 +57,9 @@ Now that we have all stubs in place, we can go ahead and provide implementation 
 
 
 ### Client side setup
-On the client side, we need to import all the GRPC and Protobuf related dlls into the project. Prebuilt binaries can be found [here](https://packages.grpc.io/archive/2019/11/6950e15882f28e43685e948a7e5227bfcef398cd-6d642d6c-a6fc-4897-a612-62b0a3c9026b/index.xml).
+On the client side, we need to import all the gRPC and Protobuf related dlls into the project. Prebuilt binaries can be found [here](https://packages.grpc.io/archive/2019/11/6950e15882f28e43685e948a7e5227bfcef398cd-6d642d6c-a6fc-4897-a612-62b0a3c9026b/index.xml).
 Import these dlls in your project. In this project we have placed these dlls under `Assets/Plugins`. 
-Now go ahead and create a channel and a GRPC service client to make the remote procedure call.
+Now go ahead and create a channel and a gRPC service client to make the remote procedure call.
 
 ```
 void Start()

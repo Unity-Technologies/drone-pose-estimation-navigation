@@ -1,6 +1,6 @@
 # Setting up the NavMesh for drone navigation
 
-In this document we described how we used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html). 
+In this document we describe how we used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html). 
 We extended NavMesh AI to our 3D path planning for drone navigation using a 2D surrogate solution that allows us to alter the navigation of the drone at runtime with scene geometry and obstacle defintions.
 
 **Table of Contents**

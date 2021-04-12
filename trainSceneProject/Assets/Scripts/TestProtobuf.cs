@@ -47,24 +47,6 @@ public class TestProtobuf : MonoBehaviour
         _poseEstimationClient = new PostEstimationService.PostEstimationServiceClient(_channel);
     }
 
-
-    private void Update()
-    {
-        // var rawBytes = CaptureScreenshot();
-        // var poseEstimation = GetPoseEstimation(rawBytes);
-        //
-        // Debug.Log("PoseEstimationData for drone quaternion: " +
-        //           poseEstimation.DroneQuaternion.X + ", " + poseEstimation.DroneQuaternion.Y + ", " +
-        //           poseEstimation.DroneQuaternion.Z +
-        //           ", " + poseEstimation.DroneQuaternion.W);
-
-        //Get Data from model
-        //Update the navmesh plane
-        // Apply the quaternion to the drone
-        //SetDestination (navmesh)        
-    }
-    
-
     private byte[] CaptureScreenshot()
     {
         Camera.main.targetTexture = renderTexture;
@@ -109,13 +91,6 @@ public class TestProtobuf : MonoBehaviour
         targetEstimatedPose = poseEstimation.TargetQuaternion;
         targetEstimatedPosition = poseEstimation.TargetTransformPosition;
         droneEstimatedPosition = poseEstimation.DroneTransformPosition;
-        // drone.transform.rotation = new Quaternion(droneEstimatedPose.X, droneEstimatedPose.Y, droneEstimatedPose.Z, droneEstimatedPose.W);
-        // target.transform.rotation = new Quaternion(targetEstimatedPose.X, targetEstimatedPose.Y, targetEstimatedPose.Z, targetEstimatedPose.W);
-        // target.transform.position = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, targetEstimatedPosition.Z);
-
-        // Do next steps here..
-        // Apply the data
-        // Navmesh building etc...
 
     }
 

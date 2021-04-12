@@ -11,7 +11,7 @@ In this document, we will go over the steps for setting up a Unity environment a
 ---
 
 ### <a name="step-1">Setting up the Unity scene</a>
-We first need to set up a Unity scene, which enables us to collect training data for training a pose estimation model that predicts the pose of a drone and a landing target. In the provided Unity project template, you should find an environment that has the necessary components already set up for you to generate data out of the box. Once import the project in Unity, navigate to the `Assets/Scenes/DroneTrainingScene.unity` and open it by double-clicking on it. You should see a scene comprised of a `Wall`, multiple `Lights`, a `Main Camera`, and a `SimulationScenario` and a `Post Process Volume` that generate random scenes with our objects of interest (the drone and the target), multiple distractor objects with random textures, random lighting, and random position and orientation for all the Game Objects in the scene. We will go over what each of the randomizers do later. You will also find some Game Object components in the scene hierarchy that are necessary for running `NavMesh` AI navigation for the drone, as well as gRPC communication pipeline for inference.
+We first need to set up a Unity scene, which enables us to collect training data for training a pose estimation model that predicts the pose of a drone and a landing target. In the provided Unity project template, you should find an environment that has the necessary components already set up for you to generate data out of the box. Once you have imported the project in Unity, navigate to the `Assets/Scenes/DroneTrainingScene.unity` and open it by double-clicking on it. You should see a scene comprised of a `Wall`, multiple `Lights`, a `Main Camera`, and a `SimulationScenario` and a `Post Process Volume` that generate random scenes with our objects of interest (the drone and the target), multiple distractor objects with random textures, random lighting, and random position and orientation for all the Game Objects in the scene. We will go over what each of the randomizers do later. You will also find some Game Object components in the scene hierarchy that are necessary for running `NavMesh` AI navigation for the drone, as well as gRPC communication pipeline for inference.
 
 #### Assets and Prefabs
 We provide multiple drone assets which you can find in `Assets/Racing Drone/prefabs`. For this project we import the drone model called `Drone_01 Variant_modified.prefab` for which we created a custom material that has better visibility in the scene. In the same folder you should find a target prefab called `TargetCube_modified.prefab` which is our landing target for the drone. We created this prefab using a `Cube` 3D Object primitive and a `Quad`. The `Quad` has a landing target texture that does not change. On the other hand, the `Cube` itself's texture is randomized with every new frame. This should reasonably vary the appearance of the target landing pad during the simulation. The textures for the drone and target landing pad could be found in `Assets/Racing Drone/texture` and `Assets/textures` respectively.
@@ -33,7 +33,7 @@ We use multiple `Directional Light` Game Objects to vary the lighting of the sce
 #### Render resolution
 The images you generate to train your deep learning model and the images you later use for inference during the pose estimation task will need to have the same resolution. We will now set this resolution.
 
-- In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `1027` and `Height` to `592`. The gif below depicts these actions. 
+- In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `1027` and `Height` to `592`.
 
 ---
 
@@ -41,7 +41,7 @@ The images you generate to train your deep learning model and the images you lat
 
 #### Domain Randomization
 We will be collecting training data from a simulation, but most real perception use-cases occur in the real world. 
-To train a model to be robust enough to generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
+In order to train a robust model that can generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
 
 #### Randomizers 
 The [Perception package](https://github.com/Unity-Technologies/com.unity.perception) provides a set of [domain randomizers](https://github.com/Unity-Technologies/com.unity.perception/tree/master/com.unity.perception/Runtime/Randomization/Randomizers/RandomizerExamples/Randomizers). It is fairly straightforward to create your own custom randomizers by following [these instructions](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Tutorial/Phase2.md).
@@ -52,19 +52,19 @@ In our scene hierarchy, the `SimulationScenario` has a script component called [
 2. `DroneObjectPositionRandomizer`: randomizes the position of the foreground objects in the scene. The drone is placed inside a volume. In order to mimic a drone in the sky and the landing target on the ground, we modified this script such that the drone and the landing target are spawned in the top 2/3 and the bottom 1/3 of the screen respectively. 
 3. `Custom Foreground Scale Randomizer`: randomizes the scale of the foreground objects. 
 4. `Custom Background Scale Randomizer`: randomizes the scale of the background distractor objects.
-5. `RotationRandomizer`: randomly rotates all the distractor objects along X, Y and Z-axis. 
+5. `RotationRandomizer`: randomly rotates all the distractor objects along X, Y, and Z-axis. 
 6. `CustomRotationRandomizer`: randomizes the rotation of the landing target and the drone along the Y-axis.
-7. `Texture Randomizer`: randomizes the texture on the `Wall` as well as the distractor objects and the sides of the landing target. We provide separate texture datasets for training and testing which could be found in `Assets/textures`. 
-8. `Hue Offset Randomizer`: randomizes the color of the different distractor objects. 
-9. `Custom Light Randomizer`: randomizes the color and intensity of the lights between a minimum and maximum intensity value.
+7. `Texture Randomizer`: randomizes the texture on the `Wall` as well as the distractor objects, and the sides of the landing target. We provide separate texture datasets for training and testing which could be found in `Assets/textures`. 
+8. `Hue Offset Randomizer`: randomizes the colour of the different distractor objects. 
+9. `Custom Light Randomizer`: randomizes the colour and intensity of the lights between a minimum and maximum intensity value.
 10. `Custom Light Position Rotation Randomizer`: randomizes the light position and rotation in the scene.
-11. `Sun Angle Randomizer`: randomizes the light Game Object to mimic the time of the day and day of the year.
+11. `Sun Angle Randomizer`: randomizes the light Game Object's intensity, elevation, and orientation to mimic the time of the day and day of the year.
 12. `Custom Camera Randomizer`: randomizes the camera's position, rotation, Field of View, and Focal Length.
 
 Certain randomizers do not appear in the `SimulationScenario`, but are attached to their respective Game Objects:
 
 1. `Custom Light Switcher Tag`: randomly switches the light on or off based on an `Enabled Probability` value.
-2. `Custom Modify Post Process Volume`: randomly modifies the post process volume overrides: vignette, white balance, film grain, lens distortion, depth of field, and contrast and saturation in colour adjustments.
+2. `Custom Modify Post Process Volume`: randomly modifies the post process volume overrides: vignette, white balance, film grain, lens distortion, depth of field, and colour adjustments such as contrast and saturation.
 
 ---
 

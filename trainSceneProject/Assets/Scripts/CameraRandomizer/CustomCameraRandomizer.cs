@@ -10,8 +10,8 @@ using UnityEngine.Perception.Randomization.Samplers;
 
 [Serializable]
 
-[AddRandomizerMenu("Perception/Camera Randomizer")]
-public class CameraRandomizer : Randomizer
+[AddRandomizerMenu("Perception/Custom Camera Randomizer")]
+public class CustomCameraRandomizer : Randomizer
 {
 
     public float positionRange = 0.005f;
@@ -22,10 +22,10 @@ public class CameraRandomizer : Randomizer
     protected override void OnIterationStart()
     {
 
-        var taggedObjects = tagManager.Query<CameraRandomizerTag>();
+        var taggedObjects = tagManager.Query<CustomCameraRandomizerTag>();
         foreach (var taggedObject in taggedObjects)
         {
-            CameraRandomizerTag tag = taggedObject.GetComponent<CameraRandomizerTag>();
+            CustomCameraRandomizerTag tag = taggedObject.GetComponent<CustomCameraRandomizerTag>();
             Vector3 adjustedPosition = AdjustedVector(tag.rootPosePosition, positionRange);
             Vector3 adjustedRotation = AdjustedVector(tag.rootPoseRotation, rotationRangeDegrees);
 

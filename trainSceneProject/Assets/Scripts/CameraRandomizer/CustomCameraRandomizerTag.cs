@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.Perception.Randomization.Randomizers;
 using UnityEngine.Perception.Randomization.Parameters;
 
-[AddComponentMenu("Perception/RandomizerTags/Camera Randomizer Tag")]
-public class CameraRandomizerTag : RandomizerTag
+[AddComponentMenu("Perception/RandomizerTags/Custom Camera Randomizer Tag")]
+public class CustomCameraRandomizerTag : RandomizerTag
 {
     [HideInInspector]
     public Vector3 rootPosePosition;

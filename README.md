@@ -25,6 +25,7 @@ git clone git@github.com:Unity-Technologies/ai-hw21-drone-pose-estimation-naviga
 - [Part 2: Data Collection and Model Training](#link-part-2)
 - [Part 3: gRPC connection](#link-part-3)
 - [Part 4: Navigation with NavMesh](#link-part-4)
+- [Part 5: Putting it all together, pose estimation and drone navigation in Unity](#link-part-5)
   
 ---
 
@@ -59,7 +60,15 @@ The gRPC pipeline drives the communication between unity process and external py
 
 In this project we use gRPC during inference phase to get the prediction of the pose estimation from the model. More information on how gRPC pipeline is setup for this project can be found [here](Documentation/1_set_up_grpc_pipeline.md).
 
-<!-- <img src="Documentation/Images/0_grpc.png" width=400/> -->
+#### Switching between inference and training mode
+
+You can switch between training mode and inference mode by checking/unchecking the Training mode option in PoseEstimationScenario script component added on SimulationScenario gameobject as shown below 
+
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/0_grpc.png" width="443" />
+
+On swithing to inference mode, you will see a canvas getting enabled that provides options to change the environment, start pose estimation and start navigation. In order to operate in inference mode, you need to have pose estimation server up and running.
+
+<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/1_grpc.png" width="1016" />
 
 ---
 
@@ -71,4 +80,10 @@ We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Nav
 
 ---
 
-### <a name="link-part-5">Part 5: closed loop control
+### <a name="link-part-5">Part 5: Putting it all together, pose estimation and drone navigation in Unity</a> 
+
+<!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
+
+---
+
+### <a name="link-part-6">Part 6: closed loop control
