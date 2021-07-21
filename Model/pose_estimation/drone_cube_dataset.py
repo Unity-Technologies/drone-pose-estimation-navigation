@@ -83,38 +83,29 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         Returns:
             a tuple of three element which are:
                 - an image tensor
-                - a tensor vector for the 3 cube's center
+                - a tensor vector for the 3 drone's center
                 coordinates (translation)
-                - a the tensor vector for the 4 quaternion elements
-                (orientation)
+                - a tensor vector for the 3 target's center
+                coordinates (translation)
         """
         position_list, image_name = element_iterator
         
         if position_list[0]['label_name'] == 'drone_position':
             translation_drone = list(position_list[0]["translation"].values())
-            orientation_drone = list(position_list[0]["rotation"].values())
-
             translation_cube = list(position_list[1]["translation"].values())
-            orientation_cube = list(position_list[1]["rotation"].values())
             
         else:
             translation_drone = list(position_list[1]["translation"].values())
-            orientation_drone = list(position_list[1]["rotation"].values())
-
             translation_cube = list(position_list[0]["translation"].values())
-            orientation_cube = list(position_list[0]["rotation"].values())
 
         translation_drone = torch.tensor(translation_drone, dtype=torch.float)
-        orientation_drone = torch.tensor(orientation_drone, dtype=torch.float)
-
         translation_cube = torch.tensor(translation_cube, dtype=torch.float)
-        orientation_cube = torch.tensor(orientation_cube, dtype=torch.float)
 
         image_origin = Image.open(image_name).convert("RGB")
         transform = self.get_transform()
         image = transform(image_origin).unsqueeze(0)
 
-        return image, translation_drone, orientation_drone, translation_cube, orientation_cube
+        return image, translation_drone, translation_cube
 
     def __iter__(self):
         """

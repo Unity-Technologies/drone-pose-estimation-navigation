@@ -8,9 +8,7 @@ from pose_estimation.drone_cube_dataset import DroneCubeDataset
 from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
-from pose_estimation.evaluation_metrics.orientation_average_quaternion_error import (
-    orientation_average_quaternion_error,
-)
+
 from pose_estimation.evaluate import evaluate_one_epoch, evaluation_over_batch
 
 
@@ -123,9 +121,8 @@ def _train_one_epoch(
     batch_size = config.train.batch_training_size
 
     criterion_translation = torch.nn.MSELoss()
-    criterion_orientation = torch.nn.MSELoss()
 
-    metric_translation_drone, metric_orientation_drone, metric_translation_cube, metric_orientation_cube = evaluation_over_batch(
+    metric_translation_drone, metric_translation_cube = evaluation_over_batch(
         estimator=estimator,
         config=config,
         data_loader=data_loader,
@@ -134,13 +131,10 @@ def _train_one_epoch(
         is_training=True,
         optimizer=optimizer,
         criterion_translation=criterion_translation,
-        criterion_orientation=criterion_orientation,
     )
 
     estimator.writer.log_training(
         training_metric_translation_drone=metric_translation_drone,
-        training_metric_orientation_drone=metric_orientation_drone,
         training_metric_translation_cube=metric_translation_cube,
-        training_metric_orientation_cube=metric_orientation_cube,
         epoch=epoch,
     )

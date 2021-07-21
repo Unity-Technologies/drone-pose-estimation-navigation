@@ -6,6 +6,7 @@ train:
   epochs: 100
   beta_loss: 1
   sample_size_train: 0
+  scale_factor: 0.1
 val:
   dataset_zip_file_name_validation: test_training
   batch_validation_size: 30
