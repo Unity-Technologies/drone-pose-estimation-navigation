@@ -39,12 +39,12 @@ def evaluate_model(estimator):
         config=config,
         data_loader=test_loader,
         epoch=0,
-        scale_factor=config.train.scale_factor,
+        scale_translation=config.train.scale_translation,
         test=True,
     )
 
 
-def evaluate_one_epoch(*, estimator, config, data_loader, epoch, scale_factor, test):
+def evaluate_one_epoch(*, estimator, config, data_loader, epoch, scale_translation, test):
     """Evaluation of the model on one epoch
     Args:
         estimator: pose estimation estimator
@@ -71,7 +71,7 @@ def evaluate_one_epoch(*, estimator, config, data_loader, epoch, scale_factor, t
             data_loader=data_loader,
             batch_size=batch_size,
             epoch=epoch,
-            scale_factor=scale_factor,
+            scale_translation=scale_translation,
             is_training=False,
         )
 
@@ -91,7 +91,7 @@ def evaluation_over_batch(
     data_loader,
     batch_size,
     epoch,
-    scale_factor,
+    scale_translation,
     is_training=True,
     optimizer=None,
     criterion_translation=None,
@@ -147,10 +147,8 @@ def evaluation_over_batch(
                
         if is_training:
             # we change the scale of the translation in order to avoid exploding gradients
-            output_translation_drone *= scale_factor
-            output_translation_cube *= scale_factor
-            target_translation_drone *= scale_factor
-            target_translation_drone *= scale_factor
+            output_translation_drone /= scale_translation
+            output_translation_cube /= scale_translation
 
             loss_translation_drone += criterion_translation(
                 output_translation_drone, target_translation_drone

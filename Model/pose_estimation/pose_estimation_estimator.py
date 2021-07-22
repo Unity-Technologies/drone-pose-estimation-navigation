@@ -58,7 +58,7 @@ class PoseEstimationEstimator:
         self.logger = logging.getLogger(__name__)
 
         # We will create as many networks as there are objects to predict the position
-        self.model = PoseEstimationNetwork()
+        self.model = PoseEstimationNetwork(config.train.scale_translation)
 
         # load estimators from file if checkpoint_file exists
         checkpoint_file = config.checkpoint.load_dir_checkpoint

@@ -21,7 +21,7 @@ class PoseEstimationNetwork(torch.nn.Module):
     the drone and one for the target.
     """
 
-    def __init__(self):
+    def __init__(self, scale_translation):
         super(PoseEstimationNetwork, self).__init__()
         self.model_backbone = torchvision.models.vgg16(pretrained=True) # uses cache
         # remove the original classifier
@@ -45,9 +45,12 @@ class PoseEstimationNetwork(torch.nn.Module):
             torch.nn.Linear(64, 3),
         )
 
+        # scale factor on the translation 
+        self.scale_translation = scale_translation
+
     def forward(self, x):
         x = self.model_backbone(x)
-        output_translation_drone = self.translation_block_drone(x)
-        output_translation_cube = self.translation_block_cube(x)
+        output_translation_drone = self.translation_block_drone(x) * self.scale_translation
+        output_translation_cube = self.translation_block_cube(x) * self.scale_translation
 
         return output_translation_drone, output_translation_cube
