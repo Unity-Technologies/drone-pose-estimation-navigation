@@ -22,6 +22,10 @@ class PoseEstimationNetwork(torch.nn.Module):
     """
 
     def __init__(self, scale_translation):
+        '''
+        Args:
+            scale_translation (float): scale factor we apply on the translation
+        '''
         super(PoseEstimationNetwork, self).__init__()
         self.model_backbone = torchvision.models.vgg16(pretrained=True) # uses cache
         # remove the original classifier

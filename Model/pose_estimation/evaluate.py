@@ -51,6 +51,7 @@ def evaluate_one_epoch(*, estimator, config, data_loader, epoch, scale_translati
         config: configuration of the model
         data_loader (DataLoader): pytorch dataloader
         epoch (int): the current epoch number
+        scale_translation (float): scale factor we apply on the translation
         test (bool): specifies which type of evaluation we are doing
     """
     estimator.model.eval()
@@ -105,6 +106,7 @@ def evaluation_over_batch(
         data_loader (DataLoader): pytorch dataloader
         batch_size (int): size of the batch
         epoch (int): the current epoch number
+        scale_translation (float): scale factor we apply on the translation
         is_training (bool): boolean to say if we are in a training process or not
         optimizer: optimizer of the model
         criterion_translation (torch.nn): criterion for the evaluation of the translation loss
