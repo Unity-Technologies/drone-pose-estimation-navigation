@@ -53,7 +53,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         data_root="/tmp",
         split="train",
         zip_file_name="drone_pose_estimation_training",
-        sample_size=0,
         **kwargs,
     ):
         self.config = config
@@ -68,9 +67,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
             self._download()
 
         self.size = self.__len__()
-        self.sample_size = min(sample_size, self.size)
-        if self.sample_size > 0:
-            self.random_indices = self._generate_random_indices()
 
     def pre_processing(self, element_iterator):
         """
@@ -121,9 +117,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         # Map each element
         mapped_itr = map(self.pre_processing, iterator)
 
-        if self.sample_size > 0:
-            mapped_itr = self._sample(mapped_itr)
-
         return mapped_itr
 
     def __len__(self):
@@ -153,16 +146,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
                 result.append(element)
         return iter(result)
 
-    def _generate_random_indices(self):
-        """
-        Method to generate a list of int between 0 and self.size and
-        of length self.sample_size
-
-        Returns:
-            list of int which corresponds to a list of indexes
-        """
-        indices = random.sample(range(0, self.size), self.sample_size)
-        return indices
 
     def _get_local_data_zip(self):
         """

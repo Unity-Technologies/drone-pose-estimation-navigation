@@ -37,7 +37,7 @@ class PoseEstimationNetwork(torch.nn.Module):
             torch.nn.ReLU(inplace=True),
             torch.nn.Linear(256, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 3),
+            torch.nn.Linear(64, 2),
         )
 
         # target
@@ -46,7 +46,7 @@ class PoseEstimationNetwork(torch.nn.Module):
             torch.nn.ReLU(inplace=True),
             torch.nn.Linear(256, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 3),
+            torch.nn.Linear(64, 2),
         )
 
         # scale factor on the translation 
@@ -54,7 +54,6 @@ class PoseEstimationNetwork(torch.nn.Module):
 
     def forward(self, x):
         x = self.model_backbone(x)
-        output_translation_drone = self.translation_block_drone(x) * self.scale_translation
         output_translation_cube = self.translation_block_cube(x) * self.scale_translation
-
+        output_translation_drone = self.translation_block_drone(x) * self.scale_translation
         return output_translation_drone, output_translation_cube

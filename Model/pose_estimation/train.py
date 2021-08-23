@@ -25,14 +25,12 @@ def train_model(estimator):
         data_root=estimator.data_root,
         split="train",
         zip_file_name=config.train.dataset_zip_file_name_training,
-        sample_size=config.train.sample_size_train,
     )
     dataset_val = DroneCubeDataset(
         config=config,
         data_root=estimator.data_root,
         split="validation",
         zip_file_name=config.val.dataset_zip_file_name_validation,
-        sample_size=config.val.sample_size_val,
     )
 
     train_loader = torch.utils.data.DataLoader(
@@ -129,6 +127,7 @@ def _train_one_epoch(
         batch_size=batch_size,
         epoch=epoch,
         is_training=True,
+        scale_translation=1,
         optimizer=optimizer,
         criterion_translation=criterion_translation,
     )
