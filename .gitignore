@@ -7,6 +7,7 @@ datasets/
 **/Library
 **/Temp
 **/obj
+**/Logs
 
 **/.idea
 **/.vs
