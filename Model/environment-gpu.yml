@@ -23,8 +23,3 @@ dependencies:
         - kfp==1.0.4
         - easydict==1.9
         - tensorboardX==2.1
-        - grpcio==1.36.1
-        - grpcio-tools==1.36.1
-        - protobuf==3.15.6
-        - wheel==0.36.2
-        - typing-extensions==3.7.4.3

@@ -53,7 +53,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         data_root="/tmp",
         split="train",
         zip_file_name="drone_pose_estimation_training",
-        sample_size=0,
         **kwargs,
     ):
         self.config = config
@@ -68,9 +67,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
             self._download()
 
         self.size = self.__len__()
-        self.sample_size = min(sample_size, self.size)
-        if self.sample_size > 0:
-            self.random_indices = self._generate_random_indices()
 
     def pre_processing(self, element_iterator):
         """
@@ -83,38 +79,29 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         Returns:
             a tuple of three element which are:
                 - an image tensor
-                - a tensor vector for the 3 cube's center
+                - a tensor vector for the 3 drone's center
                 coordinates (translation)
-                - a the tensor vector for the 4 quaternion elements
-                (orientation)
+                - a tensor vector for the 3 target's center
+                coordinates (translation)
         """
         position_list, image_name = element_iterator
         
         if position_list[0]['label_name'] == 'drone_position':
             translation_drone = list(position_list[0]["translation"].values())
-            orientation_drone = list(position_list[0]["rotation"].values())
-
             translation_cube = list(position_list[1]["translation"].values())
-            orientation_cube = list(position_list[1]["rotation"].values())
             
         else:
             translation_drone = list(position_list[1]["translation"].values())
-            orientation_drone = list(position_list[1]["rotation"].values())
-
             translation_cube = list(position_list[0]["translation"].values())
-            orientation_cube = list(position_list[0]["rotation"].values())
 
         translation_drone = torch.tensor(translation_drone, dtype=torch.float)
-        orientation_drone = torch.tensor(orientation_drone, dtype=torch.float)
-
         translation_cube = torch.tensor(translation_cube, dtype=torch.float)
-        orientation_cube = torch.tensor(orientation_cube, dtype=torch.float)
 
         image_origin = Image.open(image_name).convert("RGB")
         transform = self.get_transform()
         image = transform(image_origin).unsqueeze(0)
 
-        return image, translation_drone, orientation_drone, translation_cube, orientation_cube
+        return image, translation_drone, translation_cube
 
     def __iter__(self):
         """
@@ -129,9 +116,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
 
         # Map each element
         mapped_itr = map(self.pre_processing, iterator)
-
-        if self.sample_size > 0:
-            mapped_itr = self._sample(mapped_itr)
 
         return mapped_itr
 
@@ -162,16 +146,6 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
                 result.append(element)
         return iter(result)
 
-    def _generate_random_indices(self):
-        """
-        Method to generate a list of int between 0 and self.size and
-        of length self.sample_size
-
-        Returns:
-            list of int which corresponds to a list of indexes
-        """
-        indices = random.sample(range(0, self.size), self.sample_size)
-        return indices
 
     def _get_local_data_zip(self):
         """

@@ -50,7 +50,6 @@ class TestSingleCubeDataset:
             config=config,
             data_root=data_root,
             zip_file_name=zip_file_name,
-            sample_size=0,
             download=False,
         )
         images, targets_trans, targets_orient = [], [], []
@@ -80,7 +79,6 @@ class TestSingleCubeDataset:
             config=config,
             data_root=data_root,
             zip_file_name=zip_file_name,
-            sample_size=2,
         )
         sample_images, sample_targets_trans, sample_targets_orient = [], [], []
 

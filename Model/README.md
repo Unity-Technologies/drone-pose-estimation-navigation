@@ -2,7 +2,7 @@ Drone Pose Estimation Model
 =====================
 This section contains code for training and evaluating a deep neural network to predict the pose of a single object from RGB images. We provide support for running both locally and with Docker.  
 
-This model is a modified implementation of [Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/pdf/1703.06907.pdf), by Tobin et. al. It is based on the classic VGG-16 backbone architecture, and initialized with weights pre-trained on the ImageNet dataset. The head of the network is replaced with a 3D position prediction head that outputs (x, y, z), and an orientation predicton head that outputs a quaternion (q<sub>x</sub>, q<sub>y</sub>, q<sub>z</sub>, q<sub>w</sub>) for both the drone and landing target. 
+This model is a modified implementation of [Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/pdf/1703.06907.pdf), by Tobin et. al. It is based on the classic VGG-16 backbone architecture, and initialized with weights pre-trained on the ImageNet dataset. The head of the network is replaced with a 3D position prediction head that outputs (x, y, z), and an orientation predicton head that outputs a quaternion (q<sub>x</sub>, q<sub>y</sub>, q<sub>z</sub>, q<sub>w</sub>). 
 
 <p align='center'>
   <img src='documentation/docs/network.png' height=400/>
@@ -22,43 +22,13 @@ We trained this model on sythetic data collected in Unity. To learn how to colle
 This model supports a `train` and an `evaluate` command. Both of these have many arguments, which you can examine in `cli.py`. They will default to the values in `config.yaml` for convenience, but can be overridden via the command line.
 
 The most important `train` arguments to be aware of are:
-* `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training` and `drone_validation`, containing the training and validation data, respectively. 
+* `--data_root`: Path to the directory containing your data folders. These directory should include `UR3_single_cube_training` and `UR3_single_cube_validation`, containing the training and validation data, respectively. 
 * `--log-dir-system`: Path to directory where you'd like to save Tensorboard log files and model checkpoint files.
 
 The most important `evaluate` arguments to be aware of are:
 * `--load-dir-checkpoint`: Path to model to be evaluated. 
-* `--data_root`: Path to the directory containing your data folders. These directory should include `drone_training` and `drone_validation`, containing the training and validation data, respectively. 
+* `--data_root`: Path to the directory containing your data folders. These directory should include `UR3_single_cube_training` and `UR3_single_cube_validation`, containing the training and validation data, respectively. 
 
-
-## Training in Google Cloud AI Platform
-
-### Docker images
-
-Specific docker images were built with configurations with different datasets based on hardless levels. This is the [config.yaml](./config.yaml) file we used to change the dataset names and parameters. These docker images were pushed to the Google Cloud Registry so that it can be used in AI Platform.
-
-### Training data
-All the training data required for training were available in GCS.
-
-### Training job
-AI Platform and the GCS buckets which has the training data should be in the same project. We then submit a training job in the following steps :
-
-<p align='center'>
-  <img src='documentation/docs/ai-plat-training-01.png' width=500/>
-</p>
-
-<p align='center' width='20px'>
-  <img src='documentation/docs/ai-plat-training-02.png' width=500/>
-</p>
-
-<p align='center'>
-  <img src='documentation/docs/ai-plat-training-03.png' width=500/>
-</p>
-
-<p align='center'>
-  <img src='documentation/docs/ai-plat-training-04.png' width=500/>
-</p>
-
-The model and checkpoint files would be saved in the bucket defined in the [config.yaml](./config.yaml) file.
 
 ## Performance
 
@@ -81,3 +51,4 @@ python -m pytest tests/test_average_translation_mean_square_error.py
 ## Resources
 * [Documentation](documentation/codebase_structure.md) describing structure of the model code
 * [Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/pdf/1703.06907.pdf)
+* [Pose Estimation Tutorial](../README.md)

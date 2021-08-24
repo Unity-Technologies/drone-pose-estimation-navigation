@@ -13,10 +13,6 @@ dataset:
     --gcs-bucket=<string>                       Name of GCS Bucket where the datasets are located.
     --download-data-gcp=<boolean>               If True it will download the data from gcp otherwise it will use the data you have on local.
     --pose-estimation-gcs-path=<string>         Path inside the gcp bucket where the datasets are located.
-    --symmetric=list<bool>                      List of booleans. The length of the list is equal to the number of objects which we want to predict the position. 
-                                                The order is the one in the capture_*.json with the label_id under captures > annotations > values. 
-                                                If the object is symmetric then the element is True otherwise it is False. Based on that we will only predict the 
-                                                orientation or translation and orientation. 
 
 training-options:
     --batch-training-size=<int>                 Batch size of the training dataset.
@@ -28,6 +24,7 @@ training-options:
     --dataset-zip-file-name-training=<str>      Name of the zip file for the training dataset.
     --dataset-zip-file-name-validation=<str>    Name of the zip file for the training dataset.
     --eval_freq=<int>                           Frequency to launch the evaluation process 
+    --scale-factor=<float>                      Scaling factor we apply on the translation in order to avoid exploding gradients
 
 
 evaluation-options:
