@@ -8,12 +8,6 @@ from pose_estimation.model import PoseEstimationNetwork
 from pose_estimation.train import train_model
 from pose_estimation.evaluate import evaluate_model
 from pose_estimation.drone_cube_dataset import DroneCubeDataset
-from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
-    translation_average_mean_square_error,
-)
-from pose_estimation.evaluation_metrics.orientation_average_quaternion_error import (
-    orientation_average_quaternion_error,
-)
 
 import torch
 import torchvision
@@ -22,7 +16,7 @@ import torchvision
 class PoseEstimationEstimator:
     """
     This model is used on the SingleCube dataset.
-    Its aim is to predict the position and the orientation of the cube.
+    Its aim is to predict the position of the drone and the target.
     This class contains the method to train, evaluate, save and load the model.
 
 
@@ -64,7 +58,7 @@ class PoseEstimationEstimator:
         self.logger = logging.getLogger(__name__)
 
         # We will create as many networks as there are objects to predict the position
-        self.model = PoseEstimationNetwork()
+        self.model = PoseEstimationNetwork(config.train.scale_translation)
 
         # load estimators from file if checkpoint_file exists
         checkpoint_file = config.checkpoint.load_dir_checkpoint

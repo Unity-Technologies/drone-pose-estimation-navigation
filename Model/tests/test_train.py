@@ -40,7 +40,6 @@ def dataset(config):
         config=config,
         data_root=data_root,
         zip_file_name=zip_file_name,
-        sample_size=0,
         download=False,
     )
     return dataset_test

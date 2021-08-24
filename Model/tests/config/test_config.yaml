@@ -5,16 +5,13 @@ train:
   accumulation_steps: 1
   epochs: 1
   beta_loss: 1
-  sample_size_train: 0
 val:
   dataset_zip_file_name_validation: test_single_cube_dataset
   batch_validation_size: 1
   val_start_epoch: 0
-  sample_size_val: 0
 test:
   dataset_zip_file_name_test: test_single_cube_dataset
   batch_test_size: 1
-  sample_size_test: 0
 dataset:
   image_scale: 224
   download_data_gcp: False

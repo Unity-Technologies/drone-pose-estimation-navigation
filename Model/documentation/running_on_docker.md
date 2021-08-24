@@ -8,7 +8,7 @@ You will need to have [Docker](https://docs.docker.com/get-docker/) installed on
 
 ### Running with Docker 
 
-* **Action**: In [config.yaml](../config.yaml), under `system`, set the argument `log_dir_system` to: `/save/drone_multi_pose`. 
+* **Action**: In [config.yaml](../config.yaml), under `system`, set the argument `log_dir_system` to: `/save/single_cube`. 
 * **Action**: Set the argument `data_root` under `system` to `/data`. 
 
 Before creating the Docker image, you need to be sure your Docker settings are compatible with the project. Open Docker Desktop, click on `Settings` (the gear icon) on the top right, and go to `Resources`. Then change your settings so that it matches the following: 
@@ -33,10 +33,10 @@ docker build -t pose_estimation .
 docker run -it -v [FULL PATH TO DATA FOLDER]:/data -v [FULL PATH TO MODEL FOLDER]:/save/single_cube pose_estimation bash
 ```
 
-The `FULL PATH TO DATA FOLDER` is the path to the upper directory of your data. As an example, I have put my `drone_training` and `drone_validation` data folder into a folder called `data` that I have created in my `Documents` folder. Thus my `FULL PATH TO DATA FOLDER` will be `/Users/jonathan.leban/Documents/data`.
+The `FULL PATH TO DATA FOLDER` is the path to the upper directory of your data. As an example, I have put my `UR3_single_cube_training` and `UR3_single_cube_validation` data folder into a folder called `data` that I have created in my `Documents` folder. Thus my `FULL PATH TO DATA FOLDER` will be `/Users/jonathan.leban/Documents/data`.
 
 The `FULL PATH TO MODEL FOLDER` is the directory in which your models and metrics will be saved. For me, I created a folder called `save` into my Documents. 
-The `/save/drone_multi_posea` directory is the directory inside the docker container. That is why in the [config.yaml](../config.yaml) file, under the argument `system` the argument `log_dir_system` is set to `/save/drone_multi_pose`. 
+The `/save/single_cube` directory is the directory inside the docker container. That is why in the [config.yaml](../config.yaml) file, under the argument `system` the argument `log_dir_system` is set to `/save/single_cube`. 
 
 Thus, the final command for me is: 
 ```bash

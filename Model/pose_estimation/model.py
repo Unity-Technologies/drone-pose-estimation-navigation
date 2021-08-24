@@ -17,12 +17,15 @@ class PoseEstimationNetwork(torch.nn.Module):
     body of it is unchanged and the weights of the final model will not be too
     far from the original one. We call this method "transfer learning".
     The network is composed by two branches: one for the translation
-    (prediction of a 3 dimensional vector corresponding to x, y, z coordinates for the drone and the target) and
-    one for the orientation (prediction of a 4 dimensional vector corresponding to
-    a quaternion for the drone and the target)
+    (prediction of a 3 dimensional vector corresponding to x, y, z coordinates for 
+    the drone and one for the target.
     """
 
-    def __init__(self):
+    def __init__(self, scale_translation):
+        '''
+        Args:
+            scale_translation (float): scale factor we apply on the translation
+        '''
         super(PoseEstimationNetwork, self).__init__()
         self.model_backbone = torchvision.models.vgg16(pretrained=True) # uses cache
         # remove the original classifier
@@ -34,73 +37,23 @@ class PoseEstimationNetwork(torch.nn.Module):
             torch.nn.ReLU(inplace=True),
             torch.nn.Linear(256, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 3),
+            torch.nn.Linear(64, 2),
         )
-        self.orientation_block_drone = torch.nn.Sequential(
-            torch.nn.Linear(25088, 256),
-            torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(256, 64),
-            torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 4),
-            LinearNormalized(),
-        )
+
         # target
         self.translation_block_cube = torch.nn.Sequential(
             torch.nn.Linear(25088, 256),
             torch.nn.ReLU(inplace=True),
             torch.nn.Linear(256, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 3),
+            torch.nn.Linear(64, 2),
         )
-        self.orientation_block_cube = torch.nn.Sequential(
-            torch.nn.Linear(25088, 256),
-            torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(256, 64),
-            torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 4),
-            LinearNormalized(),
-        )
+
+        # scale factor on the translation 
+        self.scale_translation = scale_translation
 
     def forward(self, x):
         x = self.model_backbone(x)
-        output_translation_drone = self.translation_block_drone(x)
-        output_orientation_drone = self.orientation_block_drone(x)
-
-        output_translation_cube = self.translation_block_cube(x)
-        output_orientation_cube = self.orientation_block_cube(x)
-
-        return output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube
-
-
-class LinearNormalized(torch.nn.Module):
-    """
-    Custom activation function which normalizes the input.
-    It will be used to normalized the output of the orientation
-    branch in our model because a quaternion vector is a
-    normalized vector
-    """
-
-    def __init__(self):
-        super(LinearNormalized, self).__init__()
-
-    def forward(self, x):
-        return self._linear_normalized(x)
-
-    def _linear_normalized(self, x):
-        """
-        Activation function which normalizes an input
-        It will be used in the orientation network because
-        a quaternion is a normalized vector.
-        Args:
-            x (pytorch tensor with shape (batch_size, 4)): the input of the model
-        Returns:
-            a pytorch tensor normalized vector with shape(batch_size, 4)
-        """
-        norm = torch.norm(x, p=2, dim=1).unsqueeze(0)
-        for index in range(norm.shape[1]):
-            if norm[0, index].item() == 0.0:
-                norm[0, index] = 1.0
-        x = torch.transpose(x, 0, 1)
-        x = torch.div(x, norm)
-        return torch.transpose(x, 0, 1)
-
+        output_translation_cube = self.translation_block_cube(x) * self.scale_translation
+        output_translation_drone = self.translation_block_drone(x) * self.scale_translation
+        return output_translation_drone, output_translation_cube

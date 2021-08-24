@@ -8,9 +8,7 @@ from pose_estimation.drone_cube_dataset import DroneCubeDataset
 from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
-from pose_estimation.evaluation_metrics.orientation_average_quaternion_error import (
-    orientation_average_quaternion_error,
-)
+
 from pose_estimation.evaluate import evaluate_one_epoch, evaluation_over_batch
 
 
@@ -27,14 +25,12 @@ def train_model(estimator):
         data_root=estimator.data_root,
         split="train",
         zip_file_name=config.train.dataset_zip_file_name_training,
-        sample_size=config.train.sample_size_train,
     )
     dataset_val = DroneCubeDataset(
         config=config,
         data_root=estimator.data_root,
         split="validation",
         zip_file_name=config.val.dataset_zip_file_name_validation,
-        sample_size=config.val.sample_size_val,
     )
 
     train_loader = torch.utils.data.DataLoader(
@@ -123,24 +119,21 @@ def _train_one_epoch(
     batch_size = config.train.batch_training_size
 
     criterion_translation = torch.nn.MSELoss()
-    criterion_orientation = torch.nn.MSELoss()
 
-    metric_translation_drone, metric_orientation_drone, metric_translation_cube, metric_orientation_cube = evaluation_over_batch(
+    metric_translation_drone, metric_translation_cube = evaluation_over_batch(
         estimator=estimator,
         config=config,
         data_loader=data_loader,
         batch_size=batch_size,
         epoch=epoch,
         is_training=True,
+        scale_translation=1,
         optimizer=optimizer,
         criterion_translation=criterion_translation,
-        criterion_orientation=criterion_orientation,
     )
 
     estimator.writer.log_training(
         training_metric_translation_drone=metric_translation_drone,
-        training_metric_orientation_drone=metric_orientation_drone,
         training_metric_translation_cube=metric_translation_cube,
-        training_metric_orientation_cube=metric_orientation_cube,
         epoch=epoch,
     )
