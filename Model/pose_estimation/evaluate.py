@@ -127,18 +127,18 @@ def evaluation_over_batch(
             )
         )
         
-        translation_filter = torch.LongTensor([0, 1]) # Only taking x, y translation
+        # translation_filter = torch.LongTensor([0, 1]) # Only taking x, y translation
 
         target_translation_drone = target_trans_drone_list.to(estimator.device)
         target_translation_cube = target_trans_cube_list.to(estimator.device)
 
-        target_translation_drone = target_translation_drone[:, translation_filter]
-        target_translation_cube = target_translation_cube[:, translation_filter]
+        # target_translation_drone = target_translation_drone[:, translation_filter]
+        # target_translation_cube = target_translation_cube[:, translation_filter]
         
-        metric_translation_drone += criterion_translation(
+        metric_translation_drone += translation_average_mean_square_error(
             output_translation_drone, target_translation_drone
         )              
-        metric_translation_cube += criterion_translation(
+        metric_translation_cube += translation_average_mean_square_error(
             output_translation_cube, target_translation_cube
         )
        

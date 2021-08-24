@@ -96,6 +96,7 @@ def train_loop(*, estimator, config, train_dataloader, val_dataloader):
                 data_loader=val_dataloader,
                 epoch=epoch,
                 test=False,
+                scale_translation=1
             )
 
 

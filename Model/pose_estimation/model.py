@@ -31,22 +31,27 @@ class PoseEstimationNetwork(torch.nn.Module):
         # remove the original classifier
         self.model_backbone.classifier = torch.nn.Identity()
 
+        self.fc1 = torch.nn.Sequential(
+            torch.nn.Linear(25088, 256),
+            torch.nn.ReLU(inplace=True)
+        )
+
         # drone
         self.translation_block_drone = torch.nn.Sequential(
-            torch.nn.Linear(25088, 256),
-            torch.nn.ReLU(inplace=True),
             torch.nn.Linear(256, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 2),
+            torch.nn.Linear(64, 64),
+            torch.nn.ReLU(inplace=True),
+            torch.nn.Linear(64, 3),
         )
 
         # target
         self.translation_block_cube = torch.nn.Sequential(
-            torch.nn.Linear(25088, 256),
-            torch.nn.ReLU(inplace=True),
             torch.nn.Linear(256, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 2),
+            torch.nn.Linear(64, 64),
+            torch.nn.ReLU(inplace=True),
+            torch.nn.Linear(64, 3),
         )
 
         # scale factor on the translation 
@@ -54,6 +59,7 @@ class PoseEstimationNetwork(torch.nn.Module):
 
     def forward(self, x):
         x = self.model_backbone(x)
+        x = self.fc1(x)
         output_translation_cube = self.translation_block_cube(x) * self.scale_translation
         output_translation_drone = self.translation_block_drone(x) * self.scale_translation
         return output_translation_drone, output_translation_cube

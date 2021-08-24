@@ -1,5 +1,7 @@
 __pycache__/
 datasets/
+data/
+config-local.yml
 
 .DS_Store
 .vsconfig
