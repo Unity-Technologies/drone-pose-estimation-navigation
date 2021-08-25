@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package protocolor;
+
+service PostEstimationService {
+    rpc GetPoseEstimation (ImageInfo) returns (PoseEstimationResponse);
+}
+
+message ImageInfo {
+    bytes image = 1;
+}
+
+message PoseEstimationResponse {
+    TransformPosition droneTransformPosition = 3;
+    TransformPosition targetTransformPosition = 4;
+}
+
+message TransformPosition {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}

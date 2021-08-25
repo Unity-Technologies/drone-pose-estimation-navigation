@@ -14,31 +14,25 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
     def GetPoseEstimation(
             self, request: PostEstimation_pb2.ImageInfo,context) -> PostEstimation_pb2.PoseEstimationResponse:
-
-
-        # model_choice = "models_drone_target_pose_estimation_easy_ep49.tar"
         model_choice = "models_drone_target_pose_estimation_medium_ep33.tar"
-        # model_choice = "drone_target_pose_estimation_ep1.tar"
 
-        logging.info("Inside the function...")
-        output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube = run_model_main(request.image, 1027, 592, model_choice)
-        print(output_translation_drone, output_orientation_drone,  output_translation_cube, output_orientation_cube)
+        logging.info("Starting pose estimation...")
+        output_translation_drone, output_translation_cube = run_model_main(request.image, 1027, 592, model_choice)
+        print(output_translation_drone,  output_translation_cube)
 
         output_translation_drone = output_translation_drone[0]
-        output_orientation_drone = output_orientation_drone[0]
         output_translation_cube = output_translation_cube[0]
-        output_orientation_cube = output_orientation_cube[0]
 
         return PostEstimation_pb2.PoseEstimationResponse(
-            droneQuaternion=PostEstimation_pb2.Quaternion(x=output_orientation_drone[0],y=output_orientation_drone[1],z=output_orientation_drone[2],w=output_orientation_drone[3]),
-            targetQuaternion= PostEstimation_pb2.Quaternion(x=output_orientation_cube[0],y=output_orientation_cube[1],z=output_orientation_cube[2],w=output_orientation_cube[3]),
-            droneTransformPosition=PostEstimation_pb2.TransformPosition(x=output_translation_drone[0],y=output_translation_drone[1],z=output_translation_drone[2]),
-            targetTransformPosition=PostEstimation_pb2.TransformPosition(x=output_translation_cube[0],y=output_translation_cube[1],z=output_translation_cube[2]))
+            droneTransformPosition=PostEstimation_pb2.TransformPosition(
+                x=output_translation_drone[0],
+                y=output_translation_drone[1],
+                z=output_translation_drone[2]),
+            targetTransformPosition=PostEstimation_pb2.TransformPosition(
+                x=output_translation_cube[0],
+                y=output_translation_cube[1],
+                z=output_translation_cube[2]))
         
-        
-    # def GetData(image_data):
-    #     run_model_main_2()
-
 
 def serve() -> None:
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
