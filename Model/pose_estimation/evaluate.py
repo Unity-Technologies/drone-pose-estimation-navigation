@@ -1,8 +1,8 @@
 import torch
 import torchvision
 
-from pose_estimation.drone_cube_dataset import DroneCubeDataset
-from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
+from Model.pose_estimation.drone_cube_dataset import DroneCubeDataset
+from Model.pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
 

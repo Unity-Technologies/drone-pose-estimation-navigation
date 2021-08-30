@@ -12,7 +12,7 @@ import torchvision
 from PIL import Image
 import random
 
-from pose_estimation.storage.gcs import GCSClient
+from Model.pose_estimation.storage.gcs import GCSClient
 
 import logging
 
@@ -85,7 +85,7 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
                 coordinates (translation)
         """
         position_list, image_name = element_iterator
-        
+
         if position_list[0]['label_name'] == 'drone_position':
             translation_drone = list(position_list[0]["translation"].values())
             translation_cube = list(position_list[1]["translation"].values())
@@ -94,8 +94,12 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
             translation_drone = list(position_list[1]["translation"].values())
             translation_cube = list(position_list[0]["translation"].values())
 
+        translation_filter = torch.LongTensor([0, 1])
+
         translation_drone = torch.tensor(translation_drone, dtype=torch.float)
+        translation_drone = translation_drone[translation_filter]
         translation_cube = torch.tensor(translation_cube, dtype=torch.float)
+        translation_cube = translation_cube[translation_filter]
 
         image_origin = Image.open(image_name).convert("RGB")
         transform = self.get_transform()
