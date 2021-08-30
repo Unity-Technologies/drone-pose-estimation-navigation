@@ -9,7 +9,7 @@ train:
 val:
   dataset_zip_file_name_validation: drone_validation_medium
   batch_validation_size: 30
-  eval_freq: 1
+  eval_freq: 4
 test:
   dataset_zip_file_name_test: drone_validation_medium
   batch_test_size: 30
