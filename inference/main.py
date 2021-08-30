@@ -69,9 +69,13 @@ class Inference:
                 )
             #T2
             #T2-T1
+
+            print(f"Drone: \n"
+                  f"Ground truth : {target_t_drone_list[0]}, estimated - {output_t_drone[0]} \n"
+                  f"Cube: \n"
+                  f"Ground truth : {target_t_cube_list[0]}, estimated - {output_t_cube[0]}")
             target_t_drone = target_t_drone_list.to(self.device)
             target_t_cube = target_t_cube_list.to(self.device)
-            print("wefwefwe")
             metric_translation_cube += self.criterion(output_t_cube, target_t_cube)
             metric_translation_drone += self.criterion(output_t_drone, target_t_drone)
 
@@ -79,6 +83,10 @@ class Inference:
 
             avg_loss = (metric_translation_drone + metric_translation_cube) / (index + 1)
             print(f"Avg Loss : {avg_loss}")
+
+        avg_t_drone = metric_translation_drone / len_data_loader
+        avg_t_cube = metric_translation_cube / len_data_loader
+        print(f"Final loss - drone: {avg_t_drone}, cube: {avg_t_cube}")
 
             
 
@@ -98,7 +106,7 @@ def get_config(filepath):
     return config
 
 def test_model():
-    config = get_config("/Users/souranil/ai/hackathon/ai-2021/ai-hw21-pose-estimation-model/Model/config-local.yml")
+    config = get_config("/home/souranil/ai/research/ai-hw21-drone-pose-estimation-navigation/Model/config-local.yml")
     estimator = PoseEstimationEstimator(config=config)
     transforms = torchvision.transforms.Compose(
             [
@@ -113,7 +121,7 @@ def test_model():
         )
 
     i = Inference(
-        "/Users/souranil/ai/hackathon/ai-2021/ai-hw21-pose-estimation-model/inference/drone_target_pose_estimation_ep50.tar",
+        "/home/souranil/ai/research/ai-hw21-drone-pose-estimation-navigation/inference/drone_target_pose_estimation_ep50.tar",
         transforms=transforms,
         estimator=estimator
     )
