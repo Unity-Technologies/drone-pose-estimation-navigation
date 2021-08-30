@@ -42,7 +42,7 @@ class PoseEstimationNetwork(torch.nn.Module):
             torch.nn.ReLU(inplace=True),
             torch.nn.Linear(64, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 3),
+            torch.nn.Linear(64, 2),
         )
 
         # target
@@ -51,7 +51,7 @@ class PoseEstimationNetwork(torch.nn.Module):
             torch.nn.ReLU(inplace=True),
             torch.nn.Linear(64, 64),
             torch.nn.ReLU(inplace=True),
-            torch.nn.Linear(64, 3),
+            torch.nn.Linear(64, 2),
         )
 
         # scale factor on the translation 
