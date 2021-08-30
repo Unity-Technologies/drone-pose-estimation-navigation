@@ -1,11 +1,13 @@
 import torch
 import torchvision
 import yaml
+import numpy as np
 from easydict import EasyDict
 from Model.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
 from Model.pose_estimation.drone_cube_dataset import DroneCubeDataset
 from Model.pose_estimation.model import PoseEstimationNetwork
 from Model.pose_estimation.evaluate import evaluation_over_batch
+import time
 
 
 class Inference:
@@ -61,32 +63,32 @@ class Inference:
         metric_translation_drone = 0
         metric_translation_cube = 0
         len_data_loader = len(self.test_loader)
+
+        t_run = []
         for index, (images, target_t_drone_list, target_t_cube_list) in enumerate(self.test_loader):
             images = list(image.to(self.device) for image in images)
-            # T1
-            output_t_drone, output_t_cube = self.model(
-                torch.stack(images).reshape(-1, 3, 224, 224)
-                )
-            #T2
-            #T2-T1
-
-            print(f"Drone: \n"
-                  f"Ground truth : {target_t_drone_list[0]}, estimated - {output_t_drone[0]} \n"
-                  f"Cube: \n"
-                  f"Ground truth : {target_t_cube_list[0]}, estimated - {output_t_cube[0]}")
+            t1 = time.time()
+            output_t_drone, output_t_cube = self.model(torch.stack(images).reshape(-1, 3, 224, 224))
+            t2 = time.time()
+            t_run.append(t2 - t1)
+            # print(f"Drone: \n"
+            #       f"Ground truth : {target_t_drone_list[0]}, estimated - {output_t_drone[0]} \n"
+            #       f"Cube: \n"
+            #       f"Ground truth : {target_t_cube_list[0]}, estimated - {output_t_cube[0]}")
             target_t_drone = target_t_drone_list.to(self.device)
             target_t_cube = target_t_cube_list.to(self.device)
             metric_translation_cube += self.criterion(output_t_cube, target_t_cube)
             metric_translation_drone += self.criterion(output_t_drone, target_t_drone)
-
-            print(f"Cube loss : {metric_translation_cube}, Drone loss: {metric_translation_drone}")
-
-            avg_loss = (metric_translation_drone + metric_translation_cube) / (index + 1)
-            print(f"Avg Loss : {avg_loss}")
+            #
+            # # print(f"Cube loss : {metric_translation_cube}, Drone loss: {metric_translation_drone}")
+            #
+            # avg_loss = (metric_translation_drone + metric_translation_cube) / (index + 1)
+            # print(f"[index] = {index} Avg Loss : {avg_loss}")
 
         avg_t_drone = metric_translation_drone / len_data_loader
         avg_t_cube = metric_translation_cube / len_data_loader
-        print(f"Final loss - drone: {avg_t_drone}, cube: {avg_t_cube}")
+        print(f"avg inference time - {np.average(t_run)}")
+        print(f"[MSE] drone: {avg_t_drone}, cube: {avg_t_cube}")
 
             
 
