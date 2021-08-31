@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &96059731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,9 +1237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderTexture: {fileID: 8400000, guid: ab6226f70d832489eae0e1266ffc639a, type: 2}
-  scenario: {fileID: 0}
+  scenario: {fileID: 1514363902}
   drone: {fileID: 1463972984}
   target: {fileID: 571922514}
+  _canvas: {fileID: 96059730}
   Surface: {fileID: 124681311}
   planeMaterial: {fileID: 2100000, guid: 561f9ba5b17dc412abc1a226dc464b65, type: 2}
   cam: {fileID: 2048800454}
@@ -1785,6 +1786,18 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1949,7 +1962,7 @@ MonoBehaviour:
   - id: 11
   constants:
     randomSeed: 539662031
-    totalFrames: 40000
+    totalFrames: 10
   trainingMode: 1
   references:
     version: 1
@@ -1957,7 +1970,7 @@ MonoBehaviour:
       type: {class: DistractorObjectRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 0
+        collapsed: 1
         randomNumObjects:
           collapsed: 0
           value:
@@ -1993,7 +2006,7 @@ MonoBehaviour:
       type: {class: DroneObjectPositionRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 0
+        collapsed: 1
         maxPlacementTries: 100
         box: {fileID: 1576561592}
         drone: {fileID: 1463972984}
@@ -2002,7 +2015,7 @@ MonoBehaviour:
       type: {class: RotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
-        collapsed: 0
+        collapsed: 1
         rotation:
           collapsed: 0
           x:
@@ -2015,7 +2028,7 @@ MonoBehaviour:
       type: {class: CustomRotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 0
+        collapsed: 1
         rotation:
           collapsed: 0
           x:
@@ -6066,7 +6079,7 @@ MonoBehaviour:
     00000008:
       type: {class: CustomLightPositionRotationRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 1
         useMovingLight: 0
         changeLightPosition: 0.25
@@ -6104,8 +6117,8 @@ MonoBehaviour:
     0000000A:
       type: {class: SunAngleRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
-        m_Enabled: 1
-        collapsed: 0
+        m_Enabled: 0
+        collapsed: 1
         hour:
           collapsed: 0
           value:
@@ -6121,8 +6134,8 @@ MonoBehaviour:
     0000000B:
       type: {class: CustomCameraRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
-        collapsed: 0
+        m_Enabled: 0
+        collapsed: 1
         positionRange: 1.5
         rotationRangeDegrees: 10
         random:
@@ -6857,7 +6870,7 @@ Transform:
   m_GameObject: {fileID: 2048800452}
   m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: -25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6884,7 +6897,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

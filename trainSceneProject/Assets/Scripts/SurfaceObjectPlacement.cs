@@ -151,7 +151,7 @@ public class SurfaceObjectPlacer
     {
         float x = - boundBoxExtents[0] + random.Sample() * 2 * boundBoxExtents[0];
         float y; // the y coordinates will might change 
-        float z = - boundBoxExtents[2] + random.Sample() * 2 * boundBoxExtents[2];
+        float z = -boundBoxExtents[2];//+ random.Sample() * 2 * boundBoxExtents[2];
 
         if (downObject)
         {

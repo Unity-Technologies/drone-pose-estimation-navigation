@@ -167,10 +167,10 @@ def run_model_main(image_data, image_width, image_height, model_file_name):
 
     image_path = _save_image(image_data)
     image = pre_process_image(image_path, device)
-    output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube = model(torch.stack(image).reshape(-1, 3, 224, 224))
-    output_translation_drone, output_orientation_drone = output_translation_drone.detach().numpy(), output_orientation_drone.detach().numpy()
-    output_translation_cube, output_orientation_cube = output_translation_cube.detach().numpy(), output_orientation_cube.detach().numpy()
-    return output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube
+    output_translation_drone, output_translation_cube = model(torch.stack(image).reshape(-1, 3, 224, 224))
+    output_translation_drone = output_translation_drone.detach().numpy()
+    output_translation_cube = output_translation_cube.detach().numpy()
+    return output_translation_drone, output_translation_cube
 
 def run_model_main_2(image_data, image_width, image_height, model_file_name):
     global model
