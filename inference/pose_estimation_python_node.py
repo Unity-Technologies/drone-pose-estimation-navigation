@@ -204,7 +204,7 @@ def _save_image(image_data):
     count += 1
     #image_height = req.image.width
     #image_width = req.image.height
-    image = Image.frombytes('RGBA', (1027,592), image_data)
+    image = Image.frombytes('RGBA', (640,480), image_data)
     image = ImageOps.flip(image)
     image_name = "Input" + str(count) + ".png"
     if not os.path.exists(PACKAGE_LOCATION + "/images/"):
