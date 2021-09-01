@@ -14,10 +14,10 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
     def GetPoseEstimation(
             self, request: PostEstimation_pb2.ImageInfo,context) -> PostEstimation_pb2.PoseEstimationResponse:
-        model_choice = "models_drone_target_pose_estimation_medium_ep33.tar"
+        model_choice = "drone_target_pose_estimation_ep40.tar"
 
         logging.info("Starting pose estimation...")
-        output_translation_drone, output_translation_cube = run_model_main(request.image, 1027, 592, model_choice)
+        output_translation_drone, output_translation_cube = run_model_main(request.image, 640, 480, model_choice)
         print(output_translation_drone,  output_translation_cube)
 
         output_translation_drone = output_translation_drone[0]
@@ -26,12 +26,12 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
         return PostEstimation_pb2.PoseEstimationResponse(
             droneTransformPosition=PostEstimation_pb2.TransformPosition(
                 x=output_translation_drone[0],
-                y=output_translation_drone[1],
-                z=output_translation_drone[2]),
+                y=output_translation_drone[1]),
+                #z=output_translation_drone[2]),
             targetTransformPosition=PostEstimation_pb2.TransformPosition(
                 x=output_translation_cube[0],
-                y=output_translation_cube[1],
-                z=output_translation_cube[2]))
+                y=output_translation_cube[1]))
+                #z=output_translation_cube[2]))
         
 
 def serve() -> None:
