@@ -164,13 +164,16 @@ def run_model_main(image_data, image_width, image_height, model_file_name):
         checkpoint = torch.load(model_file_name, map_location=device)
         model = PoseEstimationNetwork(scale_translation=1)
         model.load_state_dict(checkpoint["model"])
+        model = model.to(device)
         model.eval()
 
     image_path = _save_image(image_data)
     image = pre_process_image(image_path, device)
     output_translation_drone, output_translation_cube = model(torch.stack(image).reshape(-1, 3, 224, 224))
-    output_translation_drone = output_translation_drone.detach().numpy()
-    output_translation_cube = output_translation_cube.detach().numpy()
+    output_translation_drone = output_translation_drone.to(device)
+    output_translation_cube = output_translation_cube.to(device)
+    output_translation_drone = output_translation_drone.detach().cpu().numpy()
+    output_translation_cube = output_translation_cube.detach().cpu().numpy()
     return output_translation_drone, output_translation_cube
 
 def run_model_main_2(image_data, image_width, image_height, model_file_name):
@@ -181,6 +184,7 @@ def run_model_main_2(image_data, image_width, image_height, model_file_name):
         checkpoint = torch.load(model_file_name, map_location=device)
         model = PoseEstimationNetwork()
         model.load_state_dict(checkpoint["model"])
+        model = model.to(device)
         model.eval()
 
     #image = pre_process_image(image_data, image_width, image_height, device)
