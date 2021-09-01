@@ -72,9 +72,9 @@ public class TestProtobuf : MonoBehaviour
         File.WriteAllBytes(path, encodedImageBytes);
 
         var poseEstimates = GetPoseEstimation(data);
-        targetEstimatedPosition = poseEstimates.TargetTransformPosition;
-        droneEstimatedPosition = poseEstimates.DroneTransformPosition;
-        Debug.Log("Done With capture..");
+        targetEstimatedPosition = poseEstimates.DroneTransformPosition;//poseEstimates.TargetTransformPosition;
+        droneEstimatedPosition = poseEstimates.TargetTransformPosition;
+        Debug.Log("Done With capture..: " + targetEstimatedPosition);
         _canvas.SetActive(true);
     }
 
@@ -102,9 +102,6 @@ public class TestProtobuf : MonoBehaviour
 
     }
 
-
-    private Protocolor.Quaternion droneEstimatedPose;
-    private Protocolor.Quaternion targetEstimatedPose;
     private TransformPosition targetEstimatedPosition;
     private TransformPosition droneEstimatedPosition;
     // public void StartPoseEstimation()
@@ -139,15 +136,21 @@ public class TestProtobuf : MonoBehaviour
         // var estimatedRotation = Camera.main.transform.rotation * rotationObject;
         
         //Debug.Log("TargetPosition : " + target.transform.position);
-        var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, target.transform.localPosition.z);
+        var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, cam.transform.InverseTransformPoint(target.transform.position).z);
 
         targetObject = GameObject.Find("TargetCube_modified");
-        var targetPosition = Camera.main.transform.TransformPoint(pos);
+        var targetPosition = cam.transform.TransformPoint(pos);
         //Debug.Log("Estimated Target Position: " + targetPosition);
 
         droneObject = GameObject.Find("Drone_01 Variant_modified");
-        var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, drone.transform.localPosition.z));
+        var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, cam.transform.InverseTransformPoint(drone.transform.position).z));
         
+        Debug.Log("Target Translation: " + target.transform.position);
+        Debug.Log("Camera Rotation:" + cam.transform.rotation);
+        Debug.Log("Camera Translation: " + cam.transform.position);
+        //
+        Debug.Log("Target Estimated position in camera space: " + pos);
+        Debug.Log("Target position in camera space: " + Camera.main.transform.TransformPoint(target.transform.position));
         Debug.Log("Target Position : " + target.transform.position + "  Estimated Target Position: " + targetPosition);
         Debug.Log("Drone Position : " + drone.transform.position + "  Estimated Drone Position: " + dronePosition);
 
