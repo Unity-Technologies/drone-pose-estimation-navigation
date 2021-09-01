@@ -5,10 +5,11 @@ import numpy as np
 import torch 
 import torchvision
 import os
-
+import sys
+sys.path.append('../Model/pose_estimation')
 from PIL import Image, ImageOps
 
-from Model.pose_estimation.model import PoseEstimationNetwork
+from model import PoseEstimationNetwork
 
 
 def preload():
