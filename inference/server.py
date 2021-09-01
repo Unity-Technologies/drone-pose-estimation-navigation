@@ -8,7 +8,8 @@ import PostEstimation_pb2_grpc
 from concurrent import futures
 
 from pose_estimation import run_model_main
-
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
