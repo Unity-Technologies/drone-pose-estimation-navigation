@@ -4,7 +4,7 @@ import logging
 import os
 import tempfile
 
-from Model.pose_estimation.storage.download import download_file
+from train.pose_estimation.storage.download import download_file
 
 from .gcs import GCSClient, gcs_bucket_and_path
 

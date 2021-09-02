@@ -1,13 +1,13 @@
 import copy
 import os
 import logging
-from Model.pose_estimation.logger import Logger
+from train.pose_estimation.logger import Logger
 from .storage.checkpoint import EstimatorCheckpoint
 
-from Model.pose_estimation.model import PoseEstimationNetwork
-from Model.pose_estimation.train import train_model
-from Model.pose_estimation.evaluate import evaluate_model
-from Model.pose_estimation.drone_cube_dataset import DroneCubeDataset
+from train.pose_estimation.model import PoseEstimationNetwork
+from train.pose_estimation.train import train_model
+from train.pose_estimation.evaluate import evaluate_model
+from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
 
 import torch
 import torchvision

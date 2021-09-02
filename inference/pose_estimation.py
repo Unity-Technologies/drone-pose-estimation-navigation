@@ -6,7 +6,7 @@ import torch
 import torchvision
 import os
 import sys
-sys.path.append('../Model/pose_estimation')
+sys.path.append('../train/pose_estimation')
 from PIL import Image, ImageOps
 
 from model import PoseEstimationNetwork

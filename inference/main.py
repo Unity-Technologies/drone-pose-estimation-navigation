@@ -3,10 +3,10 @@ import torchvision
 import yaml
 import numpy as np
 from easydict import EasyDict
-from Model.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
-from Model.pose_estimation.drone_cube_dataset import DroneCubeDataset
-from Model.pose_estimation.model import PoseEstimationNetwork
-from Model.pose_estimation.evaluate import evaluation_over_batch
+from train.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
+from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
+from train.pose_estimation.model import PoseEstimationNetwork
+from train.pose_estimation.evaluate import evaluation_over_batch
 import time
 import gc
 
@@ -114,7 +114,7 @@ def get_config(filepath):
 
 
 def test_model():
-    config = get_config("/home/souranil/ai/research/ai-hw21-drone-pose-estimation-navigation/Model/config-local.yml")
+    config = get_config("/home/souranil/ai/research/ai-hw21-drone-pose-estimation-navigation/train/config-local.yml")
     estimator = PoseEstimationEstimator(config=config)
     transforms = torchvision.transforms.Compose(
             [
