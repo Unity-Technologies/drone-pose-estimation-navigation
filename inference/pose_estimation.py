@@ -9,13 +9,7 @@ import sys
 sys.path.append('../train/pose_estimation')
 from PIL import Image, ImageOps
 
-from drone_pose_estimation_navigation.train.pose_estimation.model import PoseEstimationNetwork
-
-
-def preload():
-    '''pre-load VGG model weights, for transfer learning. Automatically cached for later use.'''
-    torchvision.models.vgg16(pretrained=True)
-
+from train.pose_estimation.model import PoseEstimationNetwork
 
 def pre_process_image(path_image, device):
     """

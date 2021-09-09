@@ -7,7 +7,6 @@ from .storage.checkpoint import EstimatorCheckpoint
 from train.pose_estimation.model import PoseEstimationNetwork
 from train.pose_estimation.train import train_model
 from train.pose_estimation.evaluate import evaluate_model
-from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
 
 import torch
 import torchvision
@@ -99,7 +98,6 @@ class PoseEstimationEstimator:
 
         Args:
             path (str): full path to the serialized estimator
-            label_id (int): corresponds to the label id in the captures_*.json folder minus 1.
         """
         self.logger.info(f"loading checkpoint from file")
         checkpoint = torch.load(path, map_location=self.device)

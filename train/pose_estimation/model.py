@@ -17,7 +17,7 @@ class PoseEstimationNetwork(torch.nn.Module):
     body of it is unchanged and the weights of the final model will not be too
     far from the original one. We call this method "transfer learning".
     The network is composed by two branches: one for the translation
-    (prediction of a 3 dimensional vector corresponding to x, y, z coordinates for 
+    (prediction of a 2 dimensional vector corresponding to x, y coordinates for 
     the drone and one for the target.
     """
 

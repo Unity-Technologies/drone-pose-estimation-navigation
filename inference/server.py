@@ -9,7 +9,7 @@ from concurrent import futures
 
 from pose_estimation import run_model_main
 import os
-os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
@@ -18,21 +18,21 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
         model_choice = "medium.tar"
 
         logging.info("Starting pose estimation...")
-        output_translation_drone, output_translation_cube = run_model_main(request.image, 640, 480, model_choice)
-        print(output_translation_drone,  output_translation_cube)
+        output_translation_drone, output_translation_target = run_model_main(request.image, 640, 480, model_choice)
+        
+        logging.info(f"the predicted (x, y) coordinates of the drone are: {output_translation_drone}")
+        logging.info(f"the predicted (x, y) coordinates of the drone are: {output_translation_target}")
 
         output_translation_drone = output_translation_drone[0]
-        output_translation_cube = output_translation_cube[0]
+        output_translation_cube = output_translation_target[0]
 
         return PostEstimation_pb2.PoseEstimationResponse(
             droneTransformPosition=PostEstimation_pb2.TransformPosition(
                 x=output_translation_drone[0],
                 y=output_translation_drone[1]),
-                #z=output_translation_drone[2]),
             targetTransformPosition=PostEstimation_pb2.TransformPosition(
                 x=output_translation_cube[0],
                 y=output_translation_cube[1]))
-                #z=output_translation_cube[2]))
         
 
 def serve() -> None:

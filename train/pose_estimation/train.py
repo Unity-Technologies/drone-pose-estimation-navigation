@@ -4,7 +4,7 @@ import os
 import torch
 import torchvision
 
-from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
+from train.pose_estimation.drone_target_dataset import DroneTargetDataset
 from train.pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
@@ -20,13 +20,13 @@ def train_model(estimator):
         estimator: pose estimation estimator
     """
     config = estimator.config
-    dataset_train = DroneCubeDataset(
+    dataset_train = DroneTargetDataset(
         config=config,
         data_root=estimator.data_root,
         split="train",
         zip_file_name=config.train.dataset_zip_file_name_training,
     )
-    dataset_val = DroneCubeDataset(
+    dataset_val = DroneTargetDataset(
         config=config,
         data_root=estimator.data_root,
         split="validation",
@@ -61,7 +61,6 @@ def train_loop(*, estimator, config, train_dataloader, val_dataloader):
 
     Args:
         estimator: pose estimation estimator
-        label_id (int): corresponds to the label id in the captures_*.json folder minus 1.
         config (CfgNode): estimator config
         train_dataloader (torch.utils.data.DataLoader): training dataloader for the model training
         val_dataloader (torch.utils.data.DataLoader): validation dataloader to feed the model evaluation
@@ -108,7 +107,6 @@ def _train_one_epoch(
 
     Args:
         estimator: pose estimation estimator
-        label_id (int): corresponds to the label id in the captures_*.json folder minus 1.
         config: model configuration
         optimizer: pytorch optimizer
         data_loader(DataLoader): pytorch dataloader

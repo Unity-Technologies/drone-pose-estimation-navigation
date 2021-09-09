@@ -19,7 +19,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class DroneCubeDataset(torch.utils.data.IterableDataset):
+class DroneTargetDataset(torch.utils.data.IterableDataset):
     """
     This class is made to create a SingleCubeDataset object which is an
     object corresponding to the dataset we want to use to feed our
@@ -79,33 +79,33 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         Returns:
             a tuple of three element which are:
                 - an image tensor
-                - a tensor vector for the 3 drone's center
+                - a tensor vector for the 2 drone's center
                 coordinates (translation)
-                - a tensor vector for the 3 target's center
+                - a tensor vector for the 2 target's center
                 coordinates (translation)
         """
         position_list, image_name = element_iterator
 
         if position_list[0]['label_name'] == 'drone':
             translation_drone = list(position_list[0]["translation"].values())
-            translation_cube = list(position_list[1]["translation"].values())
+            translation_target = list(position_list[1]["translation"].values())
             
         else:
             translation_drone = list(position_list[1]["translation"].values())
-            translation_cube = list(position_list[0]["translation"].values())
+            translation_target = list(position_list[0]["translation"].values())
 
         translation_filter = torch.LongTensor([0, 1])
 
         translation_drone = torch.tensor(translation_drone, dtype=torch.float)
         translation_drone = translation_drone[translation_filter]
-        translation_cube = torch.tensor(translation_cube, dtype=torch.float)
-        translation_cube = translation_cube[translation_filter]
+        translation_target = torch.tensor(translation_target, dtype=torch.float)
+        translation_target = translation_target[translation_filter]
 
         image_origin = Image.open(image_name).convert("RGB")
         transform = self.get_transform()
         image = transform(image_origin).unsqueeze(0)
 
-        return image, translation_drone, translation_cube
+        return image, translation_drone, translation_target
 
     def __iter__(self):
         """

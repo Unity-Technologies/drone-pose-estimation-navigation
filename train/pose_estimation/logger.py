@@ -80,7 +80,6 @@ class Logger:
                 epoch,
             )
 
-
     def done(self):
         """
         Close the writer after the whole training + evaluation

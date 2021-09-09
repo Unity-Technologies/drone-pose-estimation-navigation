@@ -1,7 +1,7 @@
 import torch
 import torchvision
 
-from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
+from train.pose_estimation.drone_target_dataset import DroneTargetDataset
 from train.pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
@@ -16,7 +16,7 @@ def evaluate_model(estimator):
     """
     config = estimator.config
 
-    dataset_test = DroneCubeDataset(
+    dataset_test = DroneTargetDataset(
         config=config,
         split="test",
         zip_file_name=config.test.dataset_zip_file_name_test,
@@ -115,6 +115,7 @@ def evaluation_over_batch(
     metric_translation_drone = 0
     metric_translation_cube = 0
     print(f"Evaluation over batch, len: {len(data_loader)}")
+    
     for index, (images, target_trans_drone_list, target_trans_cube_list) in enumerate(data_loader):
         images = list(image.to(estimator.device) for image in images)
 
@@ -127,13 +128,8 @@ def evaluation_over_batch(
             )
         )
         
-        # translation_filter = torch.LongTensor([0, 1]) # Only taking x, y translation
-
         target_translation_drone = target_trans_drone_list.to(estimator.device)
         target_translation_cube = target_trans_cube_list.to(estimator.device)
-
-        # target_translation_drone = target_translation_drone[:, translation_filter]
-        # target_translation_cube = target_translation_cube[:, translation_filter]
         
         metric_translation_drone += translation_average_mean_square_error(
             output_translation_drone, target_translation_drone
@@ -141,39 +137,21 @@ def evaluation_over_batch(
         metric_translation_cube += translation_average_mean_square_error(
             output_translation_cube, target_translation_cube
         )
-       
 
         estimator.logger.info(f"INTERMEDIATE::: drone_loss: {metric_translation_drone / (index + 1)}, cube_loss: {metric_translation_cube / (index + 1)}, index : {index} \n Divided by {index+1}")
 
-        intermediate_mean_loss_translation = (metric_translation_drone + metric_translation_cube)/ (index + 1)
-        
-        estimator.logger.info(
-            f"intermediate mean translation loss after mini batch {index + 1} in epoch {epoch} is: {intermediate_mean_loss_translation}"
-        )
-
-               
         if is_training:
             # we change the scale of the translation in order to avoid exploding gradients
-
-            # estimator.logger.info(f"PRE SCALE ::: t_drone: {output_translation_drone[0]}, t_cube: {output_translation_cube[0]}")
-
             output_translation_drone /= scale_translation
             output_translation_cube /= scale_translation
-
-            # estimator.logger.info(f"POST SCALE ::: t_drone: {output_translation_drone[0]}, t_cube: {output_translation_cube[0]}")
 
             loss_translation_drone += criterion_translation(
                 output_translation_drone, target_translation_drone
             )
 
-            # estimator.logger.info(f"Drone | predicted: {output_translation_drone[0]}, target: {target_translation_drone[0]}")
-
-            
             loss_translation_cube += criterion_translation(
                 output_translation_cube, target_translation_cube
             )
-
-            # estimator.logger.info(f"Cube | predicted: {output_translation_cube[0]}, target: {target_translation_cube[0]}")
 
             estimator.logger.info(f"LOSS : drone_loss: {loss_translation_drone}, cube_loss: {loss_translation_cube}, sum : {loss_translation_drone.item() + loss_translation_cube.item()}")
                    
@@ -183,9 +161,7 @@ def evaluation_over_batch(
 
             estimator.logger.info(f"LOSS : {train_loss.item()} vs {train_loss}, Loss shape: {train_loss.shape}")
 
-
             train_loss.backward()
-            # print(f"Index: {index}, accumulation step : {config.train.accumulation_steps}")
             if (index + 1) % config.train.accumulation_steps == 0:
                 optimizer.step()
                 print("Stepping..")
