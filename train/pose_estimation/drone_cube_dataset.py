@@ -86,7 +86,7 @@ class DroneCubeDataset(torch.utils.data.IterableDataset):
         """
         position_list, image_name = element_iterator
 
-        if position_list[0]['label_name'] == 'drone_position':
+        if position_list[0]['label_name'] == 'drone':
             translation_drone = list(position_list[0]["translation"].values())
             translation_cube = list(position_list[1]["translation"].values())
             
