@@ -26,7 +26,7 @@ checkpoint:
   load_dir_checkpoint: None
   save_frequency: 10
 system:
-  root: /Users/souranil/ai/hackathon/ai-2021/ai-hw21-pose-estimation-model
-  log_dir_system: /Users/souranil/ai/hackathon/ai-2021/ai-hw21-pose-estimation-model/models
+  root: /Users/jonathan.leban/Documents/hackathon/ai-hw21-drone-pose-estimation-navigation
+  log_dir_system: /Users/jonathan.leban/Documents/hackathon/ai-hw21-drone-pose-estimation-navigation/models
   # log_dir_system: "gs://drone-pose-estimation/out/medium-local"
-  data_root: /Users/souranil/ai/hackathon/ai-2021/ai-hw21-pose-estimation-model/data
+  data_root: /Users/jonathan.leban/Documents/hackathon/ai-hw21-drone-pose-estimation-navigation/data

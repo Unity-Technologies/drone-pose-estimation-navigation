@@ -15,7 +15,7 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
     def GetPoseEstimation(
             self, request: PostEstimation_pb2.ImageInfo,context) -> PostEstimation_pb2.PoseEstimationResponse:
-        model_choice = "drone_target_pose_estimation_ep50.tar"
+        model_choice = "medium.tar"
 
         logging.info("Starting pose estimation...")
         output_translation_drone, output_translation_cube = run_model_main(request.image, 640, 480, model_choice)
