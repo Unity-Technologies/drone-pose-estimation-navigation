@@ -9,9 +9,10 @@ import sys
 sys.path.append('../train/pose_estimation')
 from PIL import Image, ImageOps
 
-from train.pose_estimation.model import PoseEstimationNetwork
+from model.pose_estimation.model import PoseEstimationNetwork
+from model.pose_estimation.util import convert_image_to_tensor
 
-def pre_process_image(path_image, device):
+def preprocess_image(path_image, device):
     """
     Pre-processing on the image 
 
@@ -19,30 +20,10 @@ def pre_process_image(path_image, device):
         path_image (str): path to the image that will be the input of the model 
         device (torch.device): device on which is the script is running 
     """
-    image_origin = Image.open(path_image).convert("RGB")
-    transform = get_transform()
-    image = [transform(image_origin).unsqueeze(0)]
+    image = convert_image_to_tensor(path_image, 224, 224)
+    image = [image]
     image = list(img.to(device) for img in image)
     return image
-
-def get_transform():
-    """
-    Apply a transform on the input image tensor
-    Returns:
-        https://pytorch.org/docs/stable/torchvision/transforms.html
-    """
-    transform = torchvision.transforms.Compose(
-        [
-            torchvision.transforms.Resize(
-                (
-                    224,
-                    224,
-                )
-            ),
-            torchvision.transforms.ToTensor(),
-        ]
-    )
-    return transform
 
 global model
 model = None
@@ -59,30 +40,13 @@ def run_model_main(image_data, image_width, image_height, model_file_name):
         model.eval()
 
     image_path = _save_image(image_data)
-    image = pre_process_image(image_path, device)
+    image = preprocess_image(image_path, device)
     output_translation_drone, output_translation_cube = model(torch.stack(image).reshape(-1, 3, 224, 224))
     output_translation_drone = output_translation_drone.to(device)
     output_translation_cube = output_translation_cube.to(device)
     output_translation_drone = output_translation_drone.detach().cpu().numpy()
     output_translation_cube = output_translation_cube.detach().cpu().numpy()
     return output_translation_drone, output_translation_cube
-
-def run_model_main_2(image_data, image_width, image_height, model_file_name):
-    global model
-
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    if model is None:
-        checkpoint = torch.load(model_file_name, map_location=device)
-        model = PoseEstimationNetwork()
-        model.load_state_dict(checkpoint["model"])
-        model = model.to(device)
-        model.eval()
-
-    #image = pre_process_image(image_data, image_width, image_height, device)
-    output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube = model(torch.stack(image_data).reshape(-1, 3, 224, 224))
-    output_translation_drone, output_orientation_drone = output_translation_drone.detach().numpy(), output_orientation_drone.detach().numpy()
-    output_translation_cube, output_orientation_cube = output_translation_cube.detach().numpy(), output_orientation_cube.detach().numpy()
-    return output_translation_drone, output_orientation_drone, output_translation_cube, output_orientation_cube
 
 
 count = 0

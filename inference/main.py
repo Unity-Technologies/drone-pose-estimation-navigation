@@ -3,10 +3,10 @@ import torchvision
 import yaml
 import numpy as np
 from easydict import EasyDict
-from train.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
-from train.pose_estimation.drone_target_dataset import DroneTargetDataset
-from train.pose_estimation.model import PoseEstimationNetwork
-from train.pose_estimation.evaluate import evaluation_over_batch
+from model.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
+from model.pose_estimation.drone_target_dataset import DroneTargetDataset
+from model.pose_estimation.model import PoseEstimationNetwork
+from model.pose_estimation.evaluate import evaluation_over_batch
 import time
 import gc
 
