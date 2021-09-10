@@ -90,7 +90,7 @@ The Perception package relies on a "Ground Truth Renderer Feature" to output lab
 #### The Scene
 Simply put in Unity, a Scene contains any object that exists in the world. This world can be a game, or in this case, a data-collection-oriented simulation. Every new project contains a Scene named `SampleScene`, which is automatically opened when the project is created. This Scene comes with several objects and settings that we do not need, so let's create a new one.
 
-1. In the _**Project**_ tab, right-click on the `Assets/Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialPoseEstimation` and double-click on it to open it. 
+1. In the _**Project**_ tab, right-click on the `Assets/Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialDronePoseEstimation` and double-click on it to open it. 
 
 The _**Hierarchy**_ tab of the editor displays all the Scenes currently loaded, and all the objects currently present in each loaded Scene, as shown below:
 <p align="center">
@@ -141,32 +141,6 @@ For your convenience, we have provided Prefabs for most of the components of the
 </p>
 
 >Note: If you encounter issues with the materials of the imported Prefabs, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
-
-
-#### Importing the Robot
-Finally we will add the robot and the URDF files in order to import the UR3 Robot. 
-
-8. In the _**Project**_ tab, go to `Assets/TutorialAssets/URDFs/ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type and `VHACD` **Mesh Decomposer** in the Import menu. Then, click Import URDF. These actions are shown in the video below. 
-
->Note: Unity uses a left-handed coordinate system in which the y-axis points up. However, many robotics packages use a right-handed coordinate system in which the z-axis or x-axis point up. For this reason, it is important to pay attention to the coordinate system when importing URDF files or interfacing with other robotics software.
-
->Note: The `VHACD` algorithm produces higher quality convex hull for collision detection than the default algorithm.
-
-<p align="center">
-<img src="Gifs/1_URDF_importer.gif" width=800 height=548/>
-</p>
-
->Note: If you encounter issues with importing the robot, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
-
-#### Setting up the Robot
-
-9. In the _**Hierarchy**_ tab, select the `ur3_with_gripper` GameObject and in the _**Inspector**_ view, go to the `Controller` script and set the `Stiffness` to **10000**, the `Damping` to **1000** and the `Force Limit` to **1000**. These are physics properties that control how the robot moves.
-
-10. In the _**Hierarchy**_ tab, click on the arrow to the left of the `ur3_with_gripper` GameObject to expand it, then expand `world`, and select `base_link`. In the `Articulation Body` component, toggle on `Immovable`. This will fix the robot base to its current position.
-
-<p align="center">
-<img src="Gifs/1_robot_settings.gif" width=800 height=465/>
-</p>
 
 
 ### Proceed to [Part 2](2_set_up_the_data_collection_scene.md).

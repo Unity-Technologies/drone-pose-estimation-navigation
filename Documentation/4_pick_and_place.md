@@ -15,9 +15,8 @@ In this part, we will use our trained deep learning model to predict the pose of
 **Table of Contents**
   - [Setup](#setup)
   - [Add the Pose Estimation Model](#step-2)
-  - [Set Up the ROS Side](#step-3)
-  - [Set Up the Unity Side](#step-4)
-  - [Put It All Together](#step-5)
+  - [Set up the grpc connection](#step-3)
+  - [Put It All Together](#step-4)
 
 ---
 
@@ -48,7 +47,7 @@ Here you have two options for the model:
 
 3. Go inside the `ROS/src/ur3_moveit` folder and create a folder called `models`. Then copy your model file (.tar) into it.
 
-### <a name="step-3">Set Up the ROS Side</a>
+### <a name="step-3">Set Up the grpc connection</a>
 
 >Note: This project has been developed with Python 3 and ROS Noetic.
 

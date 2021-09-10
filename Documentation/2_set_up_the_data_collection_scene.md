@@ -4,8 +4,7 @@ In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned:
 * How to create a Unity Scene
 * How to use the Package Manager to download and install Unity packages
 * How to move and rotate objects in the Scene
-* How to instantiate GameObjects with Prefabs
-* How to import a robot from a URDF file  
+* How to instantiate GameObjects with Prefabs 
     
 You should now have a table, a cube, a camera, and a robot arm in your Scene. In this part we will prepare the Scene for data collection with the Perception package. 
 
