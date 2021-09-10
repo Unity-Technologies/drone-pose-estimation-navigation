@@ -446,7 +446,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 790204352}
-        m_TargetAssemblyTypeName: TestProtobuf, Assembly-CSharp
+        m_TargetAssemblyTypeName: DronePoseEstimationInference, Assembly-CSharp
         m_MethodName: StartNavigation
         m_Mode: 1
         m_Arguments:
@@ -823,7 +823,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 790204352}
-        m_TargetAssemblyTypeName: TestProtobuf, Assembly-CSharp
+        m_TargetAssemblyTypeName: DronePoseEstimationInference, Assembly-CSharp
         m_MethodName: StartPoseEstimation
         m_Mode: 1
         m_Arguments:
@@ -1233,10 +1233,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 790204351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c130c9593bc4e859fb4396873f793a, type: 3}
+  m_Script: {fileID: 11500000, guid: cda5881561cf24b7d95db7b9cee190fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderTexture: {fileID: 8400000, guid: ab6226f70d832489eae0e1266ffc639a, type: 2}
+  renderTexture: {fileID: 0}
   scenario: {fileID: 1514363902}
   drone: {fileID: 1463972984}
   target: {fileID: 571922514}
@@ -1963,14 +1963,14 @@ MonoBehaviour:
   constants:
     randomSeed: 539662031
     totalFrames: 10
-  trainingMode: 1
+  trainingMode: 0
   references:
     version: 1
     00000000:
       type: {class: DistractorObjectRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         randomNumObjects:
           collapsed: 0
           value:
@@ -2041,7 +2041,7 @@ MonoBehaviour:
       type: {class: TextureRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         texture:
           collapsed: 0
           probabilities:
@@ -6146,8 +6146,8 @@ MonoBehaviour:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 4
-          maximum: 10
+          minimum: 2
+          maximum: 5
     0000000D:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -6740,7 +6740,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 790204352}
-        m_TargetAssemblyTypeName: TestProtobuf, Assembly-CSharp
+        m_TargetAssemblyTypeName: DronePoseEstimationInference, Assembly-CSharp
         m_MethodName: GenerateNewEnvironment
         m_Mode: 1
         m_Arguments:
