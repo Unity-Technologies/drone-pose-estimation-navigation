@@ -59,7 +59,15 @@ def copy_folder_to_gcs(cloud_path, folder, pattern="*"):
         object_key = os.path.join(prefix, relative_path)
         client.upload(full_path, bucket, object_key)
 
-
+def copy_file_to_gcs(cloud_path, filename, filename_path_local):
+    """
+    Copy a file to GCS
+    """
+    client = GCSClient()
+    bucket, prefix = GCSClient.get_gcs_bucket_and_path(cloud_path)
+    object_key = os.path.join(prefix, filename)
+    client.upload(filename_path_local, bucket, object_key)
+    
 def download_file_from_gcs(cloud_path, local_path, filename, use_cache=True):
     """Helper method to download a single file from GCS
 

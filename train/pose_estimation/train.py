@@ -4,12 +4,12 @@ import os
 import torch
 import torchvision
 
-from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
-from train.pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
+from pose_estimation.drone_cube_dataset import DroneCubeDataset
+from pose_estimation.evaluation_metrics.translation_average_mean_square_error import (
     translation_average_mean_square_error,
 )
 
-from train.pose_estimation.evaluate import evaluate_one_epoch, evaluation_over_batch
+from pose_estimation.evaluate import evaluate_one_epoch, evaluation_over_batch
 
 
 def train_model(estimator):

@@ -12,7 +12,7 @@ import torchvision
 from PIL import Image
 import random
 
-from train.pose_estimation.storage.gcs import GCSClient
+from .storage.gcs import GCSClient
 
 import logging
 

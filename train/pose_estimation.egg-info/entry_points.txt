@@ -1,0 +1,3 @@
+[console_scripts]
+pose_estimation = pose_estimation.cli:main
+

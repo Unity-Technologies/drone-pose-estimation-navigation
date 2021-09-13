@@ -1,13 +1,13 @@
 import copy
 import os
 import logging
-from train.pose_estimation.logger import Logger
+from pose_estimation.logger import Logger
 from .storage.checkpoint import EstimatorCheckpoint
 
-from train.pose_estimation.model import PoseEstimationNetwork
-from train.pose_estimation.train import train_model
-from train.pose_estimation.evaluate import evaluate_model
-from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
+from pose_estimation.model import PoseEstimationNetwork
+from pose_estimation.train import train_model
+from pose_estimation.evaluate import evaluate_model
+from pose_estimation.drone_cube_dataset import DroneCubeDataset
 
 import torch
 import torchvision
@@ -22,24 +22,17 @@ class PoseEstimationEstimator:
 
     Attributes:
         config (dict): estimator config
-        data_root (str): path towards the data
-        writer: Tensorboard writer object
-        checkpointer: Model checkpointer callback to save models
-        device: model training on device (cpu|cuda)
         logger (Logger object form the class in logger.py): Log the performance
-        model (lsit): list of the PoseEstimationNetwork where the length is equal
-            to the number of classes
     """
 
-    def __init__(self, *, config, **kwargs):
-
+    def __init__(self, *, config, logger, **kwargs):
         self.config = config
         self.data_root = config.system.data_root
         self.writer = Logger(
             log_dir=self.config.system.log_dir_system,
             config=config,
         )
-        print("writer log:", config.system.log_dir_system)
+        logger.info(f"writer log at : {config.system.log_dir_system}")
 
         self.checkpointer = EstimatorCheckpoint(
             estimator_name=self.config.estimator, log_dir=config.system.log_dir_system,
@@ -47,23 +40,15 @@ class PoseEstimationEstimator:
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
         # logging config
-        logging.basicConfig(
-            level=logging.INFO,
-            format=(
-                "%(levelname)s | %(asctime)s | %(name)s | %(threadName)s | "
-                "%(message)s"
-            ),
-            datefmt="%Y-%m-%d %H:%M:%S",
-        )
-        self.logger = logging.getLogger(__name__)
+        self.logger = logger
 
         # We will create as many networks as there are objects to predict the position
         self.model = PoseEstimationNetwork(config.train.scale_translation)
 
-        # load estimators from file if checkpoint_file exists
-        checkpoint_file = config.checkpoint.load_dir_checkpoint
-        if checkpoint_file != "None":
-            self.checkpointer.load(self, checkpoint_file)
+        # load estimators from file if checkpoint_file_dir exists
+        checkpoint_file_dir = config.checkpoint.checkpoint_file_dir
+        if checkpoint_file_dir != "None":
+            self.checkpointer.load(self, os.path.join(checkpoint_file_dir, config.checkpoint.checkpoint_file_name))
 
     def train(self):
         """
@@ -107,11 +92,9 @@ class PoseEstimationEstimator:
 
         loaded_config = copy.deepcopy(checkpoint["config"])
         stored_config = copy.deepcopy(self.config)
-        del stored_config["checkpoint"]["load_dir_checkpoint"]
+        del stored_config["checkpoint"]["checkpoint_file_dir"]
+        del stored_config["checkpoint"]["checkpoint_file_name"]
         if stored_config != loaded_config:
             self.logger.warning(
                 f"Found difference in estimator config."
-                f"Estimator loaded from {path} was trained using config: "
-                f"{loaded_config}. However, the current config is: "
-                f"{self.config}."
             )
