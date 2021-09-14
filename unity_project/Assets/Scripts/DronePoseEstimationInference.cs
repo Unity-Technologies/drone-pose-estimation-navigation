@@ -15,7 +15,7 @@ using Unity.Simulation;
 using UnityEngine.AI;
 using Vector3 = UnityEngine.Vector3;
 
-public class TestProtobuf : MonoBehaviour
+public class DronePoseEstimationInference : MonoBehaviour
 {
 
     private PostEstimationService.PostEstimationServiceClient _poseEstimationClient;
@@ -80,50 +80,11 @@ public class TestProtobuf : MonoBehaviour
 
     public void StartPoseEstimation()
     {
-        // Camera.main.targetTexture = renderTexture;
-        // RenderTexture currentRT = RenderTexture.active;
-        // RenderTexture.active = renderTexture;
-        // Camera.main.Render();
         StartCoroutine(StartPoseEstimationInternal());
-        
-        // Texture2D mainCameraTexture = new Texture2D(renderTexture.width, renderTexture.height);
-        // mainCameraTexture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
-        // mainCameraTexture.Apply();
-        // RenderTexture.active = currentRT;
-        // // Get the raw byte info from the screenshot
-        // byte[] imageBytes = mainCameraTexture.GetRawTextureData();
-        // var encodedImageBytes = ImageConversion.EncodeArrayToPNG(imageBy       // vartes, GraphicsFormat.R8G8B8A8_UNorm,
-        //     (uint) renderTexture.width, (uint) renderTexture.height);
-        // var path = Application.persistentDataPath + "Image_" + _seq + ".png";
-        // _seq++;
-        // File.WriteAllBytes(path, encodedImageBytes);
-        // Camera.main.targetTexture = null;
-        // return imageBytes
-
     }
 
     private TransformPosition targetEstimatedPosition;
     private TransformPosition droneEstimatedPosition;
-    // public void StartPoseEstimation()
-    // {
-    //     // cleanup agent and navmesh plane
-    //     agent.enabled = false;
-    //     planeObject = GameObject.Find("Plane");
-    //     Destroy(planeObject);
-    //
-    //     var rawBytes = CaptureScreenshot();
-    //     var poseEstimation = GetPoseEstimation(rawBytes);
-    //
-    //     Debug.Log("PoseEstimationData for drone quaternion: " +
-    //               poseEstimation.DroneQuaternion.X + ", " + poseEstimation.DroneQuaternion.Y + ", " +
-    //               poseEstimation.DroneQuaternion.Z +
-    //               ", " + poseEstimation.DroneQuaternion.W);
-    //     droneEstimatedPose = poseEstimation.DroneQuaternion;
-    //     targetEstimatedPose = poseEstimation.TargetQuaternion;
-    //     targetEstimatedPosition = poseEstimation.TargetTransformPosition;
-    //     droneEstimatedPosition = poseEstimation.DroneTransformPosition;
-    //
-    // }
 
     public void StartNavigation()
     {
@@ -132,25 +93,14 @@ public class TestProtobuf : MonoBehaviour
         planeObject = GameObject.Find("Plane");
         Destroy(planeObject);
         
-        // var estimatedPosition = Camera.main.transform.TransformPoint(translationObject);
-        // var estimatedRotation = Camera.main.transform.rotation * rotationObject;
-        
-        //Debug.Log("TargetPosition : " + target.transform.position);
         var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, cam.transform.InverseTransformPoint(target.transform.position).z);
 
         targetObject = GameObject.Find("TargetCube_modified");
         var targetPosition = cam.transform.TransformPoint(pos);
-        //Debug.Log("Estimated Target Position: " + targetPosition);
 
         droneObject = GameObject.Find("Drone_01 Variant_modified");
         var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, cam.transform.InverseTransformPoint(drone.transform.position).z));
         
-        Debug.Log("Target Translation: " + target.transform.position);
-        Debug.Log("Camera Rotation:" + cam.transform.rotation);
-        Debug.Log("Camera Translation: " + cam.transform.position);
-        //
-        Debug.Log("Target Estimated position in camera space: " + pos);
-        Debug.Log("Target position in camera space: " + Camera.main.transform.TransformPoint(target.transform.position));
         Debug.Log("Target Position : " + target.transform.position + "  Estimated Target Position: " + targetPosition);
         Debug.Log("Drone Position : " + drone.transform.position + "  Estimated Drone Position: " + dronePosition);
 
@@ -165,17 +115,17 @@ public class TestProtobuf : MonoBehaviour
 
         // Get the top of box collider y for drawing the plane correctly over the target
         var targetCollider = targetObject.GetComponentInChildren<BoxCollider>();
-        var yHalfExtentsT = targetCollider.bounds.extents.z;
-        var yCenterT = targetCollider.bounds.center.z;
-        float yUpperT = transform.position.z + (yCenterT + yHalfExtentsT);
+        var yHalfExtentsT = targetCollider.bounds.extents.y;
+        var yCenterT = targetCollider.bounds.center.y;
+        float yUpperT = transform.position.y + (yCenterT + yHalfExtentsT);
         // set the y of target to the top of box collider
-        targetPosition.z = yUpperT;
+        targetPosition.y = yUpperT;
 
         // compare with ground truth
-        var dronePositionGT = droneObject.transform.position;
-        dronePositionGT.z = yLower - offsetY;
-        var targetPositionGT = targetObject.transform.position;
-        targetPosition.z = yUpperT;
+        // var dronePositionGT = droneObject.transform.position;
+        // dronePositionGT.z = yLower - offsetY;
+        // var targetPositionGT = targetObject.transform.position;
+        // targetPosition.z = yUpperT;
 
         // Do navmesh calculations with ground truth drone and target positions - comment out for pose estimation demo
         //targetPosition = targetPositionGT;
@@ -201,9 +151,7 @@ public class TestProtobuf : MonoBehaviour
         agent.SetDestination(targetPosition);
 
     }
-
-
-
+    
     public void GenerateNewEnvironment()
     {
         // cleanup agent and navmesh plane
