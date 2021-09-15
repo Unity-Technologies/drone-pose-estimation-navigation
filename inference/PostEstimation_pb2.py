@@ -11,8 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-
-
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='PostEstimation.proto',
   package='protocolor',
@@ -21,8 +19,6 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n\x14PostEstimation.proto\x12\nprotocolor\"\x1a\n\tImageInfo\x12\r\n\x05image\x18\x01 \x01(\x0c\"\x97\x01\n\x16PoseEstimationResponse\x12=\n\x16\x64roneTransformPosition\x18\x03 \x01(\x0b\x32\x1d.protocolor.TransformPosition\x12>\n\x17targetTransformPosition\x18\x04 \x01(\x0b\x32\x1d.protocolor.TransformPosition\"4\n\x11TransformPosition\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x32g\n\x15PostEstimationService\x12N\n\x11GetPoseEstimation\x12\x15.protocolor.ImageInfo\x1a\".protocolor.PoseEstimationResponseb\x06proto3'
 )
-
-
 
 
 _IMAGEINFO = _descriptor.Descriptor(
