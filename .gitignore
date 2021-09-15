@@ -20,3 +20,5 @@ inference/*.tar
 
 **/*.csproj
 **/*.sln
+
+*.egg_info/
