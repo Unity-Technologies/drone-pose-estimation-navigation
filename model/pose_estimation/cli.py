@@ -2,6 +2,7 @@
 Usage:
     cli.py train [options] [config] [dataset] [training-options] [hyperparameter-options] [save-options] [loading-options]
     cli.py evaluate [options] [config] [dataset] [evaluation-options] [save-options] [loading-options]
+    cli.py convert_onnx [options] [config] [onnx]
 
 config: 
     --config-file=<str>                         Path to the file containing the yaml file for the model configuration. [default: config.yaml]
@@ -26,7 +27,6 @@ training-options:
     --eval_freq=<int>                           Frequency to launch the evaluation process 
     --scale-factor=<float>                      Scaling factor we apply on the translation in order to avoid exploding gradients
 
-
 evaluation-options:
     --batch-test-size=<int>                     Batch size of the validation dataset.
     --dataset-zip-file-name-test=<str>          Name of the zip file for the training dataset.
@@ -43,8 +43,13 @@ save-options:
 loading-options:
     --load-dir-checkpoint=<dir>                 Path to checkpoint folder from which to load weights and continue training.
     --data-root=<dir>                           Upper directory of the data folders (training, evaluation and test)
-"""
 
+onnx-options:
+    --onnx-file-dir=<dir>                       Directory towards the created onnx file
+    --onnx-file-name=str                        Name of the created onnx file
+    --batch-onnx-size=int                       Batch size for the onnx file
+    --input-shape=list                          Shape of the model input
+"""
 from docopt import docopt
 
 from functools import reduce
@@ -55,7 +60,10 @@ from easydict import EasyDict
 import yaml
 
 from .pose_estimation_estimator import PoseEstimationEstimator
+from .onnx_conversion import ONNXModel
 
+import logging
+logger = logging.getLogger(__name__)
 
 # PARSE CLI
 def _get_config(args):
@@ -122,7 +130,7 @@ def main():
     args = docopt(__doc__)
     config = _get_config(args)
 
-    estimator = PoseEstimationEstimator(config=config)
+    estimator = PoseEstimationEstimator(config=config, logger=logger)
 
     print("device: ", estimator.device)
 
@@ -130,6 +138,21 @@ def main():
         estimator.train()
     elif args["evaluate"]:
         estimator.evaluate()
+    elif args["convert_onnx"]:
+        onnx_model = ONNXModel(
+            config=config,
+            logger=logger,
+            checkpoint_file_dir=config.checkpoint.checkpoint_file_dir,
+            checkpoint_file_name=config.checkpoint.checkpoint_file_name, 
+            onnx_file_dir=config.onnx.onnx_file_dir,
+            onnx_file_name=config.onnx.onnx_file_name,
+            input_shape=config.onnx.input_shape,
+            batch_size=config.onnx.batch_onnx_size
+        )
+
+        # we do the conversion of the model to onnx format 
+        onnx_model.export_model()
+        logger.info("Successful convertion of the model to onnx format")
     else:
         print("command not found!")
 
