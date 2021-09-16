@@ -4,11 +4,7 @@ import logging
 import os
 import tempfile
 
-<<<<<<< HEAD:train/pose_estimation/storage/checkpoint.py
-from pose_estimation.storage.download import download_file
-=======
 from .download import download_file
->>>>>>> master:model/pose_estimation/storage/checkpoint.py
 
 from .gcs import GCSClient, gcs_bucket_and_path
 
