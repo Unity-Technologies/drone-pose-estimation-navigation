@@ -3,10 +3,10 @@ import torchvision
 import yaml
 import numpy as np
 from easydict import EasyDict
-from train.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
-from train.pose_estimation.drone_cube_dataset import DroneCubeDataset
-from train.pose_estimation.model import PoseEstimationNetwork
-from train.pose_estimation.evaluate import evaluation_over_batch
+from model.pose_estimation.pose_estimation_estimator import PoseEstimationEstimator
+from model.pose_estimation.drone_target_dataset import DroneTargetDataset
+from model.pose_estimation.model import PoseEstimationNetwork
+from model.pose_estimation.evaluate import evaluation_over_batch
 import time
 import gc
 
@@ -26,7 +26,7 @@ class Inference:
         self.config = estimator.config
         self.criterion = torch.nn.MSELoss()
 
-        dataset_test = DroneCubeDataset(
+        dataset_test = DroneTargetDataset(
             config=self.config,
             data_root=estimator.data_root,
             split="train",
@@ -61,6 +61,7 @@ class Inference:
         )
         return transform
 
+
     def test(self):
         metric_translation_drone = 0
         metric_translation_cube = 0
@@ -84,11 +85,7 @@ class Inference:
                 metric_translation_cube += self.criterion(output_t_cube, target_t_cube)
                 metric_translation_drone += self.criterion(output_t_drone, target_t_drone)
                 gc.collect()
-                #
-                # # print(f"Cube loss : {metric_translation_cube}, Drone loss: {metric_translation_drone}")
-                #
-                # avg_loss = (metric_translation_drone + metric_translation_cube) / (index + 1)
-                # print(f"[index] = {index} Avg Loss : {avg_loss}")
+                
 
             avg_t_drone = metric_translation_drone / len_data_loader
             avg_t_cube = metric_translation_cube / len_data_loader

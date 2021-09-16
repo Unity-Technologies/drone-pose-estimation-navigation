@@ -1,0 +1,38 @@
+estimator: drone_target_pose_estimation
+train:
+  dataset_zip_file_name_training: drone_training_medium
+  batch_training_size: 150
+  accumulation_steps: 10
+  epochs: 100
+  beta_loss: 1
+  scale_translation: 1
+  sample_size_train: 1
+val:
+  dataset_zip_file_name_validation: drone_training_medium
+  sample_size_train: 1
+  batch_validation_size: 30
+  eval_freq: 4
+test:
+  dataset_zip_file_name_test: drone_training_medium
+  batch_test_size: 30
+dataset:
+  image_scale: 224
+  download_data_gcp: True
+  gcs_bucket: drone-pose-estimation
+  pose_estimation_gcs_path: data
+adam_optimizer:
+  lr: 0.0001
+  beta_1: 0.9
+  beta_2: 0.999
+checkpoint:
+  checkpoint_file_dir: /Users/jonathan.leban/Documents/hackaton/drone_pose_estimation_navigation/inference/
+  checkpoint_file_name: model_medium.tar
+  save_frequency: 1
+onnx:
+  onnx_file_dir: /tmp/onnx
+  onnx_file_name: model_medium.onnx
+  batch_onnx_size: 1
+  input_shape: [3, 224, 224]
+system:
+  log_dir_system: /tmp/logs
+  data_root: /home/souranil/ai/research/ai-hw21-drone-pose-estimation-navigation/data
