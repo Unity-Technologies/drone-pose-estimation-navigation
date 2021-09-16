@@ -21,7 +21,7 @@ inference/*.tar
 **/*.csproj
 **/*.sln
 
-*.egg_info/
+*.egg-info/
 # unity files 
 unity_project/Packages/packages-lock.json
 unity_project/ProjectSettings/ProjectVersion.txt
