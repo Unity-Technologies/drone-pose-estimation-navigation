@@ -9,27 +9,25 @@ namespace UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers
     /// Randomizes the rotation of objects tagged with a RotationRandomizerTag
     /// </summary>
     [Serializable]
-    [AddRandomizerMenu("Perception/Custom Rotation Randomizer")]
-    public class CustomRotationRandomizer : Randomizer
+    [AddRandomizerMenu("Perception/Y Rotation Randomizer")]
+    public class YRotationRandomizer : Randomizer
     {
         /// <summary>
         /// Defines the range of random rotations that can be assigned to tagged objects
         /// </summary>
-        public Vector3Parameter rotation = new Vector3Parameter
-        {
-            x = new UniformSampler(0, 360),
-            y = new UniformSampler(0, 360),
-            z = new UniformSampler(0, 360)
-        };
+        public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(0f, 360f)}; // in range (0, 1)
 
         /// <summary>
         /// Randomizes the rotation of tagged objects at the start of each scenario iteration
         /// </summary>
         protected override void OnIterationStart()
         {
-            var taggedObjects = tagManager.Query<CustomRotationRandomizerTag>();
-            foreach (var taggedObject in taggedObjects)
-                taggedObject.transform.rotation = Quaternion.Euler(rotation.Sample());
+            var taggedObjects = tagManager.Query<YRotationRandomizerTag>();
+            foreach (var taggedObject in taggedObjects){
+                float yRotation = rotationRange.Sample();
+                // sets rotation
+                taggedObject.SetYRotation(yRotation);
+            }
         }
     }
 }

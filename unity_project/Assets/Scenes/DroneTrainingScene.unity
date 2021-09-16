@@ -265,6 +265,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2387074617853997118, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
+      propertyPath: labels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387074617853997118, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
+      propertyPath: labels.Array.data[0]
+      value: target_position
+      objectReference: {fileID: 0}
     - target: {fileID: 5392045982476697605, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -325,7 +333,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5392045983078781969, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
 --- !u!1 &38035143
 GameObject:
@@ -877,6 +886,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5392045983078781972, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
   m_PrefabInstance: {fileID: 13287891}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &571922515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571922514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad381221fa19d444f8565bd1df87821d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &679448376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,14 +1882,35 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7212547553841054205, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: labels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212547553841054205, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: labels.Array.data[0]
+      value: drone_position
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3037970921497049664, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+    - {fileID: 980447008, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
 --- !u!1 &1463972984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5050751119698406971, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
   m_PrefabInstance: {fileID: 1463972983}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1463972985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463972984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad381221fa19d444f8565bd1df87821d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &1463972994
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1959,11 +2001,10 @@ MonoBehaviour:
   - id: 8
   - id: 9
   - id: 10
-  - id: 11
   constants:
     randomSeed: 539662031
     totalFrames: 10
-  trainingMode: 0
+  trainingMode: 1
   references:
     version: 1
     00000000:
@@ -1974,7 +2015,7 @@ MonoBehaviour:
         randomNumObjects:
           collapsed: 0
           value:
-            id: 12
+            id: 11
         randomPrefab:
           collapsed: 0
           probabilities:
@@ -1990,7 +2031,7 @@ MonoBehaviour:
           - 0.1
           uniform: 1
           m_Sampler:
-            id: 13
+            id: 12
           m_Categories:
           - {fileID: 6030332796725836435, guid: 7dd7f1e1f85b04c908d48829d22f4f8b, type: 3}
           - {fileID: 6016821248533432811, guid: 95c2ed58ec23643a698c890a152f30c8, type: 3}
@@ -2019,25 +2060,12 @@ MonoBehaviour:
         rotation:
           collapsed: 0
           x:
+            id: 13
+          y:
             id: 14
-          y:
+          z:
             id: 15
-          z:
-            id: 16
     00000003:
-      type: {class: CustomRotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        rotation:
-          collapsed: 0
-          x:
-            id: 17
-          y:
-            id: 18
-          z:
-            id: 19
-    00000004:
       type: {class: TextureRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
@@ -4047,7 +4075,7 @@ MonoBehaviour:
           - 0.0005
           uniform: 1
           m_Sampler:
-            id: 20
+            id: 16
           m_Categories:
           - {fileID: 2800000, guid: bb54048c91dc04e95a01d0a4b28facec, type: 3}
           - {fileID: 2800000, guid: 071543331bc2947f880c050676f29ded, type: 3}
@@ -6049,7 +6077,7 @@ MonoBehaviour:
           - {fileID: 2800000, guid: 2110837571ed94137b5a73f9d5b69ceb, type: 3}
           - {fileID: 2800000, guid: 8015286c139624e42a39d7af4f341592, type: 3}
           - {fileID: 2800000, guid: b675603a850e6456db38c74da42147b1, type: 3}
-    00000005:
+    00000004:
       type: {class: HueOffsetRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
@@ -6057,8 +6085,8 @@ MonoBehaviour:
         hueOffset:
           collapsed: 0
           value:
-            id: 21
-    00000006:
+            id: 17
+    00000005:
       type: {class: CustomBackgroundOccluderScaleRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
@@ -6066,8 +6094,8 @@ MonoBehaviour:
         scale:
           collapsed: 0
           value:
-            id: 22
-    00000007:
+            id: 18
+    00000006:
       type: {class: CustomForegroundScaleRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
@@ -6075,8 +6103,8 @@ MonoBehaviour:
         scale:
           collapsed: 0
           value:
-            id: 23
-    00000008:
+            id: 19
+    00000007:
       type: {class: CustomLightPositionRotationRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 0
@@ -6090,8 +6118,8 @@ MonoBehaviour:
         randomFloat:
           collapsed: 0
           value:
-            id: 24
-    00000009:
+            id: 20
+    00000008:
       type: {class: CustomLightRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
@@ -6099,22 +6127,22 @@ MonoBehaviour:
         lightIntensityParameter:
           collapsed: 0
           value:
-            id: 25
+            id: 21
         lightColorParameter:
           collapsed: 0
           red:
-            id: 26
+            id: 22
           green:
-            id: 27
+            id: 23
           blue:
-            id: 28
+            id: 24
           alpha:
-            id: 29
+            id: 25
         auxParameter:
           collapsed: 0
           value:
-            id: 30
-    0000000A:
+            id: 26
+    00000009:
       type: {class: SunAngleRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 0
@@ -6122,16 +6150,16 @@ MonoBehaviour:
         hour:
           collapsed: 0
           value:
-            id: 31
+            id: 27
         dayOfTheYear:
           collapsed: 0
           value:
-            id: 32
+            id: 28
         latitude:
           collapsed: 0
           value:
-            id: 33
-    0000000B:
+            id: 29
+    0000000A:
       type: {class: CustomCameraRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 0
@@ -6141,19 +6169,25 @@ MonoBehaviour:
         random:
           collapsed: 0
           value:
-            id: 34
-    0000000C:
+            id: 30
+    0000000B:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 2
           maximum: 5
-    0000000D:
+    0000000C:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
           maximum: 1
+    0000000D:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 360
     0000000E:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -6171,25 +6205,25 @@ MonoBehaviour:
       data:
         range:
           minimum: 0
-          maximum: 360
+          maximum: 1
     00000011:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 0
+          minimum: -180
+          maximum: 180
     00000012:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 360
+          minimum: 3
+          maximum: 25
     00000013:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 0
+          minimum: 1
+          maximum: 2
     00000014:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -6200,79 +6234,55 @@ MonoBehaviour:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: -180
-          maximum: 180
+          minimum: 0
+          maximum: 1
     00000016:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 3
-          maximum: 25
+          minimum: 0.4
+          maximum: 1
     00000017:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 1
-          maximum: 2
+          minimum: 0.4
+          maximum: 1
     00000018:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
+          minimum: 0.4
           maximum: 1
     00000019:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
-        range:
-          minimum: 0
-          maximum: 1
+        value: 1
     0000001A:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0.4
+          minimum: 0
           maximum: 1
     0000001B:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0.4
-          maximum: 1
-    0000001C:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0.4
-          maximum: 1
-    0000001D:
-      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        value: 1
-    0000001E:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 1
-    0000001F:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
           minimum: 0
           maximum: 24
-    00000020:
+    0000001C:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
           maximum: 365
-    00000021:
+    0000001D:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: -90
           maximum: 90
-    00000022:
+    0000001E:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
@@ -6921,8 +6931,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Labelers:
   - id: 0
-  - id: 1
-  - id: 2
   description: 
   captureRgbImages: 1
   firstCaptureFrame: 0
@@ -6940,18 +6948,6 @@ MonoBehaviour:
         annotationId: 0bfbe00d-00fa-4555-88d1-471b58449f5c
         idLabelConfig: {fileID: 11400000, guid: 0f1f921063a9345d9a005341cb757dc3, type: 2}
         visualizationColor: {r: 0, g: 1, b: 0, a: 1}
-    00000001:
-      type: {class: ObjectCountLabeler, ns: UnityEngine.Perception.GroundTruth, asm: Unity.Perception.Runtime}
-      data:
-        enabled: 1
-        objectCountMetricId: 51da3c27-369d-4929-aea6-d01614635ce2
-        m_LabelConfig: {fileID: 11400000, guid: 0f1f921063a9345d9a005341cb757dc3, type: 2}
-    00000002:
-      type: {class: RenderedObjectInfoLabeler, ns: UnityEngine.Perception.GroundTruth, asm: Unity.Perception.Runtime}
-      data:
-        enabled: 1
-        objectInfoMetricId: 5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01
-        idLabelConfig: {fileID: 11400000, guid: 0f1f921063a9345d9a005341cb757dc3, type: 2}
 --- !u!114 &2048800458
 MonoBehaviour:
   m_ObjectHideFlags: 0

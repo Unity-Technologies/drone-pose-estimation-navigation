@@ -1,4 +1,4 @@
-# Object Pose Estimation Tutorial: Part 2
+# Drone Pose Estimation And Navigation Tutorial: Part 2
 
 In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned:
 * How to create a Unity Scene
@@ -74,20 +74,29 @@ The `Perception Camera` component will now look like the image below:
 <img src="Images/2_final_perception_script.png" height=450/>
 </p>
 
-Now we need to assign a label to the `Cube` object, and add the same label to `IdLabelConfig`, since it is the pose of the cube we wish to collect. 
+Now we need to assign a label to the `Target` ad `Drone` objects, and add the same label to `IdLabelConfig`, since it is the pose of the cube we wish to collect. 
+We are going to start by the `Target`.
 
-3. Select the `Cube` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button.
+3. Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button.
 
 4. Start typing `Labeling` in the search bar that appears, until the `Labeling` script is found, with a **#** icon to the left. Click on this script. 
 
-5. In the UI that appears, click the **Add New Label** button and change `New Label` to `cube_position`. Then, click on `Add to Label Config...`, and below `Other Label Configs in Project` there should be `IdLabelConfig`. Click on `Add Label` and then close the window. 
+5. In the UI that appears, click the **Add New Label** button and change `New Label` to `target_position`. Then, click on `Add to Label Config...`, and below `Other Label Configs in Project` there should be `IdLabelConfig`. Click on `Add Label` and then close the window. 
 
-The `cube_position` label is now added to both the `Cube` object and the `IdLabelConfig` label configuration.
+The `target_position` label is now added to both the `Target` object and the `IdLabelConfig` label configuration.
 
-The _**Inspector**_ view of the `Cube` should look like the following:
+The _**Inspector**_ view of the `Target` should look like the following:
 
 <p align="center">
-<img src="Images/2_cube_label.png" height=650/>
+<img src="Images/2_target_label.png" height=650/>
+</p>
+
+6. Do the same for the `Drone`. Thus, add the label `drone_position` to the `IdLabelConfig`.
+
+7. Then, to check that you have setup the labels correctly, in the _**Project**_ tab, go in the `Assets` folder and click on `IdLabelConfig`. In the _**Inspector**_ view, you should see the following: 
+
+<p align="center">
+<img src="Images/2_id_label_config.png" height=150/>
 </p>
 
 
@@ -97,7 +106,7 @@ The _**Inspector**_ view of the `Cube` should look like the following:
 We will be collecting training data from a simulation, but most real perception use-cases occur in the real world. 
 To train a model to be robust enough to generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
 
-In this tutorial, we will randomize the position and the orientation of the cube on the table, and also the color, intensity, and position of the light. Note that the Randomizers in the Perception package can be extended to many other aspects of the environment as well.
+In this tutorial, we will randomize the position of the target and the drone, and also the color, intensity, and position of the lights, the number and pose of distractor objects, the texture on the walls and the position of the camera. Note that the Randomizers in the Perception package can be extended to many other aspects of the environment as well.
 
 
 #### The Scenario
@@ -107,10 +116,10 @@ To start randomizing your simulation, you will first need to add a **Scenario** 
 
 2. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `Pose Estimation Scenario` in the search bar that appears, until the `Pose Estimation Scenario` script is found, with a **#** icon to the left. Click on the script. 
    
-3. Still in the _**Inspector**_ tab of the `Simulation Scenario` GameObject, ensure the `Automatic Iteration` flag is enabled.
+3. Still in the _**Inspector**_ tab of the `Simulation Scenario` GameObject, ensure the `Training mode` flag is enabled.
 
 <p align="center">
-<img src="Images/2_scenario_auto.png" height=500/>
+<img src="Images/2_scenario_train.png" height=500/>
 </p>
 
 Each Scenario executes a number of Iterations, and each Iteration carries on for a number of frames. These are timing elements you can leverage in order to customize your Scenarios and the timing of your randomizations. 
@@ -132,30 +141,36 @@ Note that while _**Visual Studio**_ is the default option, you can choose any te
 7. Remove the contents of the class and copy/paste the code below:
 
 ```C#
-using System.Collections;
-using System.Collections.Generic;
 using System;
-using UnityEngine;
 using UnityEngine.Perception.Randomization.Parameters;
-using UnityEngine.Perception.Randomization.Randomizers;
+using UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers.Tags;
 using UnityEngine.Perception.Randomization.Samplers;
 
-
-[Serializable]
-[AddRandomizerMenu("Perception/Y Rotation Randomizer")]
-public class YRotationRandomizer : Randomizer
+namespace UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers
 {
-    public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(0f, 360f)}; // in range (0, 1)
-
-    protected override void OnIterationStart()
+    /// <summary>
+    /// Randomizes the rotation of objects tagged with a RotationRandomizerTag
+    /// </summary>
+    [Serializable]
+    [AddRandomizerMenu("Perception/Y Rotation Randomizer")]
+    public class YRotationRandomizer : Randomizer
     {
-        IEnumerable<YRotationRandomizerTag> tags = tagManager.Query<YRotationRandomizerTag>();
-        foreach (YRotationRandomizerTag tag in tags)
-        {
-            float yRotation = rotationRange.Sample();
+        /// <summary>
+        /// Defines the range of random rotations that can be assigned to tagged objects
+        /// </summary>
+        public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(0f, 360f)}; // in range (0, 1)
 
-            // sets rotation
-            tag.SetYRotation(yRotation);
+        /// <summary>
+        /// Randomizes the rotation of tagged objects at the start of each scenario iteration
+        /// </summary>
+        protected override void OnIterationStart()
+        {
+            var taggedObjects = tagManager.Query<YRotationRandomizerTag>();
+            foreach (var taggedObject in taggedObjects){
+                float yRotation = rotationRange.Sample();
+                Vector3 rotation = new Vector3(0f, yRotation, 0f);
+                taggedObject.transform.rotation = Quaternion.Euler(rotation);
+            }
         }
     }
 }
@@ -179,6 +194,8 @@ Let's go through the code above and understand each part:
 8. Open `YRotationRandomizerTag.cs` and replace its contents with the code below:
 
 ```C#
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Perception.Randomization.Randomizers;
 
@@ -196,10 +213,9 @@ public class YRotationRandomizerTag : RandomizerTag
         transform.eulerAngles = new Vector3(originalRotation.x, yRotation, originalRotation.z);
     }
 }
-
 ```
-The `Start` method is automatically called once, at runtime, before the first frame. Here, we use the `Start` method to save this object's original rotation in a variable. When `SetYRotation` is called by the Randomizer every Iteration, it updates the rotation around the y-axis, but keeps the x and z components of the rotation the same. 
 
+The `Start` method is automatically called once, at runtime, before the first frame. Here, we use the `Start` method to save this object's original rotation in a variable. When `SetYRotation` is called by the Randomizer every Iteration, it updates the rotation around the y-axis, but keeps the x and z components of the rotation the same. 
 
 #### Adding our Custom Object Rotation Randomizer
 
@@ -283,6 +299,6 @@ If you press play, you should see that the color, direction, and intensity of th
 <img src="Gifs/2_light_randomizer.gif" height=600/>
 </p>
 
-### Proceed to [Part 3](3_data_collection_model_training.md).
+### Proceed to [Part 3](3_grpc_connection.md).
 
 ### Go back to [Part 1](1_set_up_the_scene.md)

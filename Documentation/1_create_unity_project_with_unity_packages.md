@@ -1,4 +1,4 @@
-# Object Pose Estimation Tutorial: Part 1
+# Drone Pose Estimation And Navigation Tutorial: Part 1
 
 In this first part of the tutorial, we will start by downloading and installing the Unity Editor. We will install our project's dependencie(s): the Perception package. We will then use a set of provided prefabs to easily prepare a simulated environment containing a drone, 4 walls, and a target. 
 
@@ -6,7 +6,7 @@ In this first part of the tutorial, we will start by downloading and installing 
 **Table of Contents**
   - [Requirements](#reqs)
   - [Create a New Project](#step-1)
-  - [Download the Perception, the URDF and the TCP connector Packages](#step-2)
+  - [Download the PerceptionPackages](#step-2)
   - [Set Up the Ground Truth Renderer Feature](#step-3)
   - [Set Up the Scene](#step-4)
 

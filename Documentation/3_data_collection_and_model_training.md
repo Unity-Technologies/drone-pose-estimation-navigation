@@ -1,14 +1,14 @@
-# Object Pose Estimation Tutorial: Part 3
+# Drone Pose Estimation And Navigation Tutorial: Part 3
 
-In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned how to create our Scene in Unity Editor.
+In [Part 1](1_create_unity_project_with_unity_packages.md) of the tutorial, we learned how to create our Scene in Unity Editor.
 
-In [Part 2](2_set_up_the_data_collection_scene.md) of the tutorial, we learned:
+In [Part 2](2_set_up_the_scene_for_data_collection.md) of the tutorial, we learned:
 * How to equip the camera for the data collection
 * How to set up labelling and label configurations
 * How to create your own Randomizer 
 * How to add our custom Randomizer  
 
-In this part, we will be collecting a large dataset of RGB images of the Scene, and the corresponding pose of the cube. We will then use this data to train a machine learning model to predict the cube's position and rotation from images taken by our camera. We will then be ready to use the trained model for our pick-and-place task in [Part 4](4_pick_and_place.md).
+In this part, we will be collecting a large dataset of RGB images of the Scene, and the corresponding pose of the cube. We will then use this data to train a machine learning model to predict the target's position and drone's position from images taken by our camera. We will then set up the grpc connection and use NavMesh to perform the naviation.
 
 Steps included in this part of the tutorial:
 
@@ -146,11 +146,8 @@ python -m pose_estimation.cli evaluate
 >Note (Optional): To override additional settings on your evaluation run, you can tag on additional arguments to the command above. See the documentation in [cli.py](../Model/pose_estimation/cli.py) for more details.
 
 
-### Exercises for the Reader
-**Optional**: If you would like to learn more about Randomizers and apply domain randomization to this scene more thoroughly, check out our further exercises for the reader [here](5_more_randomizers.md).
-
-### Proceed to [Part 4](4_pick_and_place.md).
+### Proceed to [Part 4](4_setup_grpc_connection.md).
 
 ### 
 
-### Go back to [Part 2](2_set_up_the_data_collection_scene.md)
+### Go back to [Part 2](2_set_up_the_scene_for_data_collection.md)
