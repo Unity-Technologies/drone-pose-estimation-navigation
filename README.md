@@ -53,7 +53,7 @@ This part includes running data collection with the Perception Package, and usin
 If you want to have more information on how the model works and how to train your own, go [here](model/README.md).
 
 ---
-### <a name="link-part-4">[Part 4: gRPC connection](Documentation/4_setup_grpc_connection.md)</a> 
+### <a name="link-part-4">[Part 4: Connecting to Unity for inference using GRPC](Documentation/4_setup_grpc_connection.md)</a> 
 
 The gRPC pipeline drives the communication between unity process and external python process that serves the trained model input/output. gRPC is a modern high performant Remote Procedure Call framework that can run in any environment. More information on the gPRC can be found [here](https://grpc.io/docs/what-is-grpc/introduction).
 

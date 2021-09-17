@@ -106,7 +106,7 @@ The _**Inspector**_ view of the `Target` should look like the following:
 We will be collecting training data from a simulation, but most real perception use-cases occur in the real world. 
 To train a model to be robust enough to generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
 
-In this tutorial, we will randomize the position of the target and the drone, and also the color, intensity, and position of the lights, the number and pose of distractor objects, the texture on the walls and the position of the camera. Note that the Randomizers in the Perception package can be extended to many other aspects of the environment as well.
+In this tutorial, we will randomize the position of the target and the drone, and also the color, intensity, and position of the lights, the number, pose and color of distractor objects, the texture on the walls and the position of the camera. Note that the Randomizers in the Perception package can be extended to many other aspects of the environment as well.
 
 
 #### The Scenario
@@ -227,14 +227,15 @@ If you return to your list of Randomizers in the Inspector view of `Simulation S
 <img src="Images/2_y_rotation_randomizer.png" height=100/>
 </p>
 
-10. Select the `Cube` GameObject and in the _**Inspector**_ tab, add a `YRotationRandomizerTag` component. 
+10. Select the `Target` GameObject and in the _**Inspector**_ tab, add a `YRotationRandomizerTag` component. 
 
 <p align="center">
 <img src="Gifs/2_y_rotation_randomizer_settings.gif" height=550 width=900/>
 </p>
 
+11. Do the same with the `Drone` GameObject.
 
-11. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the cube now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the cube's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
+12. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the cube now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the cube's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
 
 <p align="center">
 <img src="Gifs/2_y_rotation_randomizer.gif" height=481 width=800/>
@@ -246,8 +247,8 @@ It is great that we can now rotate the cube, but we also want to move it around 
 
 To save time, we have provided a pre-written custom Randomizer to do this. 
 
-12. Select the `Simulation Scenario` GameObject, and do the following:
-    * In the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click `Add Randomizer` and start typing `RobotArmObjectPositionRandomizer`. 
+13. Select the `Simulation Scenario` GameObject, and do the following:
+    * In the _**Inspector**_ tab, on the `Simulation Scenario` component, click `Add Randomizer` and start typing `RobotArmObjectPositionRandomizer`. 
     * Set `Min Robot Reachability` to `0.2` and `Max Robot Reachability` to `0.4`. 
     * On the `Plane` field, click on the circular button to the right side and start typing `ObjectPlacementPlane` and then double click on the GameObject that appears. 
     * Drag and drop the base of the robot from the ***Hierarchy*** (the `ur3_with_gripper/world/base_link/base` object) to the `Robot Base` field.
@@ -299,6 +300,6 @@ If you press play, you should see that the color, direction, and intensity of th
 <img src="Gifs/2_light_randomizer.gif" height=600/>
 </p>
 
-### Proceed to [Part 3](3_grpc_connection.md).
+### Proceed to [Part 3](3_data_collection_and_model_training.md).
 
 ### Go back to [Part 1](1_set_up_the_scene.md)

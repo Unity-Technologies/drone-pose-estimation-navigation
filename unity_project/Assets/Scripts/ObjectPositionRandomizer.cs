@@ -8,8 +8,8 @@ using UnityEngine.Perception.Randomization.Samplers;
 
 
 [Serializable]
-[AddRandomizerMenu("Perception/Drone Object Position Randomizer")]
-public class DroneObjectPositionRandomizer : Randomizer
+[AddRandomizerMenu("Perception/Object Position Randomizer")]
+public class ObjectPositionRandomizer : Randomizer
 {
     /*  Chooses positions on the plane for placing all objects with the corresponding tag.
      *      - Each object has a radius (defined on the tag, computed per-object based on its bounds)
@@ -54,7 +54,7 @@ public class DroneObjectPositionRandomizer : Randomizer
     {
         placer.IterationStart();
 
-        IEnumerable<DroneObjectPositionRandomizerTag> tags = tagManager.Query<DroneObjectPositionRandomizerTag>();
+        IEnumerable<ObjectPositionRandomizerTag> tags = tagManager.Query<ObjectPositionRandomizerTag>();
         
         (List<GameObject> downObjects, List<GameObject> upObjects, List<GameObject> otherObjects) = SeparateTags(tags);
 
@@ -89,13 +89,13 @@ public class DroneObjectPositionRandomizer : Randomizer
 
     // HELPERS
     
-    private (List<GameObject> reachableObjects, List<GameObject> upObjects, List<GameObject> otherObjects) SeparateTags(IEnumerable<DroneObjectPositionRandomizerTag> tags)
+    private (List<GameObject> reachableObjects, List<GameObject> upObjects, List<GameObject> otherObjects) SeparateTags(IEnumerable<ObjectPositionRandomizerTag> tags)
     {
         List<GameObject> downObjects = new List<GameObject>();
         List<GameObject> upObjects = new List<GameObject>();
         List<GameObject> otherObjects = new List<GameObject>();
 
-        foreach (DroneObjectPositionRandomizerTag tag in tags)
+        foreach (ObjectPositionRandomizerTag tag in tags)
         {
             GameObject obj = tag.gameObject;
             if (tag.downObject)
