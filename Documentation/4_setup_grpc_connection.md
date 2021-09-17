@@ -38,13 +38,9 @@ Here you have two options for the model:
 
 2. You can also use the model you have trained in [Part 3](3_data_collection_model_training.md). However, be sure to rename your model to `UR3_single_cube_model.tar` as the script that will call the model is expecting this name.
 
-#### Moving the Model to the ROS Folder
-
-3. Go inside the `ROS/src/ur3_moveit` folder and create a folder called `models`. Then copy your model file (.tar) into it.
-
 ### <a name="step-3">Set Up the grpc connection</a>
 
-### Proceed to [Part 5](5_navigation_with_navmesh.md).
+### Proceed to [Part 5](5_navigation_and_inference.md).
 
 ### 
 
