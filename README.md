@@ -28,7 +28,7 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 ---
 ### <a name="link-part-1">[Part 1: Setting up Unity scene for data collection](Documentation/1_set_up_the_scene_for_data_collection.md)</a>
 
-<!-- <img src="Documentation/Images/0_scene.png" width=400 /> -->
+<img src="Documentation/Images/0_scene.png" width=400 />
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
@@ -36,7 +36,7 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 
 ### <a name="link-part-2">[Part 2: Setting up Unity scene for data collection](Documentation/2_set_up_the_scene_for_data_collection.md)</a>
 
-<!-- <img src="Documentation/Images/0_scene.png" width=400 /> -->
+<img src="Documentation/Images/0_randomized_scene.png" width=400 />
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
@@ -59,15 +59,6 @@ The gRPC pipeline drives the communication between unity process and external py
 
 In this project we use gRPC during inference phase to get the prediction of the pose estimation from the model. 
 
-<!-- #### Switching between inference and training mode
-
-You can switch between training mode and inference mode by checking/unchecking the Training mode option in PoseEstimationScenario script component added on SimulationScenario gameobject as shown below 
-
-<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/0_grpc.png" width="443" />
-
-On swithing to inference mode, you will see a canvas getting enabled that provides options to change the environment, start pose estimation and start navigation. In order to operate in inference mode, you need to have pose estimation server up and running.
-
-<img src="https://github.com/Unity-Technologies/ai-hw21-drone-pose-estimation-navigation/blob/readme/Documentation/images/1_grpc.png" width="1016" /> -->
 
 ---
 
