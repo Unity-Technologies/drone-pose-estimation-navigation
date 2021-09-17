@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5392045983078781972, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
       propertyPath: m_Name
-      value: TargetCube_modified
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 5392045983078781972, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
       propertyPath: m_Layer
@@ -1855,7 +1855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050751119698406971, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
       propertyPath: m_Name
-      value: Drone_01 Variant_modified
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 5050751119698406971, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
       propertyPath: m_Layer
