@@ -29,7 +29,7 @@ We have chosen a training dataset of 30,000 images and a validation dataset of 3
 
 1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, make sure `Automatic Iteration` is enabled. When this flag is enabled, our Scenario automatically proceeds through Iterations, triggering the `OnIterationStart()` method of all Randomizers on each Iteration. When this flag is disabled, the Iterations would have to be triggered manually. 
 
-2. In the ***Inspector*** view of  `Pose Estimation Scenario`, set the `Total Frames` field under `Constants` to 30000.
+2. In the ***Inspector*** view of  `Pose Estimation Scenario`, set the `Total Frames` field under `Constants` to 40000.
 
 3. Press play and wait until the simulation is done. It should take a bit of time (~10 min).
 
@@ -41,7 +41,7 @@ We have chosen a training dataset of 30,000 images and a validation dataset of 3
 
 5. Click _**Show Folder**_ to show and highlight the folder in your operating system's file explorer.
 
-6. Change this folder's name to `UR3_single_cube_training`.   
+6. Change this folder's name to `Drone_pose_estimation_training`.   
 
 7. Enter the folder
 
@@ -52,21 +52,21 @@ You should then see something similar to this:
 
 Now we need to collect the validation dataset. 
 
-8. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Pose Estimation Scenario`, set the `Total Frames` field under `Constants` to 3000.
+8. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Pose Estimation Scenario`, set the `Total Frames` field under `Constants` to 4000.
 
 9. Press play and wait until the simulation is done. Once the simulation finishes, follow the same steps as before to navigate to the output folder.
 
-10. Change the folder name where the latest data was saved to `UR3_single_cube_validation`. 
+10. Change the folder name where the latest data was saved to `Drone_pose_estimation_validation`. 
 
-11. **(Optional)**: Move the `UR3_single_cube_training` and `UR3_single_cube_validation` folders to a directory of your choice.  
+11. **(Optional)**: Move the `Drone_pose_estimation_training` and `Drone_pose_estimation_validation` folders to a directory of your choice.  
 
 
 ## <a name="step-2">Train the Deep Learning Model</a>
 Now it's time to train our deep learning model! We've provided the model training code for you, but if you'd like to learn more about it - or make your own changes - you can dig into the details [here](../Model).
 
-This step can take a long time if your computer doesn't have GPU support (~5 days on CPU). Even with a GPU, it can take around ~10 hours. We have provided an already trained model as an alternative to waiting for training to complete. If you would like to use this provided model, you can proceed to [Part 4](4_pick_and_place.md).
+This step can take a long time if your computer doesn't have GPU support (~5 days on CPU). Even with a GPU, it can take around ~10 hours. We have provided an already trained model as an alternative to waiting for training to complete. If you would like to use this provided model, you can proceed to [Part 4](4_setup_grpc_connection.md).
 
-1. Navigate to the `Robotics-Object-Pose-Estimation/Model` directory.
+1. Navigate to the `Drone-Pose-Estimation/Model` directory.
 
 ### Requirements
 
@@ -81,7 +81,7 @@ To run this project locally, you will need to install [Anaconda](https://docs.an
 
 If running locally without Docker, we first need to create a Conda virtual environment and install the dependencies for our machine learning model. If you only have access to CPUs, install the dependencies specified in the `environment.yml` file. If your development machine has GPU support, you can choose to use the `environment-gpu.yml` file instead.
 
-2. In a terminal window, enter the following command to create the environment. Replace `<env-name>` with an environment name of your choice, e.g. `pose-estimation`:
+2. In a terminal window, enter the following command to create the environment. Replace `<env-name>` with an environment name of your choice, e.g. `drone-pose-estimation`:
 ```bash
 conda env create -n <env-name> -f environment.yml
 ```
@@ -101,7 +101,7 @@ There are a few settings specific to your setup that you'll need to change.
 
 First, we need to specify the path to the folders where your training and validation data are saved:
 
-4. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`UR3_single_cube_training` and `UR3_single_cube_validation`) in a folder called `data` in Documents, I set the following:
+4. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`Drone_pose_estimation_training` and `Drone_pose_estimation_validation`) in a folder called `data` in Documents, I set the following:
 ```bash
   data_root: /Users/<user-name>/Documents/data
 ```
@@ -115,7 +115,7 @@ log_dir_system: /Users/<user-name>/Documents/models
 
 ### Training the model
 
-6. If you are not already in the `Robotics-Object-Pose-Estimation/Model` directory, navigate there. 
+6. If you are not already in the `Drone-Pose-Estimation/Model` directory, navigate there.
 
 7. Enter the following command to start training: 
 ```bash 
@@ -136,7 +136,7 @@ However, first we need to specify a few settings in our config file.
 
 8. In [config.yaml](../Model/config.yaml), under `checkpoint`, you need to set the argument `log_dir_checkpoint` to the path where you have saved your newly trained model.
 
-9. If you are not already in the `Robotics-Object-Pose-Estimation/Model` directory, navigate there.
+9. If you are not already in the `Drone-Pose-Estimation/Model` directory, navigate there.
 
 10. To start the evaluation run, enter the following command: 
 ```bash 
