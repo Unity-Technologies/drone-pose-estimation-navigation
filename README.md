@@ -25,7 +25,7 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 - [Part 4: Inference and Navigation](Documentation/4_inference_and_navigation.md)
 
 ---
-### <a name="link-part-1">[Part 1: Setting up Unity scene for data collection](Documentation/1_set_up_the_scene_for_data_collection.md)</a>
+### <a name="link-part-1">[Part 1: Setting up Unity scene for data collection](Documentation/1_create_unity_project_with_unity_packages.md)</a>
 
 <img src="Documentation/Images/0_scene.png" width=400 />
  
