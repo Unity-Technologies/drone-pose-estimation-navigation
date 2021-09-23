@@ -55,6 +55,7 @@ If you want to have more information on how the model works and how to train you
 
 ### <a name="link-part-5">[Part 4: Navigation and Inference](Documentation/4_inference_and_navigation.md)</a> 
 
+# TODO: @Priyesh - add image
 <!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
 
 For inference the Unity scene connects to an external python process which that serves the trained model input/output.
