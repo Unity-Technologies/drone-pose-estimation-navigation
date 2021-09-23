@@ -6,7 +6,7 @@ In this first part of the tutorial, we will start by downloading and installing 
 **Table of Contents**
   - [Requirements](#reqs)
   - [Create a New Project](#step-1)
-  - [Download the Perception Packages](#step-2)
+  - [Download the Perception Package](#step-2)
   - [Set Up the Ground Truth Renderer Feature](#step-3)
   - [Set Up the Scene](#step-4)
 
