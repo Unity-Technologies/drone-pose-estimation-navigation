@@ -1,11 +1,11 @@
-# AI Hackweek 2021 - Drone Pose Estimation and Navigation
+# Drone pose estimation and Navigation with Unity
 
 
 <!-- ![ReleaseBadge](https://badge-proxy.cds.internal.unity3d.com/5ab9a162-9dd0-4ba1-ba41-cf25378a927a) -->
 
 <img src="https://img.shields.io/badge/unity-2020.3-green.svg?style=flat-square" alt="unity 2020.3">
 
-> Note: This project has been developed with Python 3 and relies on Unity version `2020.3.7f1` and Perception SDK `0.8.0-preview.2`.
+> Note: This project has been developed with Python 3 and relies on Unity version `2020.3.7f1` and [Unity Perception SDK](https://github.com/Unity-Technologies/com.unity.perception) `0.8.0-preview.2`.
 
 This project is on multi-object pose estimation and navigation, for a drone and a target landing pad. To do so, we used Unity’s perception package, in order to capture randomly generated synthetic data, which can be used to train a multi-object pose estimation model. This model can then be used to estimate the pose of our drone and target objects in a newly generated scene that was never seen before. The estimated position of the objects, allow us to perform path planning, navigation, and obstacle avoidance, for landing the drone onto the target.
 
@@ -19,11 +19,10 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 
 
 **Table of Contents**
-- [Part 1: Create the Unity Project with Perception package](#link-part-1)
-- [Part 2: Setup the Unity Scene for Data Collection](#link-part-2)
-- [Part 3: Data Collection and Model Training](#link-part-3)
-- [Part 4: Setup gRPC connection](#link-part-4)
-- [Part 5: Navigation and Inference](#link-part-5)
+- [Part 1: Create the Unity Project with Perception package](Documentation/1_create_unity_project_with_unity_packages.md)
+- [Part 2: Setup the Unity Scene for Data Collection](Documentation/2_set_up_the_scene_for_data_collection.md)
+- [Part 3: Data Collection and Model Training](Documentation/3_data_collection_and_model_training.md)
+- [Part 4: Inference and Navigation](Documentation/4_inference_and_navigation.md)
 
 ---
 ### <a name="link-part-1">[Part 1: Setting up Unity scene for data collection](Documentation/1_set_up_the_scene_for_data_collection.md)</a>
@@ -53,19 +52,14 @@ This part includes running data collection with the Perception Package, and usin
 If you want to have more information on how the model works and how to train your own, go [here](model/README.md).
 
 ---
-### <a name="link-part-4">[Part 4: Connecting to Unity for inference using GRPC](Documentation/4_setup_grpc_connection.md)</a> 
 
-The gRPC pipeline drives the communication between unity process and external python process that serves the trained model input/output. gRPC is a modern high performant Remote Procedure Call framework that can run in any environment. More information on the gPRC can be found [here](https://grpc.io/docs/what-is-grpc/introduction).
-
-In this project we use gRPC during inference phase to get the prediction of the pose estimation from the model. 
-
-
----
-
-### <a name="link-part-5">[Part 5: Navigation and Inference](Documentation/5_navigation_and_inference.md)</a> 
+### <a name="link-part-5">[Part 4: Navigation and Inference](Documentation/4_inference_and_navigation.md)</a> 
 
 <!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->
 
-We used Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html).
+For inference the Unity scene connects to an external python process which that serves the trained model input/output.
+gRPC is a modern high performant Remote Procedure Call framework that can run in any environment. More information on the gPRC can be found [here](https://grpc.io/docs/what-is-grpc/introduction).
+
+After getting the prediction we use Unity's [Navigation and Pathfinding](https://docs.unity3d.com/Manual/Navigation.html) system that allows intelligent navigation of characters in the game world. This system uses navigation meshes that are automatically created from the scene geometry, called [NavMesh](https://docs.unity3d.com/ScriptReference/AI.NavMesh.html).
 
 ---

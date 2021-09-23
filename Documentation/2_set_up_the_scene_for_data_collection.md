@@ -302,4 +302,4 @@ If you press play, you should see that the color, direction, and intensity of th
 
 ### Proceed to [Part 3](3_data_collection_and_model_training.md).
 
-### Go back to [Part 1](1_set_up_the_scene.md)
+### Go back to [Part 1](1_create_unity_project_with_unity_packages.md)

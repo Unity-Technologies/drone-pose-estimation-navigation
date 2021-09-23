@@ -1,7 +1,8 @@
 __pycache__/
 datasets/
 data/
-train/config-local.yml
+model/config-local.yml
+model/config.yaml
 out/
 models/
 inference/*.tar
