@@ -66,7 +66,7 @@ Now it's time to train our deep learning model! We've provided the model trainin
 
 This step can take a long time if your computer doesn't have GPU support (~5 days on CPU). Even with a GPU, it can take around ~10 hours. We have provided an already trained model as an alternative to waiting for training to complete. If you would like to use this provided model, you can proceed to [Part 4](4_pick_and_place.md).
 
-1. Navigate to the `Robotics-Object-Pose-Estimation/model` directory.
+1. Navigate to the `drone-pose-estimation-navigation/model` directory.
 
 ### Requirements
 
@@ -117,7 +117,7 @@ log_dir_system: /Users/<user-name>/Documents/models
 
 ### Training the model
 
-6. If you are not already in the `Robotics-Object-Pose-Estimation/model` directory, navigate there. 
+6. If you are not already in the `drone-pose-estimation-navigation/model` directory, navigate there. 
 
 7. Enter the following command to start training: 
 ```bash
@@ -138,7 +138,7 @@ However, first we need to specify a few settings in our config file.
 
 8. In [config.yaml](../model/config.yaml), under `checkpoint`, you need to set the argument `log_dir_checkpoint` to the path where you have saved your newly trained model.
 
-9. Navigate to `Robotics-Object-Pose-Estimation/model`.
+9. Navigate to `drone-pose-estimation-navigation/model`.
 
 10. To start the evaluation run, enter the following command: 
 ```bash

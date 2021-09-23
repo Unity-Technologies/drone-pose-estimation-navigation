@@ -22,7 +22,6 @@ Steps included in this part of the tutorial:
   - Inference
     - [gRPC connection](#step-3.1)
     - [Unity Barracuda](#step-3.2)
-  - [Put It All Together](#step-4)
 
 ---
 
@@ -34,7 +33,7 @@ Here you have two options for the model:
 
 #### Option A: Use Our Pre-trained Model
 
-1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
+1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/drone-pose-estimation-navigation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
 
 #### Option B: Use Your Own Model
 
