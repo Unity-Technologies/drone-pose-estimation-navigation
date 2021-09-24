@@ -1,0 +1,39 @@
+{
+    "name": "Unity.Simulation.Capture",
+    "references": [
+        "Unity.Simulation.Core",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.HighDefinition.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "URP_ENABLED"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "",
+            "define": "HDRP_ENABLED"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "10.2.2",
+            "define": "HDRP_10_2_2_OR_LATER"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "10.0",
+            "define": "URP_10_0_OR_LATER"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -61,7 +61,7 @@ def _save_image(image_data):
     """
     global count
     count += 1
-    image = Image.frombytes('RGBA', (640,480), image_data)
+    image = Image.frombytes('RGBA', (224,224), image_data)
     image = ImageOps.flip(image)
     image_name = "Input" + str(count) + ".png"
     if not os.path.exists(PACKAGE_LOCATION + "/images/"):

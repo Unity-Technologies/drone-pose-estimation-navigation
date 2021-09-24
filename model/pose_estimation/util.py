@@ -1,10 +1,12 @@
 import torchvision
 from PIL import Image, ImageOps
-
+import torch
 def convert_image_to_tensor(image_name, width, height):
     image_origin = Image.open(image_name).convert("RGB")
     transform = get_transform(width, height)
     image = transform(image_origin).unsqueeze(0)
+    print(torch.max(image))
+    return image
 
 def get_transform(width, height):
     """

@@ -822,9 +822,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790204352}
-        m_TargetAssemblyTypeName: DronePoseEstimationInference, Assembly-CSharp
-        m_MethodName: StartPoseEstimation
+      - m_Target: {fileID: 790204354}
+        m_TargetAssemblyTypeName: BarracudaInference, Assembly-CSharp
+        m_MethodName: StartInference
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1217,6 +1217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790204353}
   - component: {fileID: 790204352}
+  - component: {fileID: 790204354}
   m_Layer: 0
   m_Name: Inference
   m_TagString: Untagged
@@ -1260,6 +1261,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &790204354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790204351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b8923e177b442e7961963ce6b816e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nnmodel: {fileID: 5022602860645237092, guid: 0d92b0606cef949bab689aa5a298c98f, type: 3}
+  mainCamera: {fileID: 2048800454}
+  canvas: {fileID: 96059730}
+  grpcInference: {fileID: 790204352}
+  rt: {fileID: 8400000, guid: 48ff09b79817f4e2086145d27143d118, type: 2}
 --- !u!1 &908068603
 GameObject:
   m_ObjectHideFlags: 0

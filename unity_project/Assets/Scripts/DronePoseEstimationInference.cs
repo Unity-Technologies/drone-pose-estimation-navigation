@@ -18,12 +18,10 @@ using Vector3 = UnityEngine.Vector3;
 public class DronePoseEstimationInference : MonoBehaviour
 {
 
-    private PostEstimationService.PostEstimationServiceClient _poseEstimationClient;
-    private Channel _channel;
-    private readonly string _server = "127.0.0.1:50051";
+   
     private int _seq = 0;
     public RenderTexture renderTexture;
-    public PoseEstimationScenario scenario;
+   
 
     public GameObject drone;
     public GameObject target;
@@ -44,7 +42,12 @@ public class DronePoseEstimationInference : MonoBehaviour
     public CustomModifyPostProcessVolume ppv;
 
     private bool captureDone = false;
+    public PoseEstimationScenario scenario;
 
+#if !UNITY_WEBGL
+    private PostEstimationService.PostEstimationServiceClient _poseEstimationClient;
+    private Channel _channel;
+    private readonly string _server = "127.0.0.1:50051";
 
     void Start()
     {
@@ -82,10 +85,9 @@ public class DronePoseEstimationInference : MonoBehaviour
     {
         StartCoroutine(StartPoseEstimationInternal());
     }
-
-    private TransformPosition targetEstimatedPosition;
-    private TransformPosition droneEstimatedPosition;
-
+#endif
+    public TransformPosition targetEstimatedPosition;
+    public TransformPosition droneEstimatedPosition;
     public void StartNavigation()
     {
         // cleanup agent and navmesh plane
@@ -163,9 +165,11 @@ public class DronePoseEstimationInference : MonoBehaviour
         ppv.CustomUpdate();
     }
 
+#if !UNITY_WEBGL
     public PoseEstimationResponse GetPoseEstimation(byte[] encodedImageData)
     {
         return _poseEstimationClient.GetPoseEstimation(new ImageInfo {Image = ByteString.CopyFrom(encodedImageData)});
     }
+#endif
 
 }

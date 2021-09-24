@@ -25,14 +25,14 @@ adam_optimizer:
   beta_1: 0.9
   beta_2: 0.999
 checkpoint:
-  checkpoint_file_dir: /Users/jonathan.leban/Documents/hackaton/drone_pose_estimation_navigation/inference/
+  checkpoint_file_dir: /Users/priyesh/git-projects/drone-pose-estimation/ai-hw21-drone-pose-estimation-navigation/inference/
   checkpoint_file_name: model_medium.tar
   save_frequency: 1
 onnx:
-  onnx_file_dir: /tmp/onnx
+  onnx_file_dir: /Users/priyesh/git-projects/drone-pose-estimation/ai-hw21-drone-pose-estimation-navigation/inference/
   onnx_file_name: model_medium.onnx
   batch_onnx_size: 1
-  input_shape: [3, 224, 224]
+  input_shape: [224, 224, 3]
 system:
   log_dir_system: /tmp/logs
   data_root: /home/souranil/ai/research/ai-hw21-drone-pose-estimation-navigation/data

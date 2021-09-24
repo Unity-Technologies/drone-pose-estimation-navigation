@@ -15,10 +15,10 @@ class PoseEstimation(PostEstimation_pb2_grpc.PostEstimationServiceServicer):
 
     def GetPoseEstimation(
             self, request: PostEstimation_pb2.ImageInfo,context) -> PostEstimation_pb2.PoseEstimationResponse:
-        model_choice = "medium.tar"
+        model_choice = "model_medium.tar"
 
         logging.info("Starting pose estimation...")
-        output_translation_drone, output_translation_target = run_model_main(request.image, 640, 480, model_choice)
+        output_translation_drone, output_translation_target = run_model_main(request.image, 224, 224, model_choice)
         
         logging.info(f"the predicted (x, y) coordinates of the drone are: {output_translation_drone}")
         logging.info(f"the predicted (x, y) coordinates of the drone are: {output_translation_target}")
