@@ -822,9 +822,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790204352}
-        m_TargetAssemblyTypeName: DronePoseEstimationInference, Assembly-CSharp
-        m_MethodName: StartPoseEstimation
+      - m_Target: {fileID: 790204354}
+        m_TargetAssemblyTypeName: BarracudaInference, Assembly-CSharp
+        m_MethodName: StartInference
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -877,6 +877,119 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5392045983078781972, guid: 4096a59dedcad4db5a1ebe4fa9e379fa, type: 3}
   m_PrefabInstance: {fileID: 13287891}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &626864804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3037970921497049664, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698048547, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050751119698406971, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+      propertyPath: m_Name
+      value: Drone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+--- !u!1 &626864805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5050751119698406971, guid: 1e15f9c7a01704f579027cde2382508f, type: 3}
+  m_PrefabInstance: {fileID: 626864804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &626864806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626864805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.8109365, y: 3.2261317, z: 4.5681257}
+  m_Center: {x: 0.00012087822, y: 0.11309564, z: 0.024102569}
+--- !u!195 &626864807
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626864805}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 2.905589
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3.452323
+  m_BaseOffset: 1.7261615
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &679448376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790204353}
   - component: {fileID: 790204352}
+  - component: {fileID: 790204354}
   m_Layer: 0
   m_Name: Inference
   m_TagString: Untagged
@@ -1238,13 +1352,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderTexture: {fileID: 0}
   scenario: {fileID: 1514363902}
-  drone: {fileID: 0}
+  drone: {fileID: 626864805}
   target: {fileID: 571922514}
   _canvas: {fileID: 96059730}
   Surface: {fileID: 124681311}
-  planeMaterial: {fileID: 2100000, guid: 561f9ba5b17dc412abc1a226dc464b65, type: 2}
+  planeMaterial: {fileID: 2100000, guid: 620f98a9452644c3e98ad9778ae2b2bc, type: 2}
   cam: {fileID: 2048800454}
-  agent: {fileID: 0}
+  agent: {fileID: 626864807}
   ppv: {fileID: 2090849523}
 --- !u!4 &790204353
 Transform:
@@ -1260,6 +1374,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &790204354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790204351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbe769a16a594233a93daf90f12ac47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nnmodel: {fileID: 5022602860645237092, guid: 0676d9450748245878c964047aa55cc3, type: 3}
+  mainCamera: {fileID: 2048800454}
+  canvas: {fileID: 96059730}
+  grpcInference: {fileID: 790204352}
+  rt: {fileID: 8400000, guid: ab6226f70d832489eae0e1266ffc639a, type: 2}
 --- !u!1 &908068603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +2029,41 @@ MonoBehaviour:
   - drone
   useAutoLabeling: 0
   autoLabelingSchemeType: 
+--- !u!195 &1316947266
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316947259}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!65 &1316947267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316947259}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6045156, y: 0.7667977, z: 2.4632452}
+  m_Center: {x: -0.053102493, y: 0.11660123, z: 0.072263196}
 --- !u!1 &1454262284 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: f385ef9bb7a1546f993e78d992be5dbe, type: 3}
@@ -1948,7 +2114,7 @@ MonoBehaviour:
   constants:
     randomSeed: 539662031
     totalFrames: 1000
-  trainingMode: 1
+  trainingMode: 0
   references:
     version: 1
     00000000:
@@ -1994,7 +2160,7 @@ MonoBehaviour:
         collapsed: 0
         maxPlacementTries: 100
         box: {fileID: 1576561592}
-        drone: {fileID: 1316947259}
+        drone: {fileID: 626864805}
         minDistanceDrone: 0
     00000002:
       type: {class: RotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
@@ -6657,6 +6823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone_red
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f385ef9bb7a1546f993e78d992be5dbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: f385ef9bb7a1546f993e78d992be5dbe, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -6973,7 +7143,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048800452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4467405dbcbd3d64ab4363e9ae8bb813, type: 3}
   m_Name: 
