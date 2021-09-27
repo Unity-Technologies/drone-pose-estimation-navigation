@@ -66,7 +66,7 @@ Now it's time to train our deep learning model! We've provided the model trainin
 
 This step can take a long time if your computer doesn't have GPU support (~5 days on CPU). Even with a GPU, it can take around ~10 hours. We have provided an already trained model as an alternative to waiting for training to complete. If you would like to use this provided model, you can proceed to [Part 4](4_setup_grpc_connection.md).
 
-1. Navigate to the `Drone-Pose-Estimation-Navigation/Model` directory.
+1. Navigate to the `drone-pose-estimation-navigation/model` directory.
 
 ### Requirements
 
@@ -95,13 +95,15 @@ conda activate <env-name>
 
 ### Updating the Model Config
 
-At the top of the [cli.py](../Model/pose_estimation/cli.py) file in the model code, you can see the documentation for all supported commands. Since typing these in can be laborious, we use a [config.yaml](../Model/config.yaml) file to feed in all these arguments. You can still use the command line arguments if you want - they will override the config. 
+At the top of the [cli.py](../model/pose_estimation/cli.py) file in the model code, you can see the documentation for all supported commands. Since typing these in can be laborious, we use a [config.yaml](../model/config.yaml) file to feed in all these arguments. You can still use the command line arguments if you want - they will override the config. 
 
 There are a few settings specific to your setup that you'll need to change.
 
 First, we need to specify the path to the folders where your training and validation data are saved:
 
-4. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`Drone_pose_estimation_training` and `Drone_pose_estimation_validation`) in a folder called `data` in Documents, I set the following:
+4. Copy [config.yaml.sample](../model/config.yaml.sample) to [config.yaml](../model/config.yaml). This would contain the configuration files that you need for training & inference.
+
+5. In the [config.yaml](../model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`UR3_single_cube_training` and `UR3_single_cube_validation`) in a folder called `data` in Documents, I set the following:
 ```bash
   data_root: /Users/<user-name>/Documents/data
 ```
@@ -115,10 +117,10 @@ log_dir_system: /Users/<user-name>/Documents/models
 
 ### Training the model
 
-6. If you are not already in the `Drone-Pose-Estimation-Navigation/Model` directory, navigate there.
+6. If you are not already in the `drone-pose-estimation-navigation/model` directory, navigate there. 
 
 7. Enter the following command to start training: 
-```bash 
+```bash
 python -m pose_estimation.cli train 
 ```
 
@@ -127,26 +129,26 @@ python -m pose_estimation.cli train
 >Note: If the training process ends unexpectedly, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
 ### Visualizing Training Results with Tensorboard
-If you'd like to examine the results of your training run in more detail, see our guide on [viewing the Tensorboard logs](../Model/documentation/tensorboard.md).
+If you'd like to examine the results of your training run in more detail, see our guide on [viewing the Tensorboard logs](../model/documentation/tensorboard.md).
 
 ### Evaluating the Model
 Once training has completed, we can also run our model on our validation dataset to measure its performance on data it has never seen before. 
 
 However, first we need to specify a few settings in our config file.
 
-8. In [config.yaml](../Model/config.yaml), under `checkpoint`, you need to set the argument `log_dir_checkpoint` to the path where you have saved your newly trained model.
+8. In [config.yaml](../model/config.yaml), under `checkpoint`, you need to set the argument `log_dir_checkpoint` to the path where you have saved your newly trained model.
 
-9. If you are not already in the `Drone-Pose-Estimation-Navigation/Model` directory, navigate there.
+9. Navigate to `drone-pose-estimation-navigation/model`.
 
 10. To start the evaluation run, enter the following command: 
-```bash 
+```bash
 python -m pose_estimation.cli evaluate 
 ```
 
 >Note (Optional): To override additional settings on your evaluation run, you can tag on additional arguments to the command above. See the documentation in [cli.py](../Model/pose_estimation/cli.py) for more details.
 
 
-### Proceed to [Part 4](4_setup_grpc_connection.md).
+### Proceed to [Part 4](4_inference_and_navigation.md).
 
 ### 
 

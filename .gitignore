@@ -1,10 +1,13 @@
 __pycache__/
 datasets/
 data/
-train/config-local.yml
+model/config-local.yaml
+model/config.yaml
+tools/
 out/
 models/
 inference/*.tar
+inference/images/*.*
 
 .DS_Store
 .vsconfig
