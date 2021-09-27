@@ -50,7 +50,7 @@ This Labeler will annotate the captured output with 3D bounding boxes of GameObj
 Once you add the Labeler, the ***Inspector*** view of the `Perception Camera` component will look like this:
 
 <p align="center">
-<img src="Images/2_perception_camera.png" width="500"/>
+<img src="Images/2_perception_camera.png" width="350" height="600"/>
 </p>
 
 
@@ -88,7 +88,7 @@ The `target_position` label is now added to both the `Target` object and the `Id
 The _**Inspector**_ view of the `Target` should look like the following:
 
 <p align="center">
-<img src="Images/2_target_label.png" height=650/>
+<img src="Images/2_target_label.png" height=450/>
 </p>
 
 6. Do the same for the `Drone`. Thus, add the label `drone_position` to the `IdLabelConfig`.
@@ -96,7 +96,7 @@ The _**Inspector**_ view of the `Target` should look like the following:
 7. Then, to check that you have setup the labels correctly, in the _**Project**_ tab, go in the `Assets` folder and click on `IdLabelConfig`. In the _**Inspector**_ view, you should see the following: 
 
 <p align="center">
-<img src="Images/2_id_label_config.png" height=150/>
+<img src="Images/2_id_label_config.png" height=250/>
 </p>
 
 
@@ -119,7 +119,7 @@ To start randomizing your simulation, you will first need to add a **Scenario** 
 3. Still in the _**Inspector**_ tab of the `Simulation Scenario` GameObject, ensure the `Training mode` flag is enabled.
 
 <p align="center">
-<img src="Images/2_scenario_train.png" height=500/>
+<img src="Images/2_scenario_train.png" height=400/>
 </p>
 
 Each Scenario executes a number of Iterations, and each Iteration carries on for a number of frames. These are timing elements you can leverage in order to customize your Scenarios and the timing of your randomizations. 
@@ -243,31 +243,37 @@ If you return to your list of Randomizers in the Inspector view of `Simulation S
 
 #### Randomizing Object Positions
 
-It is great that we can now rotate the cube, but we also want to move it around the table. However, not all positions on the table are valid - we also need it to be within the robot arm's reach. 
+It is great that we can now rotate the target and the drone, but we also want to move them in the space. However, we want the two objects to be seen by the camera when taking pictures. Even if the data will not be saved if the objects are not on the camera's frame (feature of the Perception package), it will be time saving to ensure the two objects are always seen by the camera. We decided to create an invisible 3D box that will define the allowed positions for the objects in the scene. 
 
-To save time, we have provided a pre-written custom Randomizer to do this. 
+13. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Box` Prefab into the _**Hierarchy**_ tab.
 
-13. Select the `Simulation Scenario` GameObject, and do the following:
-    * In the _**Inspector**_ tab, on the `Simulation Scenario` component, click `Add Randomizer` and start typing `RobotArmObjectPositionRandomizer`. 
-    * Set `Min Robot Reachability` to `0.2` and `Max Robot Reachability` to `0.4`. 
-    * On the `Plane` field, click on the circular button to the right side and start typing `ObjectPlacementPlane` and then double click on the GameObject that appears. 
-    * Drag and drop the base of the robot from the ***Hierarchy*** (the `ur3_with_gripper/world/base_link/base` object) to the `Robot Base` field.
+Now we need to have the position randomizer. To save time, we have provided a pre-written custom Randomizer to do this. 
+
+14. Select the `Simulation Scenario` GameObject, and do the following:
+    * In the _**Inspector**_ tab, on the `Simulation Scenario` component, click `Add Randomizer` and start typing `ObjectPositionRandomizer`. 
+    * On the `Box` field, click on the circular button to the right side and start typing `Box` and then double click on the GameObject that appears. 
+    * On the `Drone` field, click on the circular button to the right side and start typing `Drone` and then double click on the GameObject that appears. 
 
 <p align="center">
 <img src="Gifs/2_robot_randomizer_settings.gif" height=658 width=950/>
 </p>
 
-13.  Now we need to add the corresponding RandomizerTag to the cube. 
-    * Select the `Cube` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `RobotArmObjectPositionRandomizerTag` in the search bar that appears, until the `RobotArmObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
-    * In the UI for this new component, enable the `Must Be Reachable` property. 
+15.  Now we need to add the corresponding RandomizerTag to the target and the drone. 
+    * Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+    * In the UI for this new component, enable the `Down Object` property. This will ensure that the target is always in the first 2/3 volume of box, and thus in the first 2/3 of the camera's frame.
 
-The `RobotArmObjectPositionRandomizerTag` component should now look like this:
+The `ObjectPositionRandomizerTag` component should now look like this:
 
 <p align="center">
 <img src="Images/2_RobotArmReachablePositionRandomizerSetting.png" width=500/>
 </p>
 
-If you press **▷** (play) now, you should see the `Cube` and `Goal` objects moving around the robot with the cube rotating on each frame.
+16.  Now we need to add the corresponding RandomizerTag to the target and the drone. 
+    * Select the `Drone` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+    * In the UI for this new component, enable the `Up Object` property. This will ensure that the target is always in the last 1/3 volume of box, and thus in the last 1/3 of the camera's frame.
+
+
+If you press **▷** (play) now, you should see the `Target` and `Drone` objects moving around.
 
 <p align="center">
 <img src="Gifs/2_object_position_randomizer.gif" height=388 width=800/>
@@ -277,11 +283,10 @@ If you press **▷** (play) now, you should see the `Cube` and `Goal` objects mo
 
 Now we will add another Randomizer to introduce some variation into the Scene's lighting. 
 
-14.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
-    * For the range parameter of `Light Intensity Parameter`, set `Min` to `0.9` and `Max` to `1.1`. 
-    * For the range parameter of `Rotation X`, set `Min` to `40` and `Max` to `80`. 
-    * For the range parameter of `Rotation Y`, set `Min` to `-180` and `Max` to `180`. 
-    * For the range parameters of `Red`, `Green` and `Blue` inside of `Light Color Parameter`, set `Min` to `0.5`. 
+17.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `CustomLightRandomizer`. 
+    * For the `red` parameter of `Light Color Parameter`, set `Min` to `0.4` and `Max` to `1.0`. 
+    * For the `green` parameter of `Light Color Parameter`, set `Min` to `0.4` and `Max` to `1.0`.
+    * For the `blue` parameter of `Light Color Parameter`, set `Min` to `0.4` and `Max` to `1.0`.
     
 The Randomizer should now look like this: 
 
@@ -289,16 +294,12 @@ The Randomizer should now look like this:
 <img src="Images/2_light_randomizer_settings.png" height=450/>
 </p>
 
-15.  Now we need to add a RandomizerTag to the light. Select the `Directional Light` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `LightRandomizerTag` in the search bar that appears, until the `LightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
+18.  Now we need to add a RandomizerTag to the lights. Click on the arrow on the left of the `Lights` GameObject. You should now see multiple `Direction Light` objects. Click on the `Direction Light (1)` and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `CustomLightRandomizerTag` in the search bar that appears, until the `CustomLightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
 
 To view this script, you can right click on the three dots at the right end and select `Edit Script`. 
 This Randomizer is a bit different from the previous ones. The line `[RequireComponent(typeof(Light))]` makes it so that you can only add the `LightRandomizerTag` component to an object that already has a **Light** component attached. This way, the Randomizers that query for this tag can be confident that the found objects have a **Light** component.
 
-If you press play, you should see that the color, direction, and intensity of the lighting now change with each frame.
-
-<p align="center">
-<img src="Gifs/2_light_randomizer.gif" height=600/>
-</p>
+19. Repeat the same action for the `Direction Light (2)`, `Direction Light (3)` and `Direction Light (4)`.
 
 ### Proceed to [Part 3](3_data_collection_and_model_training.md).
 
