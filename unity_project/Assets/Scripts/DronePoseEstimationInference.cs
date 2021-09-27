@@ -105,7 +105,7 @@ public class DronePoseEstimationInference : MonoBehaviour
         Debug.Log("Drone Position : " + drone.transform.position + "  Estimated Drone Position: " + dronePosition);
 
         // Get the bottom of box collider y for drawing the plane correctly under the drone
-        var droneCollider = droneObject.GetComponentInChildren<BoxCollider>();
+        var droneCollider = drone.GetComponentInChildren<BoxCollider>();
         var yHalfExtents = droneCollider.bounds.extents.y;
         var yCenter = droneCollider.bounds.center.y;
         float yLower = transform.position.y + (yCenter - yHalfExtents);
@@ -114,7 +114,7 @@ public class DronePoseEstimationInference : MonoBehaviour
         dronePosition.y = yLower - offsetY;
 
         // Get the top of box collider y for drawing the plane correctly over the target
-        var targetCollider = targetObject.GetComponentInChildren<BoxCollider>();
+        var targetCollider = target.GetComponentInChildren<BoxCollider>();
         var yHalfExtentsT = targetCollider.bounds.extents.y;
         var yCenterT = targetCollider.bounds.center.y;
         float yUpperT = transform.position.y + (yCenterT + yHalfExtentsT);

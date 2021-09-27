@@ -14,7 +14,9 @@ public class Rotors : MonoBehaviour
     {
         foreach (var rotor in rotors)
         {
-            rotor.transform.localRotation *= Quaternion.Euler(0, 0, zDegreesPerSecond * Time.deltaTime);
+            var center = rotor.transform.GetComponent<Renderer>().bounds.center;
+            rotor.transform.RotateAround(center, Vector3.up, 500 * Time.deltaTime);
+            //rotor.transform.localRotation *= Quaternion.Euler(0, zDegreesPerSecond * Time.deltaTime, 0);
         }
     }
 }
