@@ -1,0 +1,30 @@
+{
+    "name": "Unity.Simulation.Capture.Editor",
+    "references": [
+        "Unity.Simulation.Core",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.HighDefinition.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "URP_ENABLED"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "",
+            "define": "HDRP_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

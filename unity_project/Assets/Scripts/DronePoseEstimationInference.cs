@@ -17,9 +17,11 @@ using Vector3 = UnityEngine.Vector3;
 
 public class DronePoseEstimationInference : MonoBehaviour
 {
-
+#if !UNITY_WEBGL
     private PostEstimationService.PostEstimationServiceClient _poseEstimationClient;
     private Channel _channel;
+#endif
+    
     private readonly string _server = "127.0.0.1:50051";
     private int _seq = 0;
     public RenderTexture renderTexture;
@@ -27,7 +29,6 @@ public class DronePoseEstimationInference : MonoBehaviour
 
     public GameObject drone;
     public GameObject target;
-
     public GameObject _canvas;
 
 
@@ -45,7 +46,7 @@ public class DronePoseEstimationInference : MonoBehaviour
 
     private bool captureDone = false;
 
-
+#if !UNITY_WEBGL
     void Start()
     {
         _channel = new Channel(_server, ChannelCredentials.Insecure);
@@ -82,9 +83,10 @@ public class DronePoseEstimationInference : MonoBehaviour
     {
         StartCoroutine(StartPoseEstimationInternal());
     }
+#endif
 
-    private TransformPosition targetEstimatedPosition;
-    private TransformPosition droneEstimatedPosition;
+    public TransformPosition targetEstimatedPosition;
+    public TransformPosition droneEstimatedPosition;
 
     public void StartNavigation()
     {
@@ -95,17 +97,17 @@ public class DronePoseEstimationInference : MonoBehaviour
         
         var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, cam.transform.InverseTransformPoint(target.transform.position).z);
 
-        targetObject = GameObject.Find("TargetCube_modified");
+        //targetObject = GameObject.Find("TargetCube_modified");
         var targetPosition = cam.transform.TransformPoint(pos);
 
-        droneObject = GameObject.Find("Drone_01 Variant_modified");
+        //droneObject = GameObject.Find("Drone_01 Variant_modified");
         var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, cam.transform.InverseTransformPoint(drone.transform.position).z));
         
         Debug.Log("Target Position : " + target.transform.position + "  Estimated Target Position: " + targetPosition);
         Debug.Log("Drone Position : " + drone.transform.position + "  Estimated Drone Position: " + dronePosition);
 
         // Get the bottom of box collider y for drawing the plane correctly under the drone
-        var droneCollider = droneObject.GetComponentInChildren<BoxCollider>();
+        var droneCollider = drone.GetComponent<BoxCollider>();
         var yHalfExtents = droneCollider.bounds.extents.y;
         var yCenter = droneCollider.bounds.center.y;
         float yLower = transform.position.y + (yCenter - yHalfExtents);
@@ -114,7 +116,7 @@ public class DronePoseEstimationInference : MonoBehaviour
         dronePosition.y = yLower - offsetY;
 
         // Get the top of box collider y for drawing the plane correctly over the target
-        var targetCollider = targetObject.GetComponentInChildren<BoxCollider>();
+        var targetCollider = target.GetComponentInChildren<BoxCollider>();
         var yHalfExtentsT = targetCollider.bounds.extents.y;
         var yCenterT = targetCollider.bounds.center.y;
         float yUpperT = transform.position.y + (yCenterT + yHalfExtentsT);
@@ -163,9 +165,11 @@ public class DronePoseEstimationInference : MonoBehaviour
         ppv.CustomUpdate();
     }
 
+#if !UNITY_WEBGL
     public PoseEstimationResponse GetPoseEstimation(byte[] encodedImageData)
     {
         return _poseEstimationClient.GetPoseEstimation(new ImageInfo {Image = ByteString.CopyFrom(encodedImageData)});
     }
+#endif
 
 }

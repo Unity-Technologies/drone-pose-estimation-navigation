@@ -1,7 +1,17 @@
 {
   "dependencies": {
+    "com.unity.barracuda": {
+      "version": "file:com.unity.barracuda",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.burst": "1.6.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
     "com.unity.burst": {
-      "version": "1.4.6",
+      "version": "1.6.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -90,7 +100,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
-      "version": "10.6.0",
+      "version": "10.5.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -117,23 +127,22 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
-      "version": "10.6.0",
+      "version": "10.5.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "10.6.0",
+        "com.unity.render-pipelines.core": "10.5.0",
         "com.unity.searcher": "4.3.2"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.simulation.capture": {
-      "version": "0.0.10-preview.20",
-      "depth": 1,
-      "source": "registry",
+      "version": "file:com.unity.simulation.capture@0.0.10-preview.20",
+      "depth": 0,
+      "source": "embedded",
       "dependencies": {
         "com.unity.simulation.core": "0.0.10-preview.22"
-      },
-      "url": "https://packages.unity.com"
+      }
     },
     "com.unity.simulation.client": {
       "version": "0.0.10-preview.10",
