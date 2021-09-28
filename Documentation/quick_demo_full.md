@@ -37,7 +37,7 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 
 ## Add the Pose Estimation Model
 
-1. Download the [pose estimation model](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/releases/download/v0.6.0/Drone_pose_estimation_model.tar) we have trained.
+1. Download the [pose estimation model](https://github.com/Unity-Technologies/drone-pose-estimation-navigation/releases/download/v0.6.0/Drone_pose_estimation_model.tar) we have trained.
 
 2. Go inside the `inference` folder and copy the `Drone_pose_estimation_model.tar` file you just downloaded into this folder.
 

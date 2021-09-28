@@ -127,16 +127,15 @@ A Prefab is just a file, and you can easily create an instance of the object in 
 
 For your convenience, we have provided Prefabs for most of the components of the scene (the cube, goal, table, and floor).
 
-6. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Target` Prefab into the _**Hierarchy**_ tab.
+6. We are going to use multiple lights and we will group them into one object. Thus, for your convenience, please delete the delete the `Directional Light` Game Object. To do that, Go in the _**Hierarchy**_ tab, right click on the `Directional Light` and select `delete`. 
 
-7. Repeat the above action with the `Drone` and `Wall` Prefabs. 
+7. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Target` Prefab into the _**Hierarchy**_ tab.
+
+8. Repeat the above action with the `Drone`, `Lights` and  `Wall` Prefabs. 
 
 
 <p align="center">
 <img src="Gifs/1_import_prefabs.gif"/>
 </p>
-
->Note: If you encounter issues with the materials of the imported Prefabs, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
-
 
 ### Proceed to [Part 2](./2_set_up_the_scene_for_data_collection.md).

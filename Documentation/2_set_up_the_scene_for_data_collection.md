@@ -6,7 +6,7 @@ In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned:
 * How to move and rotate objects in the Scene
 * How to instantiate GameObjects with Prefabs 
     
-You should now have a table, a cube, a camera, and a robot arm in your Scene. In this part we will prepare the Scene for data collection with the Perception package. 
+You should now have a target, a drone, a camera, lights, and a wall in your Scene. In this part we will prepare the Scene for data collection with the Perception package. 
 
 <p align="center">
 <img src="Images/2_Pose_Estimation_Data_Collection.png" width="680" height="520"/>
@@ -50,13 +50,13 @@ This Labeler will annotate the captured output with 3D bounding boxes of GameObj
 Once you add the Labeler, the ***Inspector*** view of the `Perception Camera` component will look like this:
 
 <p align="center">
-<img src="Images/2_perception_camera.png" width="350" height="600"/>
+<img src="Images/2_perception_camera.png" width="280" height="600"/>
 </p>
 
 
 ### <a name="step-2">Set Up Labelling and Label Configurations</a>
 
-Our work above prepares us to collect RGB images from the camera and associated 3D bounding boxes for objects in our Scene. However, we still need to specify _which_ objects we'd like to collect poses for using the Labeler we added. In this tutorial, we will only collect the pose of the cube, but you can add more objects if you'd like.
+Our work above prepares us to collect RGB images from the camera and associated 3D bounding boxes for objects in our Scene. However, we still need to specify _which_ objects we'd like to collect poses for using the Labeler we added. In this tutorial, we will only collect the pose of the target and the drone, but you can add more objects if you'd like.
 
 You will notice that the `BoundingBox3DLabeler` component has a field named `Id Label Config`. The label configuration we link here will determine which objects' poses get saved in our dataset. 
 
@@ -74,16 +74,16 @@ The `Perception Camera` component will now look like the image below:
 <img src="Images/2_final_perception_script.png" height=450/>
 </p>
 
-Now we need to assign a label to the `Target` ad `Drone` objects, and add the same label to `IdLabelConfig`, since it is the pose of the cube we wish to collect. 
+Now we need to assign a label to the `Target` ad `Drone` objects, and add the same label to `IdLabelConfig`, since it is the pose of the target and the pose we wish to collect. 
 We are going to start by the `Target`.
 
 3. Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button.
 
 4. Start typing `Labeling` in the search bar that appears, until the `Labeling` script is found, with a **#** icon to the left. Click on this script. 
 
-5. In the UI that appears, click the **Add New Label** button and change `New Label` to `target_position`. Then, click on `Add to Label Config...`, and below `Other Label Configs in Project` there should be `IdLabelConfig`. Click on `Add Label` and then close the window. 
+5. In the UI that appears, click the **Add New Label** button and change `New Label` to `target`. Then, click on `Add to Label Config...`, and below `Other Label Configs in Project` there should be `IdLabelConfig`. Click on `Add Label` and then close the window. 
 
-The `target_position` label is now added to both the `Target` object and the `IdLabelConfig` label configuration.
+The `target` label is now added to both the `Target` object and the `IdLabelConfig` label configuration.
 
 The _**Inspector**_ view of the `Target` should look like the following:
 
@@ -91,7 +91,7 @@ The _**Inspector**_ view of the `Target` should look like the following:
 <img src="Images/2_target_label.png" height=450/>
 </p>
 
-6. Do the same for the `Drone`. Thus, add the label `drone_position` to the `IdLabelConfig`.
+6. Do the same for the `Drone`. Thus, add the label `drone` to the `IdLabelConfig`.
 
 7. Then, to check that you have setup the labels correctly, in the _**Project**_ tab, go in the `Assets` folder and click on `IdLabelConfig`. In the _**Inspector**_ view, you should see the following: 
 
@@ -128,7 +128,7 @@ Each Scenario executes a number of Iterations, and each Iteration carries on for
 #### Writing our Custom Object Rotation Randomizer
 The randomization workflow involves two types of C# classes: Randomizers and RandomizerTags. Randomizers are added to the Scenario and perform the actual randomization tasks, while RandomizerTags are attached to objects in the scene, so that Randomizers know which objects to target. One Randomizer can target many different RandomizerTags.
 
-First, we will write a Randomizer to randomly rotate the cube around its y-axis on each Iteration of the Scenario. 
+First, we will write a Randomizer to randomly rotate the target and the drone around its y-axis on each Iteration of the Scenario. 
 
 4. In the _**Project**_ tab, right-click on the **Scripts** folder and select `Create -> C# Script`. Name your new script file `YRotationRandomizer`.
 
@@ -235,7 +235,7 @@ If you return to your list of Randomizers in the Inspector view of `Simulation S
 
 11. Do the same with the `Drone` GameObject.
 
-12. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the cube now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the cube's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
+12. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the target and the drone now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the target's and the drone's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
 
 <p align="center">
 <img src="Gifs/2_y_rotation_randomizer.gif" height=481 width=800/>
@@ -258,8 +258,9 @@ Now we need to have the position randomizer. To save time, we have provided a pr
 <img src="Gifs/2_robot_randomizer_settings.gif" height=658 width=950/>
 </p>
 
-15.  Now we need to add the corresponding RandomizerTag to the target and the drone. 
-    * Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+Now we need to add the corresponding RandomizerTag to the target and the drone.
+
+15.  * Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
     * In the UI for this new component, enable the `Down Object` property. This will ensure that the target is always in the first 2/3 volume of box, and thus in the first 2/3 of the camera's frame.
 
 The `ObjectPositionRandomizerTag` component should now look like this:
@@ -268,8 +269,9 @@ The `ObjectPositionRandomizerTag` component should now look like this:
 <img src="Images/2_RobotArmReachablePositionRandomizerSetting.png" width=500/>
 </p>
 
-16.  Now we need to add the corresponding RandomizerTag to the target and the drone. 
-    * Select the `Drone` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+Now we need to add the corresponding RandomizerTag to the target and the drone.
+
+16. * Select the `Drone` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
     * In the UI for this new component, enable the `Up Object` property. This will ensure that the target is always in the last 1/3 volume of box, and thus in the last 1/3 of the camera's frame.
 
 
@@ -294,12 +296,13 @@ The Randomizer should now look like this:
 <img src="Images/2_light_randomizer_settings.png" height=450/>
 </p>
 
-18.  Now we need to add a RandomizerTag to the lights. Click on the arrow on the left of the `Lights` GameObject. You should now see multiple `Direction Light` objects. Click on the `Direction Light (1)` and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `CustomLightRandomizerTag` in the search bar that appears, until the `CustomLightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
+18.  Now we need to add a RandomizerTag to the lights. For your convenience we already did that for you. To check, you can click on the arrow on the left of the `Lights` GameObject. You should now see multiple `Direction Light` objects. Click on the `Direction Light (1)` and in the _**Inspector**_ tab, you should see a component named `CustomLightRandomizerTag`.
 
 To view this script, you can right click on the three dots at the right end and select `Edit Script`. 
 This Randomizer is a bit different from the previous ones. The line `[RequireComponent(typeof(Light))]` makes it so that you can only add the `LightRandomizerTag` component to an object that already has a **Light** component attached. This way, the Randomizers that query for this tag can be confident that the found objects have a **Light** component.
 
-19. Repeat the same action for the `Direction Light (2)`, `Direction Light (3)` and `Direction Light (4)`.
+You can do the same action for the `Direction Light (2)`, `Direction Light (3)` and `Direction Light (4)`.
+
 
 ### Proceed to [Part 3](3_data_collection_and_model_training.md).
 
