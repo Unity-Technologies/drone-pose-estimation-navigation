@@ -17,12 +17,14 @@ Open a new terminal and set yourself where you want to host the repository and r
 git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 ```
 
+**Want to skip the tutorial and run the full demo? Check out our [Quick Demo](Documentation/quick_demo_full.md).**
+
 
 **Table of Contents**
-- [Part 1: Create the Unity Project with Perception package](Documentation/1_create_unity_project_with_unity_packages.md)
-- [Part 2: Setup the Unity Scene for Data Collection](Documentation/2_set_up_the_scene_for_data_collection.md)
-- [Part 3: Data Collection and Model Training](Documentation/3_data_collection_and_model_training.md)
-- [Part 4: Inference and Navigation](Documentation/4_inference_and_navigation.md)
+- [Part 1: Create the Unity Project with Perception package](#link-part-1)
+- [Part 2: Setup the Unity Scene for Data Collection](#link-part-2)
+- [Part 3: Data Collection and Model Training](#link-part-3)
+- [Part 4: Inference and Navigation](#link-part-4)
 
 ---
 ### <a name="link-part-1">[Part 1: Setting up Unity scene for data collection](Documentation/1_create_unity_project_with_unity_packages.md)</a>
