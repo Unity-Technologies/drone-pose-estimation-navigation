@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 5023081}
   - component: {fileID: 5023080}
   - component: {fileID: 5023079}
-  - component: {fileID: 5023078}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -157,19 +156,6 @@ Transform:
   m_Father: {fileID: 38035144}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!114 &5023078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5023076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a72b8ad3db648a496db49ad2623f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabledProbability: 0.8
 --- !u!114 &5023079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,7 +1279,6 @@ GameObject:
   - component: {fileID: 908068608}
   - component: {fileID: 908068607}
   - component: {fileID: 908068606}
-  - component: {fileID: 908068605}
   m_Layer: 0
   m_Name: Directional Light (2)
   m_TagString: Untagged
@@ -1315,19 +1300,6 @@ Transform:
   m_Father: {fileID: 38035144}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!114 &908068605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908068603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a72b8ad3db648a496db49ad2623f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabledProbability: 0.8
 --- !u!114 &908068606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1668,7 +1640,6 @@ GameObject:
   - component: {fileID: 1294405311}
   - component: {fileID: 1294405310}
   - component: {fileID: 1294405309}
-  - component: {fileID: 1294405308}
   m_Layer: 0
   m_Name: Directional Light (3)
   m_TagString: Untagged
@@ -1690,19 +1661,6 @@ Transform:
   m_Father: {fileID: 38035144}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
---- !u!114 &1294405308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294405306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a72b8ad3db648a496db49ad2623f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabledProbability: 0.8
 --- !u!114 &1294405309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,38 +1945,30 @@ MonoBehaviour:
   - id: 7
   - id: 8
   - id: 9
+  - id: 10
   constants:
     randomSeed: 539662031
     totalFrames: 1000
-  trainingMode: 0
+  trainingMode: 1
   references:
     version: 1
     00000000:
       type: {class: DistractorObjectRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 0
+        collapsed: 1
         randomNumObjects:
           collapsed: 0
           value:
-            id: 10
+            id: 11
         randomPrefab:
           collapsed: 0
           probabilities: []
           uniform: 1
           m_Sampler:
-            id: 11
+            id: 12
           m_Categories: []
     00000001:
-      type: {class: ObjectPositionRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 0
-        maxPlacementTries: 100
-        box: {fileID: 0}
-        drone: {fileID: 0}
-        minDistanceDrone: 0
-    00000002:
       type: {class: YRotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Assembly-CSharp}
       data:
         m_Enabled: 1
@@ -2026,47 +1976,40 @@ MonoBehaviour:
         rotationRange:
           collapsed: 0
           value:
-            id: 12
-    00000003:
-      type: {class: RotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        rotation:
-          collapsed: 0
-          x:
             id: 13
-          y:
+    00000002:
+      type: {class: ObjectPositionRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        maxPlacementTries: 100
+        box: {fileID: 1576561592}
+        drone: {fileID: 1463972984}
+        minDistanceDrone: 0
+    00000003:
+      type: {class: CustomLightRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        lightIntensityParameter:
+          collapsed: 0
+          value:
             id: 14
-          z:
+        lightColorParameter:
+          collapsed: 0
+          red:
             id: 15
-    00000004:
-      type: {class: ColorRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        colorParameter:
-          collapsed: 0
-          hue:
+          green:
             id: 16
-          saturation:
+          blue:
             id: 17
-          value:
-            id: 18
           alpha:
-            id: 19
-    00000005:
-      type: {class: CustomCameraRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        positionRange: 0.005
-        rotationRangeDegrees: 1
-        random:
+            id: 18
+        auxParameter:
           collapsed: 0
           value:
-            id: 20
-    00000006:
+            id: 19
+    00000004:
       type: {class: CustomLightPositionRotationRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
@@ -2080,31 +2023,36 @@ MonoBehaviour:
         randomFloat:
           collapsed: 0
           value:
-            id: 21
-    00000007:
-      type: {class: CustomLightRandomizer, ns: , asm: Assembly-CSharp}
+            id: 20
+    00000005:
+      type: {class: RotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
-        collapsed: 0
-        lightIntensityParameter:
+        collapsed: 1
+        rotation:
           collapsed: 0
-          value:
+          x:
+            id: 21
+          y:
             id: 22
-        lightColorParameter:
-          collapsed: 0
-          red:
+          z:
             id: 23
-          green:
-            id: 24
-          blue:
-            id: 25
-          alpha:
-            id: 26
-        auxParameter:
+    00000006:
+      type: {class: ColorRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        colorParameter:
           collapsed: 0
+          hue:
+            id: 24
+          saturation:
+            id: 25
           value:
+            id: 26
+          alpha:
             id: 27
-    00000008:
+    00000007:
       type: {class: HueOffsetRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
@@ -2113,7 +2061,7 @@ MonoBehaviour:
           collapsed: 0
           value:
             id: 28
-    00000009:
+    00000008:
       type: {class: TextureRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
@@ -2125,24 +2073,38 @@ MonoBehaviour:
           m_Sampler:
             id: 29
           m_Categories: []
-    0000000A:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+    00000009:
+      type: {class: CustomCameraRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        range:
-          minimum: 0
-          maximum: 1
+        m_Enabled: 1
+        collapsed: 1
+        positionRange: 1.5
+        rotationRangeDegrees: 10
+        random:
+          collapsed: 0
+          value:
+            id: 30
+    0000000A:
+      type: {class: CustomForegroundScaleRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        scale:
+          collapsed: 0
+          value:
+            id: 31
     0000000B:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 1
+          minimum: 2
+          maximum: 5
     0000000C:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
-          maximum: 360
+          maximum: 1
     0000000D:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -2154,35 +2116,35 @@ MonoBehaviour:
       data:
         range:
           minimum: 0
-          maximum: 360
+          maximum: 1
     0000000F:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 360
+          minimum: 0.4
+          maximum: 1
     00000010:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
+          minimum: 0.4
           maximum: 1
     00000011:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
+          minimum: 0.4
           maximum: 1
     00000012:
+      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        value: 1
+    00000013:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
           maximum: 1
-    00000013:
-      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        value: 1
     00000014:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -2194,41 +2156,41 @@ MonoBehaviour:
       data:
         range:
           minimum: 0
-          maximum: 1
+          maximum: 360
     00000016:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
-          maximum: 1
+          maximum: 360
     00000017:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0.4
-          maximum: 1
+          minimum: 0
+          maximum: 360
     00000018:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0.4
-          maximum: 1
-    00000019:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0.4
-          maximum: 1
-    0000001A:
-      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        value: 1
-    0000001B:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
           maximum: 1
+    00000019:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 1
+    0000001A:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 1
+    0000001B:
+      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        value: 1
     0000001C:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -2236,6 +2198,18 @@ MonoBehaviour:
           minimum: -180
           maximum: 180
     0000001D:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 1
+    0000001E:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 1
+    0000001F:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
@@ -2496,7 +2470,6 @@ GameObject:
   - component: {fileID: 1770538637}
   - component: {fileID: 1770538636}
   - component: {fileID: 1770538635}
-  - component: {fileID: 1770538634}
   m_Layer: 0
   m_Name: Directional Light (4)
   m_TagString: Untagged
@@ -2518,19 +2491,6 @@ Transform:
   m_Father: {fileID: 38035144}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
---- !u!114 &1770538634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770538632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a72b8ad3db648a496db49ad2623f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabledProbability: 0.8
 --- !u!114 &1770538635
 MonoBehaviour:
   m_ObjectHideFlags: 0

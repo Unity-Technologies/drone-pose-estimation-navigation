@@ -260,7 +260,7 @@ Now we need to have the position randomizer. To save time, we have provided a pr
 
 Now we need to add the corresponding RandomizerTag to the target and the drone.
 
-15.  * Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+15. * Select the `Target` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `ObjectPositionRandomizerTag` in the search bar that appears, until the `ObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
     * In the UI for this new component, enable the `Down Object` property. This will ensure that the target is always in the first 2/3 volume of box, and thus in the first 2/3 of the camera's frame.
 
 The `ObjectPositionRandomizerTag` component should now look like this:
@@ -285,24 +285,112 @@ If you press **▷** (play) now, you should see the `Target` and `Drone` objects
 
 Now we will add another Randomizer to introduce some variation into the Scene's lighting. 
 
-17.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `CustomLightRandomizer`. 
+17. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `DistractorObjectRandomizer`. 
     * For the `red` parameter of `Light Color Parameter`, set `Min` to `0.4` and `Max` to `1.0`. 
     * For the `green` parameter of `Light Color Parameter`, set `Min` to `0.4` and `Max` to `1.0`.
     * For the `blue` parameter of `Light Color Parameter`, set `Min` to `0.4` and `Max` to `1.0`.
-    
+ 
 The Randomizer should now look like this: 
 
 <p align="center">
 <img src="Images/2_light_randomizer_settings.png" height=450/>
 </p>
 
-18.  Now we need to add a RandomizerTag to the lights. For your convenience we already did that for you. To check, you can click on the arrow on the left of the `Lights` GameObject. You should now see multiple `Direction Light` objects. Click on the `Direction Light (1)` and in the _**Inspector**_ tab, you should see a component named `CustomLightRandomizerTag`.
+18. Now we need to add a RandomizerTag to the lights. For your convenience we already did that for you. To check, you can click on the arrow on the left of the `Lights` GameObject. You should now see multiple `Direction Light` objects. Click on the `Direction Light (1)` and in the _**Inspector**_ tab, you should see a component named `CustomLightRandomizerTag`.
 
 To view this script, you can right click on the three dots at the right end and select `Edit Script`. 
 This Randomizer is a bit different from the previous ones. The line `[RequireComponent(typeof(Light))]` makes it so that you can only add the `LightRandomizerTag` component to an object that already has a **Light** component attached. This way, the Randomizers that query for this tag can be confident that the found objects have a **Light** component.
 
 You can do the same action for the `Direction Light (2)`, `Direction Light (3)` and `Direction Light (4)`.
 
+We also want to randomize the rotation of the lights. 
+
+19. Repeat the same process with the `CustomLightPositionRotationRandomizer`. 
+
+20. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `SunAngleRandomizer`. 
+
+21. Now we need to add a RandomizerTag to the lights. For your convenience we already did that for you. To check, you can click on the arrow on the left of the `Lights` GameObject. You should now see multiple `Direction Light` objects. Click on the `Direction Light` and in the _**Inspector**_ tab, you should see a component named `SunAngleRandomizerTag`.
+
+#### Distractor Object Randomizer
+
+Now we will add another Randomizer to introduce some variation into the Scene's objects. 
+
+22. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `DistractorObjectRandomizer`. 
+    * In the UI, click on `Add Folder` and a window showing the content of the `Assets` folder will pop up. Go inside the `TutorialAssets` folder and select `distractor objects`. A bunch of objects will appear in the window just above `Add Folder`. 
+    * In the UI, for the range, change the min to 2 and the 
+
+    
+The Randomizer should now look like this: 
+
+<p align="center">
+<img src="Images/2_distractor_objects_randomizer_settings.png" height=450/>
+</p>
+
+The randomizers are triggered sequentially and in the `DistractorObjectRandomizer`, we create different Game Objects in the scene and we add them different raandomizer tags. Thus, we need to put the `DistractorObjectRandomizer` in the first position of the randomizers so that it will be triggerd in first place by the `Pose Estimation Scenario` component of the `Simulation Scenario` GameObject. 
+
+23. Put your mouse on the three vertical lines of the `DistractorObjectRandomizer` component and hold the click and move it at the top of the `Randomizers` section. 
+
+The `Pose Estimation Scenario` should look like this: 
+<p align="center">
+<img src="Images/2_distractor_objects_randomizer_position.png" height=450/>
+</p>
+
+#### Rotation Randomizer
+
+Now we will add another Randomizer to introduce some variation into the distractor objects' rotation. 
+
+24. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `RotationRandomizer`.   
+
+25. Now we need to add a RandomizerTag to the distractor objects. For your convenience we already did that for you. 
+
+#### Color Randomizer
+
+Now we will add another Randomizer to introduce some variation into the objects' color. 
+
+26. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `ColorRandomizer`. 
+
+27. Now we need to add a RandomizerTag to the `Target`, `Drone` and the distractor objects. 
+Select the `Target` Game Object and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `ColorRandomizerTag` in the search bar that appears, until the `ColorRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+
+28. Repeat the process for the `Drone` Game Object. 
+
+For your convenience, we added the `ColorRandomizerTag` for you on the distractor objects. 
+
+#### Hue Offset Randomizer
+
+Now we will add another Randomizer to introduce some variation into the hue value of the colors. 
+
+29. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `HueOffsetRandomizer`. 
+    
+This randomizer will be applied on all the objects which possesses a `ColorRandomizerTag`. 
+
+#### Texture Randomizer
+
+Now we will add another Randomizer to introduce some variation into the wall's texture. 
+
+30. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `TextureRandomizer`.   
+
+Now we need to add a RandomizerTag to the `Wall`. 
+31. Select the `Wall` Game Object and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `TextureRandomizerTag` in the search bar that appears, until the `TextureRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
+    * In the UI, click on `Add Folder` and a window showing the content of the `Assets` folder will pop up. Go inside the `TutorialAssets` folder and select `distractor objects`. A bunch of objects will appear in the window just above `Add Folder`. 
+
+
+#### Camera Randomizer
+
+Now we will add another Randomizer to introduce some variation into the camera's pose. 
+
+32.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `CustomCameraRandomizer`. 
+    * In the UI, set the `Position Range` to `1.5`. 
+    * In the UI, set the `Rotation Range Degrees` to `10`. 
+
+Now we need to add a RandomizerTag to the `Main Camera`. 
+
+33. Select the `Main Camera` Game Object and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `CustomCameraRandomizerTag` in the search bar that appears, until the `CustomCameraRandomizerTag` script is found, with a **#** icon to the left. Click on the script.
+
+Finally, your `Pose Estimation Scenario` should look like this: 
+<p align="center">
+<img src="Images/2_pose_estimation_scenario_final.png" height=450/>
+</p>
 
 ### Proceed to [Part 3](3_data_collection_and_model_training.md).
 
