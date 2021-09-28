@@ -10,13 +10,6 @@
 This project is on multi-object pose estimation and navigation, for a drone and a target landing pad. To do so, we used Unity’s perception package, in order to capture randomly generated synthetic data, which can be used to train a multi-object pose estimation model. This model can then be used to estimate the pose of our drone and target objects in a newly generated scene that was never seen before. The estimated position of the objects, allow us to perform path planning, navigation, and obstacle avoidance, for landing the drone onto the target.
 
 
-
-### Cloning the repository
-Open a new terminal and set yourself where you want to host the repository and run the following command: 
-```bash
-git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
-```
-
 **Want to skip the tutorial and run the full demo? Check out our [Quick Demo](Documentation/quick_demo_full.md).**
 
 
@@ -27,7 +20,7 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 - [Part 4: Inference and Navigation](#link-part-4)
 
 ---
-### <a name="link-part-1">[Part 1: Setting up Unity scene for data collection](Documentation/1_create_unity_project_with_unity_packages.md)</a>
+### <a name="link-part-1">[Part 1: Create the Unity Project with Perception package](Documentation/1_create_unity_project_with_unity_packages.md)</a>
 
 <img src="Documentation/Images/0_scene.png" width=400 />
  
@@ -55,7 +48,7 @@ If you want to have more information on how the model works and how to train you
 
 ---
 
-### <a name="link-part-5">[Part 4: Navigation and Inference](Documentation/4_inference_and_navigation.md)</a> 
+### <a name="link-part-5">[Part 4: Navigation and Inference](Documentation/4_navigation_and_inference.md)</a> 
 
 # TODO: @Priyesh - add image
 <!-- <img src="Documentation/Gifs/0_demo.gif" width=400/> -->

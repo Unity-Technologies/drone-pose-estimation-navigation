@@ -148,7 +148,7 @@ python -m pose_estimation.cli evaluate
 >Note (Optional): To override additional settings on your evaluation run, you can tag on additional arguments to the command above. See the documentation in [cli.py](../Model/pose_estimation/cli.py) for more details.
 
 
-### Proceed to [Part 4](4_inference_and_navigation.md).
+### Proceed to [Part 4](4_navigation_and_inference.md).
 
 ### 
 
