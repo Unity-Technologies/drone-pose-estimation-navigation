@@ -1846,7 +1846,7 @@ MonoBehaviour:
   constants:
     randomSeed: 539662031
     totalFrames: 1000
-  trainingMode: 0
+  trainingMode: 1
   references:
     version: 1
     00000000:
@@ -6265,7 +6265,7 @@ Transform:
   m_GameObject: {fileID: 1576561592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -7, z: 13}
-  m_LocalScale: {x: 50, y: 35, z: 15}
+  m_LocalScale: {x: 45, y: 35, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -6797,7 +6797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048800452}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4467405dbcbd3d64ab4363e9ae8bb813, type: 3}
   m_Name: 
