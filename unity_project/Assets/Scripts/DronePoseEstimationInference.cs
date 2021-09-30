@@ -33,8 +33,8 @@ public class DronePoseEstimationInference : MonoBehaviour
 
     // navmesh stuff
     public NavMeshSurface Surface;
-    private GameObject targetObject;
-    private GameObject droneObject;
+    // private GameObject targetObject;
+    // private GameObject droneObject;
     private GameObject planeObject;
     public Material planeMaterial;
     public Camera cam;
@@ -72,8 +72,8 @@ public class DronePoseEstimationInference : MonoBehaviour
         File.WriteAllBytes(path, encodedImageBytes);
 
         var poseEstimates = GetPoseEstimation(data);
-        targetEstimatedPosition = poseEstimates.DroneTransformPosition;//poseEstimates.TargetTransformPosition;
-        droneEstimatedPosition = poseEstimates.TargetTransformPosition;
+        targetEstimatedPosition = poseEstimates.TargetTransformPosition;//poseEstimates.TargetTransformPosition;
+        droneEstimatedPosition = poseEstimates.DroneTransformPosition;
         Debug.Log("Done With capture..: " + targetEstimatedPosition);
         _canvas.SetActive(true);
     }
@@ -85,41 +85,40 @@ public class DronePoseEstimationInference : MonoBehaviour
 
     private TransformPosition targetEstimatedPosition;
     private TransformPosition droneEstimatedPosition;
-
+    
     public void StartNavigation()
     {
         // cleanup agent and navmesh plane
+
         agent.enabled = false;
         planeObject = GameObject.Find("Plane");
         Destroy(planeObject);
         
         var pos = new Vector3(targetEstimatedPosition.X, targetEstimatedPosition.Y, cam.transform.InverseTransformPoint(target.transform.position).z);
-
-        targetObject = GameObject.Find("TargetCube_modified");
         var targetPosition = cam.transform.TransformPoint(pos);
-
-        droneObject = GameObject.Find("Drone_01 Variant_modified");
         var dronePosition = Camera.main.transform.TransformPoint(new Vector3(droneEstimatedPosition.X, droneEstimatedPosition.Y, cam.transform.InverseTransformPoint(drone.transform.position).z));
         
         Debug.Log("Target Position : " + target.transform.position + "  Estimated Target Position: " + targetPosition);
         Debug.Log("Drone Position : " + drone.transform.position + "  Estimated Drone Position: " + dronePosition);
 
         // Get the bottom of box collider y for drawing the plane correctly under the drone
-        var droneCollider = drone.GetComponentInChildren<BoxCollider>();
+        var actualDronePosition = dronePosition;
+        var droneCollider = drone.GetComponent<BoxCollider>();
         var yHalfExtents = droneCollider.bounds.extents.y;
         var yCenter = droneCollider.bounds.center.y;
         float yLower = transform.position.y + (yCenter - yHalfExtents);
-        var offsetY = droneCollider.center.y;
+        var offsetY = droneCollider.center.normalized.y;
         // set the y of drone to the bottom of box collider
-        dronePosition.y = yLower - offsetY;
+        actualDronePosition.y = yLower - offsetY;
 
         // Get the top of box collider y for drawing the plane correctly over the target
-        var targetCollider = target.GetComponentInChildren<BoxCollider>();
+        var actualTargetPosition = targetPosition;
+        var targetCollider = target.GetComponent<BoxCollider>();
         var yHalfExtentsT = targetCollider.bounds.extents.y;
         var yCenterT = targetCollider.bounds.center.y;
         float yUpperT = transform.position.y + (yCenterT + yHalfExtentsT);
         // set the y of target to the top of box collider
-        targetPosition.y = yUpperT;
+        actualTargetPosition.y = yUpperT;
 
         // compare with ground truth
         // var dronePositionGT = droneObject.transform.position;
@@ -131,26 +130,29 @@ public class DronePoseEstimationInference : MonoBehaviour
         //targetPosition = targetPositionGT;
         //dronePosition = dronePositionGT;
 
-        Vector3 midPointPosition = (targetPosition - dronePosition).normalized;
+        Vector3 midPointPosition = (actualDronePosition - actualTargetPosition).normalized;
 
         // create navmesh plane
         GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
         plane.GetComponent<Renderer>().material = planeMaterial;
-        plane.transform.position = (dronePosition + targetPosition) / 2;
+        plane.transform.position = (actualDronePosition + actualTargetPosition) / 2;
         UnityEngine.Quaternion rot = UnityEngine.Quaternion.LookRotation(midPointPosition, Vector3.up);
         plane.transform.rotation = rot;
         plane.transform.localScale = new Vector3(20, 20, 20);
 
+        // agent.enabled = false;
         // build navmesh
         Surface.BuildNavMesh();
 
         // restart the agent
         agent.enabled = true;
-
+        // agent.isStopped = true;
         // move agent to target
+        // agent.Warp(dronePosition);
         agent.SetDestination(targetPosition);
-
+        // agent.isStopped = false;
     }
+    
     
     public void GenerateNewEnvironment()
     {

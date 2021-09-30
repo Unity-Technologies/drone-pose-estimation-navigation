@@ -9,8 +9,8 @@ public class NavMeshBuilder : MonoBehaviour
 {
     public NavMeshSurface Surface;
 
-    private GameObject targetObject;
-    private GameObject droneObject;
+    public GameObject targetObject;
+    public GameObject droneObject;
 
     private GameObject planeObject;
 
@@ -28,10 +28,10 @@ public class NavMeshBuilder : MonoBehaviour
 
     private void Start()
     {
-        targetObject = GameObject.Find("TargetCube_modified");
+        targetObject = GameObject.Find("Target");
         var targetPosition = targetObject.transform.position;
 
-        droneObject = GameObject.Find("Drone_01 Variant_modified");
+        droneObject = GameObject.Find("DroneModel");
         var dronePosition = droneObject.transform.position;
 
         // Get the bottom of box collider y for drawing the plane correctly under the drone

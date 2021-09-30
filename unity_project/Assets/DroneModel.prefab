@@ -375,7 +375,6 @@ GameObject:
   - component: {fileID: 7043824748137249882}
   - component: {fileID: 3267012582194300271}
   - component: {fileID: 4936730075084876944}
-  - component: {fileID: 792880316128039947}
   m_Layer: 0
   m_Name: CGAXR_MC_Drone_Low_CGAXR_MC_Fan
   m_TagString: Untagged
@@ -446,19 +445,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &792880316128039947
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613389461210345445}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 43.935886, y: 4.56818, z: 45.597527}
-  m_Center: {x: -31.306585, y: 46.578926, z: 31.3032}
 --- !u!1 &691043947612927643
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +456,6 @@ GameObject:
   - component: {fileID: 1570792123426427133}
   - component: {fileID: 6605584150840227378}
   - component: {fileID: 1572269581238176775}
-  - component: {fileID: 792880316128039944}
   m_Layer: 0
   m_Name: CGAXR_MC_Drone_Low_CGAXR_MC_Fan1
   m_TagString: Untagged
@@ -541,19 +526,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &792880316128039944
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691043947612927643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 44.09513, y: 4.2095184, z: 45.663193}
-  m_Center: {x: 31.193073, y: 46.39959, z: 31.30309}
 --- !u!1 &757115337975837591
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +699,6 @@ GameObject:
   - component: {fileID: 6848398584516462583}
   - component: {fileID: 5873746619405643623}
   - component: {fileID: 7922260038899676364}
-  - component: {fileID: 792880316128039949}
   m_Layer: 0
   m_Name: CGAXR_MC_Drone_Low_CGAXR_MC_Fan2
   m_TagString: Untagged
@@ -798,19 +769,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &792880316128039949
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572819730649164551}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 43.935856, y: 4.568184, z: 45.59754}
-  m_Center: {x: 31.3066, y: 46.57893, z: -31.303116}
 --- !u!1 &1638162234176022058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1833,6 @@ GameObject:
   - component: {fileID: 3479313243874167316}
   - component: {fileID: 5188631667775534216}
   - component: {fileID: 5494964111681944114}
-  - component: {fileID: 792880316128039946}
   m_Layer: 0
   m_Name: CGAXR_MC_Drone_Low_CGAXR_MC_Fan3
   m_TagString: Untagged
@@ -1946,19 +1903,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &792880316128039946
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4134237787609741656}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 43.867783, y: 4.5681915, z: 45.663307}
-  m_Center: {x: -31.306679, y: 46.578926, z: -31.303028}
 --- !u!1 &4317307020756291123
 GameObject:
   m_ObjectHideFlags: 0
