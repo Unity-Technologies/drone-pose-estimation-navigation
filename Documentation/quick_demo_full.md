@@ -29,7 +29,7 @@ git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 
 2. Open the scene. Go to `Assets/Scenes` and double click on `TutorialDronePoseEstimationNagivation`. 
 
-3. We now need to set the size of the images used. In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `650` and `Height` to `400`. The gif below depicts these actions.
+3. We now need to set the size of the images used. In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `640` and `Height` to `480`. The gif below depicts these actions.
 
 <p align="center">
 <img src="Gifs/2_aspect_ratio.gif"/>

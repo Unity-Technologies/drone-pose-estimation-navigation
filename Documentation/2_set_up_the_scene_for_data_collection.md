@@ -23,7 +23,7 @@ You should now have a target, a drone, a camera, lights, and a wall in your Scen
 
 The images you generate to train your deep learning model and the images you later use for inference during the pick-and-place task will need to have the same resolution. We will now set this resolution.
 
-1. In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `650` and `Height` to `400`. The gif below depicts these actions. 
+1. In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `640` and `Height` to `480`. The gif below depicts these actions. 
 
 <p align="center">
 <img src="Gifs/2_aspect_ratio.gif"/>
