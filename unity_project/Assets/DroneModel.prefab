@@ -174,9 +174,9 @@ GameObject:
   - component: {fileID: 792880316128039963}
   - component: {fileID: 4532813733865723033}
   - component: {fileID: 6867982931718060164}
-  - component: {fileID: 5116060604910639311}
   - component: {fileID: 6600261489132556092}
   - component: {fileID: 4410319380298490292}
+  - component: {fileID: 7743251351078528662}
   m_Layer: 0
   m_Name: DroneModel
   m_TagString: Untagged
@@ -314,18 +314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downObject: 0
   upObject: 1
---- !u!114 &5116060604910639311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558879165101320512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3518baca260147eeb87d2c14f70eb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6600261489132556092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +352,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7743251351078528662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558879165101320512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad381221fa19d444f8565bd1df87821d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &613389461210345445
 GameObject:
   m_ObjectHideFlags: 0

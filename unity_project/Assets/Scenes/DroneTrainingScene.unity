@@ -522,7 +522,7 @@ RectTransform:
   - {fileID: 455727629}
   - {fileID: 53280466}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 804babbc9478c4bf4a9ef2d21cfc915a, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!114 &124681312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,10 +588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3e8181b24a341a3b1baade8e0b0a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Surface: {fileID: 124681311}
-  targetObject: {fileID: 571922514}
-  droneObject: {fileID: 727419450}
-  planeMaterial: {fileID: 2100000, guid: 54e5e493aad354ef2bfb3d60e2e2add9, type: 2}
+  Surface: {fileID: 0}
+  targetObject: {fileID: 0}
+  droneObject: {fileID: 0}
+  planeMaterial: {fileID: 2100000, guid: 561f9ba5b17dc412abc1a226dc464b65, type: 2}
 --- !u!4 &124681313
 Transform:
   m_ObjectHideFlags: 0
@@ -604,7 +604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383393131
 GameObject:
@@ -670,8 +670,83 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &406907380
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.028367
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828528123585395629, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+      propertyPath: m_Name
+      value: Target
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8828528123585395626, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+--- !u!1 &406907381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8828528123585395629, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
+  m_PrefabInstance: {fileID: 406907380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &406907382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406907381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad381221fa19d444f8565bd1df87821d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &455727628
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,11 +880,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455727628}
   m_CullTransparentMesh: 1
---- !u!1 &571922514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8828528123585395629, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-  m_PrefabInstance: {fileID: 8828528124087804927}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &679448376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,318 +1135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9546a8975fe4783ac74e987ecca9635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &727419449
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 32417520723630155, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 191226137158318838, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Name
-      value: DroneModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 613389461210345445, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 691043947612927643, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 757115337975837591, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 792880316128039963, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007500454214174083, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1572819730649164551, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638162234176022058, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906326135643764338, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989206998945570642, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417366500196486490, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2437029410372457190, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2978353345336108122, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116959029289714990, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3208423073560331113, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3361400927018192600, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3365877082684845327, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3834402293145407501, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3912535505747002790, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4070766841860111262, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134237787609741656, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317307020756291123, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Speed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Height
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Radius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_BaseOffset
-      value: 1.726161
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Acceleration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: avoidancePriority
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467270808274930558, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532813733865723033, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733879245547393612, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5014044298723002645, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274353253133268538, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5332292432642411083, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458294347433809546, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6168352236389768016, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6611957861283741794, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6669812944483327678, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6873033555747745644, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7382975856520504114, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7406615920603782082, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7466535509687332808, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7493723692459671290, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7827589224909334435, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7849575172902334359, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8130590625117352096, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8279015003843734679, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8280371871709285428, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387164180388370897, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532285017945979425, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
---- !u!1 &727419450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-  m_PrefabInstance: {fileID: 727419449}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &727419451 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
-  m_PrefabInstance: {fileID: 727419449}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &727419452
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727419450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 108.14506, y: 49.718403, z: 115.51593}
-  m_Center: {x: 0.110259056, y: 23.512547, z: 2.2440958}
 --- !u!1 &750098771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,14 +1241,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderTexture: {fileID: 0}
   scenario: {fileID: 1514363902}
-  drone: {fileID: 727419450}
-  target: {fileID: 571922514}
+  drone: {fileID: 0}
+  target: {fileID: 0}
   _canvas: {fileID: 96059730}
   Surface: {fileID: 124681311}
-  planeMaterial: {fileID: 2100000, guid: 54e5e493aad354ef2bfb3d60e2e2add9, type: 2}
+  planeMaterial: {fileID: 2100000, guid: 561f9ba5b17dc412abc1a226dc464b65, type: 2}
   cam: {fileID: 2048800454}
-  agent: {fileID: 727419451}
-  ppv: {fileID: 2090849523}
+  agent: {fileID: 0}
+  ppv: {fileID: 0}
 --- !u!4 &790204353
 Transform:
   m_ObjectHideFlags: 0
@@ -1503,7 +1261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &908068603
 GameObject:
@@ -1880,6 +1638,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db00808ab9d04579b81b7f0dbd67b90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1152460751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_Name
+      value: DroneModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 792880316128039963, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903632596847260666, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+--- !u!1 &1152460752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+  m_PrefabInstance: {fileID: 1152460751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1294405306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,12 +1891,10 @@ MonoBehaviour:
   - id: 7
   - id: 8
   - id: 9
-  - id: 10
-  - id: 11
   constants:
     randomSeed: 539662031
-    totalFrames: 30000
-  trainingMode: 0
+    totalFrames: 1000
+  trainingMode: 1
   references:
     version: 1
     00000000:
@@ -2071,7 +1905,7 @@ MonoBehaviour:
         randomNumObjects:
           collapsed: 0
           value:
-            id: 12
+            id: 10
         randomPrefab:
           collapsed: 0
           probabilities:
@@ -2087,7 +1921,7 @@ MonoBehaviour:
           - 0.1
           uniform: 1
           m_Sampler:
-            id: 13
+            id: 11
           m_Categories:
           - {fileID: 6030332796725836435, guid: 7dd7f1e1f85b04c908d48829d22f4f8b, type: 3}
           - {fileID: 6016821248533432811, guid: 95c2ed58ec23643a698c890a152f30c8, type: 3}
@@ -2100,15 +1934,24 @@ MonoBehaviour:
           - {fileID: 4016244083471174794, guid: b65643442652f4e5cac1ba8a138fe11b, type: 3}
           - {fileID: 1846734885985130355, guid: 02d0dd79e02e54b0497c611f55f79aff, type: 3}
     00000001:
-      type: {class: DroneObjectPositionRandomizer, ns: , asm: Assembly-CSharp}
+      type: {class: ObjectPositionRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
         collapsed: 1
         maxPlacementTries: 100
         box: {fileID: 1576561592}
-        drone: {fileID: 727419450}
+        drone: {fileID: 1152460752}
         minDistanceDrone: 0
     00000002:
+      type: {class: YRotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        rotationRange:
+          collapsed: 0
+          value:
+            id: 12
+    00000003:
       type: {class: RotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
@@ -2116,2036 +1959,2108 @@ MonoBehaviour:
         rotation:
           collapsed: 0
           x:
-            id: 14
+            id: 13
           y:
-            id: 15
+            id: 14
           z:
-            id: 16
-    00000003:
-      type: {class: CustomRotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Assembly-CSharp}
+            id: 15
+    00000004:
+      type: {class: ColorRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
         collapsed: 1
-        rotation:
+        colorParameter:
           collapsed: 0
-          x:
+          hue:
+            id: 16
+          saturation:
             id: 17
-          y:
+          value:
             id: 18
-          z:
+          alpha:
             id: 19
-    00000004:
+    00000005:
+      type: {class: CustomCameraRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        m_Enabled: 0
+        collapsed: 0
+        positionRange: 1.5
+        rotationRangeDegrees: 10
+        random:
+          collapsed: 0
+          value:
+            id: 20
+    00000006:
+      type: {class: CustomLightPositionRotationRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        useMovingLight: 0
+        changeLightPosition: 0.25
+        initialLightPosition: {x: 0, y: 0, z: 0}
+        useRotatingLight: 0
+        changeLightRotation: 10
+        initialLightRotation: {x: 0, y: 0, z: 0}
+        randomFloat:
+          collapsed: 0
+          value:
+            id: 21
+    00000007:
+      type: {class: CustomLightRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        lightIntensityParameter:
+          collapsed: 0
+          value:
+            id: 22
+        lightColorParameter:
+          collapsed: 0
+          red:
+            id: 23
+          green:
+            id: 24
+          blue:
+            id: 25
+          alpha:
+            id: 26
+        auxParameter:
+          collapsed: 0
+          value:
+            id: 27
+    00000008:
+      type: {class: HueOffsetRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
+      data:
+        m_Enabled: 1
+        collapsed: 1
+        hueOffset:
+          collapsed: 0
+          value:
+            id: 28
+    00000009:
       type: {class: TextureRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         texture:
           collapsed: 0
           probabilities:
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
-          - 0.0005
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
+          - 0.0004985045
           uniform: 1
           m_Sampler:
-            id: 20
+            id: 29
           m_Categories:
+          - {fileID: 2800000, guid: 43fae7a0ac27b4a998eaa7ccc07cc68e, type: 3}
+          - {fileID: 2800000, guid: dab3496b9cc1e4f8cbd41f64a4f91d80, type: 3}
+          - {fileID: 2800000, guid: d385508ca5beb44e5974b73c1d9c6510, type: 3}
+          - {fileID: 2800000, guid: 5cb6eef72d6564959bdf8706712d30a4, type: 3}
+          - {fileID: 2800000, guid: 92ef443e697e94704b8ba0eb32cd1363, type: 3}
+          - {fileID: 2800000, guid: 5450369561ab9459f934baacd1ddb22a, type: 3}
           - {fileID: 2800000, guid: bb54048c91dc04e95a01d0a4b28facec, type: 3}
           - {fileID: 2800000, guid: 071543331bc2947f880c050676f29ded, type: 3}
           - {fileID: 2800000, guid: 95e443ea41723461394e6962f120e7c5, type: 3}
@@ -6146,111 +6061,30 @@ MonoBehaviour:
           - {fileID: 2800000, guid: 2110837571ed94137b5a73f9d5b69ceb, type: 3}
           - {fileID: 2800000, guid: 8015286c139624e42a39d7af4f341592, type: 3}
           - {fileID: 2800000, guid: b675603a850e6456db38c74da42147b1, type: 3}
-    00000005:
-      type: {class: HueOffsetRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        hueOffset:
-          collapsed: 0
-          value:
-            id: 21
-    00000006:
-      type: {class: CustomBackgroundOccluderScaleRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        scale:
-          collapsed: 0
-          value:
-            id: 22
-    00000007:
-      type: {class: CustomForegroundScaleRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 0
-        collapsed: 1
-        scale:
-          collapsed: 0
-          value:
-            id: 23
-    00000008:
-      type: {class: CustomLightPositionRotationRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        useMovingLight: 0
-        changeLightPosition: 0.25
-        initialLightPosition: {x: 0, y: 0, z: 0}
-        useRotatingLight: 0
-        changeLightRotation: 10
-        initialLightRotation: {x: 0, y: 0, z: 0}
-        randomFloat:
-          collapsed: 0
-          value:
-            id: 24
-    00000009:
-      type: {class: CustomLightRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        lightIntensityParameter:
-          collapsed: 0
-          value:
-            id: 25
-        lightColorParameter:
-          collapsed: 0
-          red:
-            id: 26
-          green:
-            id: 27
-          blue:
-            id: 28
-          alpha:
-            id: 29
-        auxParameter:
-          collapsed: 0
-          value:
-            id: 30
     0000000A:
-      type: {class: SunAngleRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
-      data:
-        m_Enabled: 1
-        collapsed: 1
-        hour:
-          collapsed: 0
-          value:
-            id: 31
-        dayOfTheYear:
-          collapsed: 0
-          value:
-            id: 32
-        latitude:
-          collapsed: 0
-          value:
-            id: 33
-    0000000B:
-      type: {class: CustomCameraRandomizer, ns: , asm: Assembly-CSharp}
-      data:
-        m_Enabled: 0
-        collapsed: 0
-        positionRange: 1.5
-        rotationRangeDegrees: 10
-        random:
-          collapsed: 0
-          value:
-            id: 34
-    0000000C:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 0
-    0000000D:
+          minimum: 2
+          maximum: 5
+    0000000B:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
           maximum: 1
+    0000000C:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 360
+    0000000D:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0
+          maximum: 360
     0000000E:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -6268,25 +6102,23 @@ MonoBehaviour:
       data:
         range:
           minimum: 0
-          maximum: 360
+          maximum: 1
     00000011:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
-          maximum: 0
+          maximum: 1
     00000012:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: 0
-          maximum: 360
+          maximum: 1
     00000013:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
-        range:
-          minimum: 0
-          maximum: 0
+        value: 1
     00000014:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -6297,79 +6129,49 @@ MonoBehaviour:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: -180
-          maximum: 180
+          minimum: 0
+          maximum: 1
     00000016:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 3
-          maximum: 25
+          minimum: 0
+          maximum: 1
     00000017:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0.04
-          maximum: 0.05
+          minimum: 0.4
+          maximum: 1
     00000018:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
+          minimum: 0.4
           maximum: 1
     00000019:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0
-          maximum: 1
-    0000001A:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
           minimum: 0.4
           maximum: 1
+    0000001A:
+      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        value: 1
     0000001B:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0.4
+          minimum: 0
           maximum: 1
     0000001C:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
-          minimum: 0.4
-          maximum: 1
+          minimum: -180
+          maximum: 180
     0000001D:
-      type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        value: 1
-    0000001E:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 1
-    0000001F:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 24
-    00000020:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 365
-    00000021:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: -90
-          maximum: 90
-    00000022:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
@@ -6478,11 +6280,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576561592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: 6.1}
-  m_LocalScale: {x: 40, y: 30, z: 5}
+  m_LocalPosition: {x: 0, y: -7, z: 13}
+  m_LocalScale: {x: 40, y: 30, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726801472
 GameObject:
@@ -7018,8 +6820,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Labelers:
   - id: 0
-  - id: 1
-  - id: 2
   description: 
   captureRgbImages: 1
   firstCaptureFrame: 0
@@ -7037,18 +6837,6 @@ MonoBehaviour:
         annotationId: 0bfbe00d-00fa-4555-88d1-471b58449f5c
         idLabelConfig: {fileID: 11400000, guid: 0f1f921063a9345d9a005341cb757dc3, type: 2}
         visualizationColor: {r: 0, g: 1, b: 0, a: 1}
-    00000001:
-      type: {class: ObjectCountLabeler, ns: UnityEngine.Perception.GroundTruth, asm: Unity.Perception.Runtime}
-      data:
-        enabled: 1
-        objectCountMetricId: 51da3c27-369d-4929-aea6-d01614635ce2
-        m_LabelConfig: {fileID: 11400000, guid: 0f1f921063a9345d9a005341cb757dc3, type: 2}
-    00000002:
-      type: {class: RenderedObjectInfoLabeler, ns: UnityEngine.Perception.GroundTruth, asm: Unity.Perception.Runtime}
-      data:
-        enabled: 1
-        objectInfoMetricId: 5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01
-        idLabelConfig: {fileID: 11400000, guid: 0f1f921063a9345d9a005341cb757dc3, type: 2}
 --- !u!114 &2048800458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7063,141 +6851,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rootPosePosition: {x: 0, y: 0, z: 0}
   rootPoseRotation: {x: 0, y: 0, z: 0}
---- !u!1 &2090849522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2090849525}
-  - component: {fileID: 2090849524}
-  - component: {fileID: 2090849523}
-  m_Layer: 0
-  m_Name: Post Process Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2090849523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090849522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07636814e97734b62a64fa6d0103b699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minVignetteIntensity: 0
-  maxVignetteIntensity: 0.5
-  minWhiteBalanceTemperature: -100
-  maxWhiteBalanceTemperature: 100
-  minFilmGrainIntensity: 0
-  maxFilmGrainIntensity: 1
-  minLensDistortionIntensity: -0.2
-  maxLensDistortionIntensity: 0.2
-  minFocusDistance: 1.5
-  maxFocusDistance: 3
-  minPostExposure: -1.5
-  maxPostExposure: 1.5
-  minContrast: -25
-  maxContrast: 25
-  minSaturation: -25
-  maxSaturation: 25
---- !u!114 &2090849524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090849522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 1da17dfdf1c6c4a0983f84c90c556e97, type: 2}
---- !u!4 &2090849525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090849522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.028367, y: 4.610238, z: 2.8185706}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8828528124087804927
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.028367
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395620, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395623, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828528123585395629, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}
-      propertyPath: m_Name
-      value: Target
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 249da8987cb8c49328d09ec2c51c581d, type: 3}

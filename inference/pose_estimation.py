@@ -9,8 +9,8 @@ import sys
 sys.path.append('../train/pose_estimation')
 from PIL import Image, ImageOps
 
-from model.pose_estimation.model import PoseEstimationNetwork
-from model.pose_estimation.util import convert_image_to_tensor
+from Model.pose_estimation.model import PoseEstimationNetwork
+from Model.pose_estimation.util import convert_image_to_tensor
 
 def preprocess_image(path_image, device):
     """

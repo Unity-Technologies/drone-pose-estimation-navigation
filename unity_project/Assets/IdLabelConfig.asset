@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: IdLabelConfig
   m_EditorClassIdentifier: 
   m_LabelEntries:
-  - label: drone
-    id: 1
   - label: target
+    id: 1
+  - label: drone
     id: 2
   autoAssignIds: 1
   startingLabelId: 1
