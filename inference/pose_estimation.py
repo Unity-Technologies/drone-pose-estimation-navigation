@@ -6,11 +6,11 @@ import torch
 import torchvision
 import os
 import sys
-sys.path.append('../train/pose_estimation')
+sys.path.append('../model/pose_estimation')
 from PIL import Image, ImageOps
 
-from Model.pose_estimation.model import PoseEstimationNetwork
-from Model.pose_estimation.util import convert_image_to_tensor
+from model import PoseEstimationNetwork
+from util import convert_image_to_tensor
 
 def preprocess_image(path_image, device):
     """
