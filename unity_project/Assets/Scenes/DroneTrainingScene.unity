@@ -1241,13 +1241,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderTexture: {fileID: 0}
   scenario: {fileID: 1514363902}
-  drone: {fileID: 0}
-  target: {fileID: 0}
+  drone: {fileID: 1152460752}
+  target: {fileID: 406907381}
   _canvas: {fileID: 96059730}
   Surface: {fileID: 124681311}
-  planeMaterial: {fileID: 2100000, guid: 561f9ba5b17dc412abc1a226dc464b65, type: 2}
+  planeMaterial: {fileID: 2100000, guid: 54e5e493aad354ef2bfb3d60e2e2add9, type: 2}
   cam: {fileID: 2048800454}
-  agent: {fileID: 0}
+  agent: {fileID: 1152460754}
   ppv: {fileID: 0}
 --- !u!4 &790204353
 Transform:
@@ -1709,6 +1709,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_Speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_Height
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: m_Radius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+      propertyPath: avoidancePriority
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
 --- !u!1 &1152460752 stripped
@@ -1716,6 +1732,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 558879165101320512, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
   m_PrefabInstance: {fileID: 1152460751}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &1152460754 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 4410319380298490292, guid: 1699b125fd9dd4f0f97f0016e1c31c6b, type: 3}
+  m_PrefabInstance: {fileID: 1152460751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1152460760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152460752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 108.54056, y: 54.98289, z: 80}
+  m_Center: {x: -0.0000071525574, y: 23.286943, z: 0}
 --- !u!1 &1294405306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,7 +1928,7 @@ MonoBehaviour:
   constants:
     randomSeed: 539662031
     totalFrames: 1000
-  trainingMode: 1
+  trainingMode: 0
   references:
     version: 1
     00000000:
@@ -1937,7 +1971,7 @@ MonoBehaviour:
       type: {class: ObjectPositionRandomizer, ns: , asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         maxPlacementTries: 100
         box: {fileID: 1576561592}
         drone: {fileID: 1152460752}
@@ -1946,7 +1980,7 @@ MonoBehaviour:
       type: {class: YRotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Assembly-CSharp}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         rotationRange:
           collapsed: 0
           value:
@@ -1955,7 +1989,7 @@ MonoBehaviour:
       type: {class: RotationRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         rotation:
           collapsed: 0
           x:
@@ -1968,7 +2002,7 @@ MonoBehaviour:
       type: {class: ColorRandomizer, ns: UnityEngine.Perception.Randomization.Randomizers.SampleRandomizers, asm: Unity.Perception.Runtime}
       data:
         m_Enabled: 1
-        collapsed: 1
+        collapsed: 0
         colorParameter:
           collapsed: 0
           hue:

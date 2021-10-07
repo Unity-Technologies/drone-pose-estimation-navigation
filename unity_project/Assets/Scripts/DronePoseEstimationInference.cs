@@ -39,10 +39,7 @@ public class DronePoseEstimationInference : MonoBehaviour
     public Material planeMaterial;
     public Camera cam;
     public NavMeshAgent agent;
-
-    // post process volume
-    public CustomModifyPostProcessVolume ppv;
-
+    
     private bool captureDone = false;
 
 
@@ -162,7 +159,6 @@ public class DronePoseEstimationInference : MonoBehaviour
         Destroy(planeObject);
 
         scenario.Move();
-        ppv.CustomUpdate();
     }
 
     public PoseEstimationResponse GetPoseEstimation(byte[] encodedImageData)
