@@ -1,4 +1,4 @@
-# Part 4: Inference & Navigation
+# Drone Pose Estimation And Navigation Tutorial: Part 4
 
 In [Part 1](1_create_unity_project_with_unity_packages.md) of the tutorial, we learned how to create our Scene in Unity Editor.
 
@@ -19,7 +19,7 @@ Steps included in this part of the tutorial:
 **Table of Contents**
   - [Setup](#setup)
   - [Add the Pose Estimation Model](#step-2)
-  - Inference
+  - [Inference](#inference)
     - [gRPC connection](#step-3.1)
     - [Unity Barracuda](#step-3.2)
 
@@ -33,16 +33,16 @@ Here you have two options for the model:
 
 #### Option A: Use Our Pre-trained Model
 
-1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/drone-pose-estimation-navigation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
+1. To save time, you may use the model we have trained. Download this [Drone_pose_estimation_model.tar](https://github.com/Unity-Technologies/drone-pose-estimation-navigation/releases/download/v0.6.0/Drone_pose_estimation_model.tar) file, which contains the pre-trained model weights.
 
 #### Option B: Use Your Own Model
 
-2. You can also use the model you have trained in [Part 3](3_data_collection_and_model_training.md). However, be sure to rename your model to `UR3_single_cube_model.tar` as the script that will call the model is expecting this name.
+2. You can also use the model you have trained in [Part 3](3_data_collection_and_model_training.md). However, be sure to rename your model to `Drone_pose_estimation_model.tar` as the script that will call the model is expecting this name.
 
 
-**Inference**
+### <a name="inference">Inference</a>
 
-### <a name="step-3.1">gRPC connection</a>
+#### <a name="step-3.1">gRPC connection</a>
 
 1. Navigate to folder `drone-pose-estimation-navigation/inference`
 2. Based on [Add the Pose Estimation Model](#step-2) we choose the model to be used, and run a python process that exposes a service API over gRPC using:
@@ -53,7 +53,7 @@ python server.py
 4. Select the `SimulationScenario` GameObject, and uncheck `Training` flag in `Pose Estimation Scenario` in the inspector as shown below:
 
 <p align="center">
-    <img src="Images/toggle_training.png" />
+    <img src="Images/toggle_training.png" width=200/>
 </p>
 5. Hit play. This will start the player in inference mode. There are
 three buttons in this mode:
@@ -65,6 +65,6 @@ will get back a prediction of the drone & target translation.
 * Start Navigate: The predicted translation of the target is then used by the Navmesh module to navigate to the target.
 
 
-### <a name="step-3.1">Unity Barracuda</a>
+#### <a name="step-3.1">Unity Barracuda</a>
 
 # TODO: @Priyesh - add image
