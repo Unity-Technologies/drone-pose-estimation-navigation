@@ -62,7 +62,7 @@ Now we need to collect the validation dataset.
 
 
 ## <a name="step-2">Train the Deep Learning Model</a>
-Now it's time to train our deep learning model! We've provided the model training code for you, but if you'd like to learn more about it - or make your own changes - you can dig into the details [here](../Model).
+Now it's time to train our deep learning model! We've provided the model training code for you, but if you'd like to learn more about it - or make your own changes - you can dig into the details [here](../model).
 
 This step can take a long time if your computer doesn't have GPU support (~5 days on CPU). Even with a GPU, it can take around ~10 hours. We have provided an already trained model as an alternative to waiting for training to complete. If you would like to use this provided model, you can proceed to [Part 4](4_setup_grpc_connection.md).
 
@@ -73,7 +73,7 @@ This step can take a long time if your computer doesn't have GPU support (~5 day
 We support two approaches for running the model: Docker (which can run anywhere) or locally with Conda. 
 
 #### Option A: Using Docker
-If you would like to run using Docker, you can follow the [Docker steps provided](../Model/documentation/running_on_docker.md) in the model documentation.
+If you would like to run using Docker, you can follow the [Docker steps provided](../model/documentation/running_on_docker.md) in the model documentation.
 
 
 #### Option B: Using Conda 
@@ -103,14 +103,14 @@ First, we need to specify the path to the folders where your training and valida
 
 4. Copy [config.yaml.sample](../model/config.yaml.sample) to [config.yaml](../model/config.yaml). This would contain the configuration files that you need for training & inference.
 
-5. In the [config.yaml](../model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`UR3_single_cube_training` and `UR3_single_cube_validation`) in a folder called `data` in Documents, I set the following:
+5. In the [config.yaml](../model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`Drone_pose_estimation_training` and `Drone_pose_estimation_validation`) in a folder called `data` in Documents, I set the following:
 ```bash
   data_root: /Users/<user-name>/Documents/data
 ```
 
 Second, we need to modify the location where the model is going to be saved: 
 
-5. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `log_dir_system` to the full path of the output folder where your model's results will be saved. For example, I created a new directory called `models` in my Documents, and then set the following:
+5. In the [config.yaml](../model/config.yaml), under `system`, you need to set the argument `log_dir_system` to the full path of the output folder where your model's results will be saved. For example, I created a new directory called `models` in my Documents, and then set the following:
 ```bash
 log_dir_system: /Users/<user-name>/Documents/models
 ```
@@ -124,7 +124,7 @@ log_dir_system: /Users/<user-name>/Documents/models
 python -m pose_estimation.cli train 
 ```
 
->Note (Optional): If you want to override certain training hyperparameters, you can do so with additional arguments on the above command. See the documentation at the top of [cli.py](../Model/pose_estimation/cli.py) for a full list of supported arguments.
+>Note (Optional): If you want to override certain training hyperparameters, you can do so with additional arguments on the above command. See the documentation at the top of [cli.py](../model/pose_estimation/cli.py) for a full list of supported arguments.
 
 >Note: If the training process ends unexpectedly, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
@@ -145,10 +145,10 @@ However, first we need to specify a few settings in our config file.
 python -m pose_estimation.cli evaluate 
 ```
 
->Note (Optional): To override additional settings on your evaluation run, you can tag on additional arguments to the command above. See the documentation in [cli.py](../Model/pose_estimation/cli.py) for more details.
+>Note (Optional): To override additional settings on your evaluation run, you can tag on additional arguments to the command above. See the documentation in [cli.py](../model/pose_estimation/cli.py) for more details.
 
 
-### Proceed to [Part 4](4_inference_and_navigation.md).
+### Proceed to [Part 4](4_navigation_and_inference.md).
 
 ### 
 

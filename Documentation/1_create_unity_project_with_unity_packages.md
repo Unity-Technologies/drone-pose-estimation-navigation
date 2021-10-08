@@ -49,10 +49,6 @@ We will need to download and install the Perception package. In general, package
   
 It can take a few minutes for the manager to download and import packages.
 
-<p align="center">
-<img src="Gifs/1_package_imports_short.gif"/>
-</p>
-
 
 #### Install Dependencies
 Install the following packages with the provided git URL:
@@ -90,7 +86,7 @@ The Perception package relies on a "Ground Truth Renderer Feature" to output lab
 #### The Scene
 Simply put in Unity, a Scene contains any object that exists in the world. This world can be a game, or in this case, a data-collection-oriented simulation. Every new project contains a Scene named `SampleScene`, which is automatically opened when the project is created. This Scene comes with several objects and settings that we do not need, so let's create a new one.
 
-1. In the _**Project**_ tab, right-click on the `Assets/Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialDronePoseEstimation` and double-click on it to open it. 
+1. In the _**Project**_ tab, right-click on the `Assets/Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialDronePoseEstimationNagivation` and double-click on it to open it. 
 
 The _**Hierarchy**_ tab of the editor displays all the Scenes currently loaded, and all the objects currently present in each loaded Scene, as shown below:
 <p align="center">
@@ -114,7 +110,7 @@ As seen above, the new Scene already contains a camera (`Main Camera`) and a lig
 #### Adding Tutorial Files
 Now it is time to add some more objects to our scene. Before doing so, we need to import some folders containing the required assets. 
 
-4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/drone-pose-estimation-navigation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
+4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/drone-pose-estimation-navigation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `Scripts`.
 
 5. Drag and Drop the `TutorialAssets` folder from your operating system's file explorer onto the `Assets` folder in the _**Project**_ tab of the editor. 
 
@@ -131,16 +127,15 @@ A Prefab is just a file, and you can easily create an instance of the object in 
 
 For your convenience, we have provided Prefabs for most of the components of the scene (the cube, goal, table, and floor).
 
-6. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Target` Prefab into the _**Hierarchy**_ tab.
+6. We are going to use multiple lights and we will group them into one object. Thus, for your convenience, please delete the delete the `Directional Light` Game Object. To do that, Go in the _**Hierarchy**_ tab, right click on the `Directional Light` and select `delete`. 
 
-7. Repeat the above action with the `Drone` and `Wall` Prefabs. 
+7. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Target` Prefab into the _**Hierarchy**_ tab.
+
+8. Repeat the above action with the `Drone`, `Lights` and  `Wall` Prefabs. 
 
 
 <p align="center">
 <img src="Gifs/1_import_prefabs.gif"/>
 </p>
-
->Note: If you encounter issues with the materials of the imported Prefabs, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
-
 
 ### Proceed to [Part 2](./2_set_up_the_scene_for_data_collection.md).
