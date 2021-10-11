@@ -8,9 +8,6 @@ In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned:
     
 You should now have a target, a drone, a camera, lights, and a wall in your Scene. In this part we will prepare the Scene for data collection with the Perception package. 
 
-<p align="center">
-<img src="Images/2_Pose_Estimation_Data_Collection.png" width="680" height="520"/>
-</p>
 
 **Table of Contents**
   - [Equip the Camera for Data Collection](#step-1)
