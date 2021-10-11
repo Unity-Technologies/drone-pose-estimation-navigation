@@ -90,7 +90,7 @@ Simply put in Unity, a Scene contains any object that exists in the world. This 
 
 The _**Hierarchy**_ tab of the editor displays all the Scenes currently loaded, and all the objects currently present in each loaded Scene, as shown below:
 <p align="center">
-<img src="Images/1_hierarchy.png" width=500 height=200/>
+<img src="Images/1_hierarchy.png" width=300 height=150/>
 </p>
 
 As seen above, the new Scene already contains a camera (`Main Camera`) and a light (`Directional Light`). We will now modify the camera's field of view and position to prepare it for the tutorial.
