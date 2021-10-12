@@ -1,6 +1,6 @@
 # Drone Pose Estimation And Navigation Tutorial: Part 1
 
-In this first part of the tutorial, we will start by downloading and installing the Unity Editor. We will install our project's dependencie(s): the Perception package. We will then use a set of provided prefabs to easily prepare a simulated environment containing a drone, a wall, a target and a few distractor objects. 
+In this first part of the tutorial, we will start by downloading and installing the Unity Editor. We will install our project's dependencie(s): the Perception package. We will then use a set of provided prefabs to easily prepare a simulated environment containing a drone, a target, a wall and few distractor objects. 
 
 
 **Table of Contents**
@@ -21,7 +21,7 @@ To follow this tutorial you need to **clone** this repository even if you want t
 git clone git@github.com:Unity-Technologies/drone-pose-estimation-navigation.git
 ```
 
-2. [Install Unity `2020.2.*`.](install_unity.md) or a later version of it. 
+2. [Install Unity `2020.3.*`.](install_unity.md) or a later version of it. 
 
 
 ### <a name="step-1">Create a New Project</a> 
@@ -127,7 +127,7 @@ A Prefab is just a file, and you can easily create an instance of the object in 
 
 For your convenience, we have provided Prefabs for most of the components of the scene (the cube, goal, table, and floor).
 
-6. We are going to use multiple lights and we will group them into one object. Thus, for your convenience, please delete the delete the `Directional Light` Game Object. To do that, Go in the _**Hierarchy**_ tab, right click on the `Directional Light` and select `delete`. 
+6. We are going to use multiple lights and we will group them into one object. Thus, for your convenience, please delete the `Directional Light` Game Object. To do that, Go in the _**Hierarchy**_ tab, right click on the `Directional Light` and select `delete`. 
 
 7. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Target` Prefab into the _**Hierarchy**_ tab.
 
