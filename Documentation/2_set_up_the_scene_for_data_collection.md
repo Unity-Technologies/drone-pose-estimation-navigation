@@ -252,7 +252,7 @@ Now we need to have the position randomizer. To save time, we have provided a pr
     * On the `Drone` field, click on the circular button to the right side and start typing `Drone` and then double click on the GameObject that appears. 
 
 <p align="center">
-<img src="Gifs/2_robot_randomizer_settings.gif" height=658 width=950/>
+<img src="Images/2_object_placement_randomizer.png" height=100/>
 </p>
 
 Now we need to add the corresponding RandomizerTag to the target and the drone.
@@ -263,7 +263,7 @@ Now we need to add the corresponding RandomizerTag to the target and the drone.
 The `ObjectPositionRandomizerTag` component should now look like this:
 
 <p align="center">
-<img src="Images/2_RobotArmReachablePositionRandomizerSetting.png" width=500/>
+<img src="Images/2_object_position_randomizer_tag.png" width=350/>
 </p>
 
 Now we need to add the corresponding RandomizerTag to the target and the drone.
@@ -383,6 +383,8 @@ Now we will add another Randomizer to introduce some variation into the camera's
 Now we need to add a RandomizerTag to the `Main Camera`. 
 
 33. Select the `Main Camera` Game Object and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `CustomCameraRandomizerTag` in the search bar that appears, until the `CustomCameraRandomizerTag` script is found, with a **#** icon to the left. Click on the script.
+
+34. For the medium scenario, we are going to uncheck the `CustomCameraRandomizer`, thus uncheck the component. 
 
 Finally, your `Pose Estimation Scenario` should look like this: 
 <p align="center">
