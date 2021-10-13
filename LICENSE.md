@@ -3,7 +3,6 @@
 <div align="center"> http://www.apache.org/licenses/ </div> 
 
 \
-&nbsp;
 
 <p> TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION </p>
 
@@ -188,7 +187,6 @@ You may obtain a copy of the License at
 <div padding-left= "60px">http://www.apache.org/licenses/LICENSE-2.0 </div>
 
 \
-&nbsp;
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
