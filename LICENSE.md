@@ -1,7 +1,7 @@
 <div>
-<p style="text-align:center"> Apache License </p>  
-<p style="text-align:center"> Version 2.0, January 2004 </p>  
-<p style="text-align:center"> http://www.apache.org/licenses/ </p>  
+<p style="text-align: center"> Apache License </p>  
+<p style="text-align: center"> Version 2.0, January 2004 </p>  
+<p style="text-align: center"> http://www.apache.org/licenses/ </p>  
                            
 <p> TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION </p>
 
