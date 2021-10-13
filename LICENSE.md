@@ -1,7 +1,10 @@
 <div align="center"> Apache License </div>  
 <div align="center"> Version 2.0, January 2004 </div>  
-<div align="center"> http://www.apache.org/licenses/ </div>  
-                           
+<div align="center"> http://www.apache.org/licenses/ </div> 
+
+\
+&nbsp;
+
 <p> TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION </p>
 
 1. Definitions.
@@ -183,6 +186,9 @@ you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
 <div padding-left= "60px">http://www.apache.org/licenses/LICENSE-2.0 </div>
+
+\
+&nbsp;
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
