@@ -1,5 +1,4 @@
-<div>
-<div style="align: center"> Apache License </div>  
+-> Apache License <-
 <div style="align: center"> Version 2.0, January 2004 </div>  
 <div style="align: center"> http://www.apache.org/licenses/ </div>  
                            
