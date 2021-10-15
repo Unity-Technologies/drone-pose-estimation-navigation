@@ -1852,7 +1852,7 @@ MonoBehaviour:
   constants:
     randomSeed: 539662031
     totalFrames: 1000
-  trainingMode: 0
+  trainingMode: 1
   references:
     version: 1
     00000000:
