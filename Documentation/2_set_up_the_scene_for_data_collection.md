@@ -103,7 +103,7 @@ The _**Inspector**_ view of the `Target` should look like the following:
 We will be collecting training data from a simulation, but most real perception use-cases occur in the real world. 
 To train a model to be robust enough to generalize to the real domain, we rely on a technique called [Domain Randomization](https://arxiv.org/pdf/1703.06907.pdf). Instead of training a model in a single, fixed environment, we _randomize_ aspects of the environment during training in order to introduce sufficient variation into the generated data. This forces the machine learning model to handle many small visual variations, making it more robust.
 
-In this tutorial, we will randomize the position of the target and the drone, and also the color, intensity, and position of the lights, the number, pose and color of distractor objects, the texture on the walls and the position of the camera. Note that the Randomizers in the Perception package can be extended to many other aspects of the environment as well.
+In this tutorial, we will randomize the position of the target and the drone, and also the color, intensity, and position of the lights, the number, pose and color of distractor objects, the texture on the walls and the position of the camera (only for the hard scenario). Note that the Randomizers in the Perception package can be extended to many other aspects of the environment as well.
 
 
 #### The Scenario
@@ -252,7 +252,7 @@ Now we need to have the position randomizer. To save time, we have provided a pr
     * On the `Drone` field, click on the circular button to the right side and start typing `Drone` and then double click on the GameObject that appears. 
 
 <p align="center">
-<img src="Gifs/2_robot_randomizer_settings.gif" height=658 width=950/>
+<img src="Images/2_object_placement_randomizer.png" height=100/>
 </p>
 
 Now we need to add the corresponding RandomizerTag to the target and the drone.
@@ -263,7 +263,7 @@ Now we need to add the corresponding RandomizerTag to the target and the drone.
 The `ObjectPositionRandomizerTag` component should now look like this:
 
 <p align="center">
-<img src="Images/2_RobotArmReachablePositionRandomizerSetting.png" width=500/>
+<img src="Images/2_object_position_randomizer_tag.png" width=350/>
 </p>
 
 Now we need to add the corresponding RandomizerTag to the target and the drone.
@@ -314,7 +314,7 @@ Now we will add another Randomizer to introduce some variation into the Scene's 
 
 22. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `DistractorObjectRandomizer`. 
     * In the UI, click on `Add Folder` and a window showing the content of the `Assets` folder will pop up. Go inside the `TutorialAssets` folder and select `distractor objects`. A bunch of objects will appear in the window just above `Add Folder`. 
-    * In the UI, for the range, change the min to 2 and the 
+    * In the UI, for the range, change the min to `2` and the max to `5`.
 
     
 The Randomizer should now look like this: 
@@ -383,6 +383,8 @@ Now we will add another Randomizer to introduce some variation into the camera's
 Now we need to add a RandomizerTag to the `Main Camera`. 
 
 33. Select the `Main Camera` Game Object and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `CustomCameraRandomizerTag` in the search bar that appears, until the `CustomCameraRandomizerTag` script is found, with a **#** icon to the left. Click on the script.
+
+34. For the medium scenario, we are going to uncheck the `CustomCameraRandomizer`, thus uncheck the component. 
 
 Finally, your `Pose Estimation Scenario` should look like this: 
 <p align="center">

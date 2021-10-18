@@ -8,7 +8,7 @@ In [Part 2](2_set_up_the_scene_for_data_collection.md) of the tutorial, we learn
 * How to create your own Randomizer 
 * How to add our custom Randomizer  
 
-In this part, we will be collecting a large dataset of RGB images of the Scene, and the corresponding pose of the cube. We will then use this data to train a machine learning model to predict the target's position and drone's position from images taken by our camera. We will then set up the grpc connection and use NavMesh to perform the naviation.
+In this part, we will be collecting a large dataset of RGB images of the Scene, and the corresponding pose of the drone and the target. We will then use this data to train a machine learning model to predict the target's position and drone's position from images taken by our camera. In this project, we are only going to predict the x and y position of the drone and the target. We will then set up the grpc connection and use NavMesh to perform the naviation.
 
 Steps included in this part of the tutorial:
 
@@ -21,11 +21,11 @@ Steps included in this part of the tutorial:
 
 ## <a name="step-1">Collect the Training and Validation Data</a>
 
-Now it is time to collect the data: a set of images with the corresponding position and orientation of the cube relative to the camera.
+Now it is time to collect the data: a set of images with the corresponding position and orientation of the drone and the target relative to the camera.
 
 We need to collect data for the training process and data for the validation one. 
 
-We have chosen a training dataset of 30,000 images and a validation dataset of 3,000 images. 
+We have chosen a training dataset of 40,000 images and a validation dataset of 4,000 images. 
 
 1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, make sure `Automatic Iteration` is enabled. When this flag is enabled, our Scenario automatically proceeds through Iterations, triggering the `OnIterationStart()` method of all Randomizers on each Iteration. When this flag is disabled, the Iterations would have to be triggered manually. 
 
@@ -125,8 +125,6 @@ python -m pose_estimation.cli train
 ```
 
 >Note (Optional): If you want to override certain training hyperparameters, you can do so with additional arguments on the above command. See the documentation at the top of [cli.py](../model/pose_estimation/cli.py) for a full list of supported arguments.
-
->Note: If the training process ends unexpectedly, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
 ### Visualizing Training Results with Tensorboard
 If you'd like to examine the results of your training run in more detail, see our guide on [viewing the Tensorboard logs](../model/documentation/tensorboard.md).

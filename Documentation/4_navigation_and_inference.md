@@ -59,10 +59,10 @@ python server.py
 three buttons in this mode:
 
 
-* New Environment: Creates a new environments based off the Randomizers
-* Start Pose Estimation: This will send a screenshot of the current scene to the gRPC API exposed in step #2, and 
+* New Environment: creates a new environment based off the Randomizers
+* Start Pose Estimation: this will send a screenshot of the current scene to the gRPC API exposed in [step 2](#step-2), and 
 will get back a prediction of the drone & target translation.
-* Start Navigate: The predicted translation of the target is then used by the Navmesh module to navigate to the target.
+* Start Navigate: the predicted translation of the target is then used by the Navmesh module to navigate the drone to the target.
 
 
 #### <a name="step-3.1">Unity Barracuda</a>

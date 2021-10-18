@@ -7,7 +7,7 @@
 
 > Note: This project has been developed with Python 3 and relies on Unity version `2020.3.7f1` and [Unity Perception SDK](https://github.com/Unity-Technologies/com.unity.perception) `0.8.0-preview.2`.
 
-This project is on multi-object pose estimation and navigation, for a drone and a target landing pad. To do so, we used Unity’s perception package, in order to capture randomly generated synthetic data, which can be used to train a multi-object pose estimation model. This model can then be used to estimate the pose of our drone and target objects in a newly generated scene that was never seen before. The estimated position of the objects, allow us to perform path planning, navigation, and obstacle avoidance, for landing the drone onto the target.
+This project is on multi-object pose estimation and navigation, for a drone and a target landing pad. To do so, we used Unity’s perception package, in order to capture randomly generated synthetic data, which can be used to train a multi-object pose estimation model. This model can then be used to estimate the pose of our drone and target objects in a newly generated scene that was never seen before. The estimated position of the objects allows us to perform path planning, navigation, and obstacle avoidance, for landing the drone onto the target.
 
 
 **Want to skip the tutorial and run the full demo? Check out our [Quick Demo](Documentation/quick_demo_full.md).**
