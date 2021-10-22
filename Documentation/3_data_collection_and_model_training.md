@@ -47,7 +47,7 @@ We have chosen a training dataset of 40,000 images and a validation dataset of 4
 
 You should then see something similar to this: 
 <p align="center">
-<img src="Images/3_data_logs.png" width = "800"/>
+<img src="Images/3_data_logs.png" width = "400"/>
 </p>
 
 Now we need to collect the validation dataset. 

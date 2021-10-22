@@ -242,7 +242,7 @@ If you return to your list of Randomizers in the Inspector view of `Simulation S
 
 It is great that we can now rotate the target and the drone, but we also want to move them in the space. However, we want the two objects to be seen by the camera when taking pictures. Even if the data will not be saved if the objects are not on the camera's frame (feature of the Perception package), it will be time saving to ensure the two objects are always seen by the camera. We decided to create an invisible 3D box that will define the allowed positions for the objects in the scene. 
 
-13. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Box` Prefab into the _**Hierarchy**_ tab.
+13. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part2` and drag and drop the `Box` Prefab into the _**Hierarchy**_ tab.
 
 Now we need to have the position randomizer. To save time, we have provided a pre-written custom Randomizer to do this. 
 
@@ -320,7 +320,7 @@ Now we will add another Randomizer to introduce some variation into the Scene's 
 The Randomizer should now look like this: 
 
 <p align="center">
-<img src="Images/2_distractor_objects_randomizer_settings.png" height=450/>
+<img src="Images/2_distractor_objects_randomizer_settings.png" height=250/>
 </p>
 
 The randomizers are triggered sequentially and in the `DistractorObjectRandomizer`, we create different Game Objects in the scene and we add them different raandomizer tags. Thus, we need to put the `DistractorObjectRandomizer` in the first position of the randomizers so that it will be triggerd in first place by the `Pose Estimation Scenario` component of the `Simulation Scenario` GameObject. 
@@ -365,9 +365,9 @@ This randomizer will be applied on all the objects which possesses a `ColorRando
 
 Now we will add another Randomizer to introduce some variation into the wall's texture. 
 
-30. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `TextureRandomizer`.   
+30. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `TextureRandomizer`.
 
-Now we need to add a RandomizerTag to the `Wall`. 
+Now we need to add a RandomizerTag to the `Wall`.
 31. Select the `Wall` Game Object and in the _**Inspector**_ tab, click on the _**Add Component**_ button.  Start typing `TextureRandomizerTag` in the search bar that appears, until the `TextureRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
     * In the UI, click on `Add Folder` and a window showing the content of the `Assets` folder will pop up. Go inside the `TutorialAssets` folder and select `distractor objects`. A bunch of objects will appear in the window just above `Add Folder`. 
 
