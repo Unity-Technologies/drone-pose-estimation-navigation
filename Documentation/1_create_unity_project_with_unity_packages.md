@@ -131,8 +131,9 @@ For your convenience, we have provided Prefabs for most of the components of the
 
 7. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Target` Prefab into the _**Hierarchy**_ tab.
 
-8. Repeat the above action with the `Drone`, `Lights` and  `Wall` Prefabs. 
+8. Repeat the above action with the `Wall` and `Lights` Prefabs. 
 
+9. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1/Drone` and drag and drop the `Drone` Prefab into the _**Hierarchy**_ tab.
 
 <p align="center">
 <img src="Gifs/1_import_prefabs.gif"/>
