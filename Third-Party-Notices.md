@@ -249,7 +249,8 @@ obtain one at https://mozilla.org/MPL/2.0/.
 ```
 
 Component Name: Unity Drone Pack
-Licenst Type: Extension Asset
+
+License Type: Extension Asset
 
 ```
 https://unity3d.com/legal/as_terms
