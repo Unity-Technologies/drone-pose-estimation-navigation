@@ -1,7 +1,6 @@
 Component Name: grpc
-
-License Type: Apache 2.0, BSD 3, Mozilla Public License, v. 2.0
-Link: https://raw.githubusercontent.com/grpc/grpc/master/LICENSE
+License Type: ["Apache 2.0", "BSD 3", "Mozilla Public License v2.0"] 
+[https://github.com/grpc/grpc]
 
 ```
 
