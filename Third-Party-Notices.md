@@ -1,6 +1,6 @@
-Component Name: grpc
-License Type: ["Apache 2.0", "BSD 3", "Mozilla Public License v2.0"] 
-[https://github.com/grpc/grpc]
+Component Name: grpc <br>
+License Type: ["Apache 2.0", "BSD 3", "Mozilla Public License v2.0"] <br>
+[https://github.com/grpc/grpc] <br>
 
 ```
 
