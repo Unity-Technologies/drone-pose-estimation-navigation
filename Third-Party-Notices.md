@@ -1,5 +1,6 @@
 Component Name: grpc <br>
 License Type: ["Apache 2.0", "BSD 3", "Mozilla Public License v2.0"] <br>
+Copyright 2016, Google Inc.<br>
 [https://github.com/grpc/grpc] <br>
 
 ```
