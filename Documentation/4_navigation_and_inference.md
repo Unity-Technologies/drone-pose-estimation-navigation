@@ -45,7 +45,8 @@ Here you have two options for the model:
 #### <a name="step-3.1">gRPC connection</a>
 
 1. Navigate to folder `drone-pose-estimation-navigation/inference`
-2. Based on [Add the Pose Estimation Model](#step-2) we choose the model to be used, and run a python process that exposes a service API over gRPC using:
+2. Run `pip install -r requirements.txt`
+3. Based on [Add the Pose Estimation Model](#step-2) we choose the model to be used, and run a python process that exposes a service API over gRPC using:
 ```shell
 python server.py
 ```
