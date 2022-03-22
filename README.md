@@ -22,7 +22,7 @@ This project is on multi-object pose estimation and navigation, for a drone and 
 ---
 ### <a name="link-part-1">[Part 1: Create the Unity Project with Perception package](Documentation/1_create_unity_project_with_unity_packages.md)</a>
 
-<img src="Documentation/Images/0_scene.png" width=400 />
+<img src="Documentation/Images/0_new_drone.png" width=400 />
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
