@@ -64,8 +64,3 @@ three buttons in this mode:
 * Start Pose Estimation: this will send a screenshot of the current scene to the gRPC API exposed in [step 2](#step-2), and 
 will get back a prediction of the drone & target translation.
 * Start Navigate: the predicted translation of the target is then used by the Navmesh module to navigate the drone to the target.
-
-
-#### <a name="step-3.1">Unity Barracuda</a>
-
-# TODO: @Priyesh - add image
