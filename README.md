@@ -29,8 +29,6 @@ This project is on multi-object pose estimation and navigation, for a drone and 
 ---
 
 ### <a name="link-part-2">[Part 2: Setting up Unity scene for data collection](Documentation/2_set_up_the_scene_for_data_collection.md)</a>
-
-<img src="Documentation/Images/0_randomized_scene.png" width=400 />
  
  This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception).We use the Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
 
