@@ -65,7 +65,6 @@ def train_loop(*, estimator, config, train_dataloader, val_dataloader):
         train_dataloader (torch.utils.data.DataLoader): training dataloader for the model training
         val_dataloader (torch.utils.data.DataLoader): validation dataloader to feed the model evaluation
     """
-    config = config
     model = estimator.model.to(estimator.device)
     params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.Adam(
