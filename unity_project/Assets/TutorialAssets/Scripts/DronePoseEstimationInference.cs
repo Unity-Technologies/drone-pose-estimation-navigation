@@ -7,11 +7,6 @@ using Grpc.Core;
 using Protocolor;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
-using UnityEngine.Perception.Randomization.Scenarios;
-using Quaternion = UnityEngine.Quaternion;
-
-using System.Numerics;
-using Unity.Simulation;
 using UnityEngine.AI;
 using Vector3 = UnityEngine.Vector3;
 
